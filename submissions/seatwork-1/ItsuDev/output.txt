@@ -1,0 +1,52 @@
+/mnt/c/Users/mrjha/umak-elec3-ccsad/umak-elec3-ccsad/submissions/seatwork-1/ItsuDev
+total 0
+drwxrwxrwx 1 root root 512 Aug 23 23:34 .
+drwxrwxrwx 1 root root 512 Aug 23 23:26 ..
+-rwxrwxrwx 1 root root  84 Aug 23 23:34 output.txt
+drwxrwxrwx 1 root root 512 Aug 23 23:33 practice_cli
+-rwxrwxrwx 1 root root 372 Aug 23 23:31 seatwork.sh
+Hello Linux
+Learning CLI is fun!
+-rwxrwxrwx 1 root root 33 Aug 23 23:34 notes.txt
+root
+Sun Aug 23 23:34:09 +08 2026
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.1  24448 15540 ?        Ss   23:02   0:00 /sbin/init
+root           2  0.0  0.0   3180  2204 hvc0     Sl+  23:02   0:00 /init
+root           7  0.0  0.0   3212  2144 hvc0     Sl+  23:02   0:00 plan9 --control-socket 7 --log-level 4 --server-fd 8 --pipe-fd 10 --log-truncate
+root          60  0.0  0.1  33964 13012 ?        S<s  23:02   0:00 /usr/lib/systemd/systemd-journald
+systemd+      94  0.0  0.1  22540 14552 ?        Ss   23:02   0:00 /usr/lib/systemd/systemd-resolved
+root         101  0.0  0.1  35368 12256 ?        Ss   23:02   0:00 /usr/lib/systemd/systemd-udevd
+root         176  0.0  0.0   2888  1948 ?        Ss   23:02   0:00 /bin/sh /usr/lib/systemd/scripts/chronyd-starter.sh -n -F 1
+root         178  0.0  0.0   4472  3104 ?        Ss   23:02   0:00 /usr/sbin/cron -f -P
+message+     179  0.0  0.0   8800  5372 ?        Ss   23:02   0:00 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root         189  0.0  0.3  44092 29776 ?        Ss   23:02   0:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+root         197  0.0  0.1  18448  9396 ?        Ss   23:02   0:00 /usr/lib/systemd/systemd-logind
+syslog       216  0.0  0.0 220548  5624 ?        Ssl  23:02   0:00 /usr/sbin/rsyslogd -n -iNONE
+root         219  0.0  0.0   5492  2768 tty1     Ss+  23:02   0:00 /usr/sbin/agetty --noreset --noclear --issue-file=/etc/issue:/etc/issue.d:/run/issue.d:/usr/lib/issue.d - linux
+root         240  0.0  0.4 123456 32488 ?        Ssl  23:02   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+_chrony      251  0.0  0.1  24520 11760 ?        S    23:02   0:00 /usr/sbin/chronyd -n -F 1 -x
+_chrony      260  0.0  0.0  12092  2404 ?        S    23:02   0:00 /usr/sbin/chronyd -n -F 1 -x
+root         518  0.0  0.0   3188  1108 ?        Ss   23:05   0:00 /init
+root         519  0.0  0.0   3204  1244 ?        S    23:05   0:00 /init
+root         520  0.0  0.0   6268  5500 pts/0    Ss   23:05   0:00 -bash
+root         521  0.0  0.0   8500  5352 ?        Ss   23:05   0:00 login -- root
+root         559  0.0  0.1  22336 13536 ?        Ss   23:05   0:00 /usr/lib/systemd/systemd --user
+root         561  0.0  0.0  22916  4004 ?        S    23:05   0:00 (sd-pam)
+root         590  0.0  0.0   6136  5372 pts/1    Ss+  23:05   0:00 -bash
+polkitd      768  0.0  0.1 306444  8392 ?        Ssl  23:06   0:00 /usr/lib/polkit-1/polkitd --no-debug --log-level=notice
+root         845  0.0  0.0   5212  4504 pts/0    S    23:13   0:00 bash
+root         854  0.0  0.0   5212  4536 pts/0    S    23:13   0:00 bash
+root         907  0.0  0.0   3188  1116 ?        Ss   23:22   0:00 /init
+root         908  0.0  0.0   3204  1252 ?        S    23:22   0:00 /init
+root         915  0.0  0.0   3200  1960 pts/2    Ss+  23:22   0:00 /init
+root         917  0.0  0.0   2888  1932 pts/2    S+   23:22   0:00 sh -c /usr/lib/wsl/wsl-setup
+root         918  0.0  0.0   5212  4276 pts/2    S+   23:22   0:00 /bin/bash /usr/lib/wsl/wsl-setup
+root         952  0.0  0.1 1792300 15292 ?       Ssl  23:33   0:00 /usr/libexec/wsl-pro-service
+root         998  0.0  0.0   5212  2952 pts/0    S+   23:34   0:00 bash
+root        1012  0.0  0.0   7160  4316 pts/0    R+   23:34   0:00 ps aux
+520
+590
+845
+854
+998
