@@ -8,7 +8,7 @@ Brief used (Lab Activity 1 only): N/A
 Attach 1 or 2 screenshots of you (and your group) actually doing the work in your terminal:
 
 ![Screenshot](image1.png)
-![Screenshot](image 2.PNG)
+![Screenshot](image2.PNG)
 
 ## Evidence
 
