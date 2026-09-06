@@ -38,6 +38,7 @@ currently-active ones are:
 | Path | What it is |
 |---|---|
 | [`activities/seatwork-1/`](activities/seatwork-1/) | Seatwork 1 — Linux CLI Fundamentals |
+| [`activities/assignment-1/`](activities/assignment-1/) | Assignment 1 — Course Materials Portal: Diagnose, Fix, and Look Ahead |
 | [`templates/`](templates/) | Shared templates (evidence write-ups, etc.) |
 | [`submissions/`](submissions/) | Where your work goes — one folder per person/group, per activity |
 | [`.github/`](.github/) | PR template and the CI workflow that checks submissions |
