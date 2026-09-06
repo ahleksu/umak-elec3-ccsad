@@ -1,0 +1,8 @@
+ANSWER_1: The application failed because its’ access to the configuration file, /etc/course-portal/portal.conf, was denied
+ANSWER_2: Converting -rw-------gives an octal permission mode of 600, which assigns: Owner permissions to be able to read and write (rw- )and grants no access ( --- ) to group and others. Since the course-portal account is not the file’s owner  and a member of the course-portal group which isn’t granted access, it cannot read the file.
+ANSWER_3: 640
+ANSWER_3_WHY: 400, 755, and 777 are wrong for various reasons. Mode 400 sets group permissions to no access (---). Mode 755 grants execute permissions (x) to all holders and grants access to others and configuration files do not need execute permissions, and giving others read access grants unnecessary permissions beyond the minimum needed. Mode 777 grants full read, write, and execute (rwx) access to everyone which is owner, group, and others which creates severe security risks by granting unnecessary write and execute privileges to all users on the system.
+ANSWER_4_ORDER: B,G,E,D,F,A,I,C,H
+ANSWER_5: Using chmod 777 creates security risks as it allows any user on the system to write and execute the configuration file and can lead to unauthorized users to tamper with sensitive system settings or run arbitrary code.
+ANSWER_6: A successful application or service restart status check (checking systemctl status course-portal to verify it shows active (running)) or seeing clear success logs without "Permission denied" errors in /var/log/course-portal/app.log.
+ANSWER_7_BRIDGE: component=<file system permission configuration>, detect=<automated monitoring and log alerting>, recover=<automated configuration management>, proof=<user-facing endpoint monitoring>
