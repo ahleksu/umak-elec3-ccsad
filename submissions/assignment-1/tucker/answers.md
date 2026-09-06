@@ -1,0 +1,10 @@
+ANSWER_1: based on the log, Course MAterial Portal was not able to open the config file /etc/course-portal/portal.conf because the permission is denied.
+ANSWER_2: The file permission is -rw------- equivalent in octal is 600. The owner is able to read and write (6), but the group and others does not have access (0). Root is the owner of the file and course-portal is the group. Course-portal is the member of the Group (GID 995) however, but it is not the file owner. That is why even though Course-portal is member of the group, it doesn't have any permission because the group does not gave any permission.
+ANSWER_3: 640
+ANSWER_3_WHY: In 400, only the owner has read access; the group still has 0, so course-portal gains nothing. Course-portal will not receive anything because the group only have 0. In 755, the group have read and execute but too much because others have an access and config file doesnt need an execute. On 777, owner, group, and other have already full access but too much. 640 is just right because the group can still read but does not give permission to other person
+ANSWER_4_ORDER: B, G, E, D, F, A, I, C, H
+ANSWER_5: If it's 777, anyone in the system, not only course-portal, will be able to edit or write config.file. It will be dangerous because anyone can access and enter it.
+ANSWER_6: It is necessary to look for /var/log/course-portal/app.log to see if the permission denied error is gone. This is to confirm that application file is already open, not only a working chmod command.
+ANSWER_7_BRIDGE: component=part of permissions/config, detect=automatic monitoring that takes care of error logs, recover=automatically fix the right permissions, proof=health check or test request to check if the server is really working
+
+The server-level failure happened in the configuration/permissions component. A larger system needs log monitoring to detect it, automated remediation to recover from it, and a health check to prove that users are served again.
