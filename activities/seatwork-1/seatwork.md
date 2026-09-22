@@ -140,13 +140,17 @@ Open a Pull Request against this repository with your `seatwork.sh` at
 `submissions/seatwork-1/<github_username>/seatwork.sh`.
 
 Before opening the PR, do the exact same check CI will do:
+
 ```bash
 bash activities/seatwork-1/check.sh submissions/seatwork-1/<github_username>
 ```
+
 Example, for the GitHub username `jdelacruz`:
+
 ```bash
 bash activities/seatwork-1/check.sh submissions/seatwork-1/jdelacruz
 ```
+
 It runs your script in an isolated sandbox (your real files are never touched) and
 checks that every part actually produced the expected output. A green CI check means
 the same thing this printed locally: `PASS`. If CI is red, read the failure message,

@@ -1,0 +1,74 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "RunOnlyT3MicroInstances",
+      "Effect": "Allow",
+      "Action": "____",
+      "Resource": "arn:aws:ec2:ap-southeast-1:<ACCOUNT_ID>:____/*",
+      "Condition": { "StringEquals": { "ec2:InstanceType": "____" } }
+    },
+    {
+      "Sid": "RunInstancesSupportingResources",
+      "Effect": "Allow",
+      "Action": "ec2:RunInstances",
+      "Resource": [
+        "arn:aws:ec2:ap-southeast-1::image/*",
+        "arn:aws:ec2:ap-southeast-1:<ACCOUNT_ID>:volume/*",
+        "arn:aws:ec2:ap-southeast-1:<ACCOUNT_ID>:network-interface/*",
+        "arn:aws:ec2:ap-southeast-1:<ACCOUNT_ID>:subnet/*",
+        "arn:aws:ec2:ap-southeast-1:<ACCOUNT_ID>:security-group/*"
+      ]
+    },
+    {
+      "Sid": "ReadPublicAmiParameters",
+      "Effect": "Allow",
+      "Action": ["ssm:GetParameter", "ssm:GetParameters"],
+      "Resource": "arn:aws:ssm:ap-southeast-1::parameter/aws/service/ami-amazon-linux-latest/*"
+    },
+    {
+      "Sid": "ListInstanceProfilesForTheWizard",
+      "Effect": "Allow",
+      "Action": "iam:ListInstanceProfiles",
+      "Resource": "*"
+    },
+    {
+      "Sid": "TagResourcesOnlyAtCreation",
+      "Effect": "Allow",
+      "Action": "ec2:CreateTags",
+      "Resource": "arn:aws:ec2:ap-southeast-1:<ACCOUNT_ID>:*/*",
+      "Condition": { "StringEquals": { "ec2:CreateAction": ["RunInstances", "CreateSecurityGroup"] } }
+    },
+    {
+      "Sid": "CreateSecurityGroupInAnyVpc",
+      "Effect": "Allow",
+      "Action": "ec2:CreateSecurityGroup",
+      "Resource": "arn:aws:ec2:ap-southeast-1:<ACCOUNT_ID>:vpc/*"
+    },
+    {
+      "Sid": "CreateOwnTaggedSecurityGroup",
+      "Effect": "Allow",
+      "Action": "ec2:CreateSecurityGroup",
+      "Resource": "arn:aws:ec2:ap-southeast-1:<ACCOUNT_ID>:security-group/*",
+      "Condition": { "StringEquals": { "aws:RequestTag/team": "${aws:username}" } }
+    },
+    {
+      "Sid": "ChangeOnlyOwnSecurityGroups",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:RevokeSecurityGroupIngress",
+        "ec2:DeleteSecurityGroup"
+      ],
+      "Resource": "arn:aws:ec2:ap-southeast-1:<ACCOUNT_ID>:security-group/*",
+      "Condition": { "StringEquals": { "ec2:ResourceTag/team": "${aws:username}" } }
+    },
+    {
+      "Sid": "ControlOnlyOwnInstances",
+      "Effect": "Allow",
+      "Action": ["ec2:StopInstances", "ec2:TerminateInstances", "ec2:GetConsoleOutput"],
+      "Resource": "arn:aws:ec2:ap-southeast-1:<ACCOUNT_ID>:instance/*",
+      "Condition": { "StringEquals": { "ec2:ResourceTag/team": "${aws:username}" } }
+    }
+  ]
+}
