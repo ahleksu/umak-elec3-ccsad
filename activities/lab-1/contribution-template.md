@@ -2,6 +2,6 @@
 
 | Lab Section | Driver | Navigator | Recorder | Reviewer |
 |---|---|---|---|---|
-| Part A & B | | | | |
-| Part C | | | | |
-| Part D & E | | | | |
+| Part A & B | SANTOS | TUCKER | MIDORIKAWA | ARCILLA H. |
+| Part C | SANTOS | TUCKER | MIDORIKAWA | ARCILLA H. |
+| Part D & E | SANTOS | ARCILLA H. | MIDORIKAWA | TUCKER |
