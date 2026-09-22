@@ -1,12 +1,13 @@
-# ELEC3 Cloud Computing — CCSAD
+# ELEC3 Cloud Computing — IV-CCSAD
 
-This is the public submission repository for **CCSAD**, UMak CCIS ELEC3 (Cloud
+This is the public submission repository for **IV-CCSAD**, UMak CCIS ELEC3 (Cloud
 Computing). Seatworks, lab activities, and assignments are posted here as they're
 assigned, and you submit your work as a Pull Request.
 
 ## Environment Setup
 
 These exercises assume a standard Bash/Linux environment. To make sure all students use the same commands and experience no compatibility issues:
+
 - **Windows Users (Recommended):** Install **Windows Subsystem for Linux (WSL)** (e.g., Ubuntu). Open your WSL terminal to run `bash` and do your work there.
 - **Windows Users (Alternative):** Install **Git for Windows** and use **Git Bash**. Note that some Linux-specific process commands (like `ps aux` or `pgrep`) might behave differently here, so WSL is strongly preferred.
 - **MacOS / Linux Users:** Your native terminal (Terminal.app on Mac, or your standard Linux terminal) is already compatible. Just open it and run `bash` if you are using `zsh` by default.
@@ -35,13 +36,17 @@ This repo grows over the semester as new seatworks, labs, and assignments are ad
 under `activities/`. Check that folder directly for the full, current list; the
 currently-active ones are:
 
-| Path | What it is |
-|---|---|
-| [`activities/seatwork-1/`](activities/seatwork-1/) | Seatwork 1 — Linux CLI Fundamentals |
+| Path                                               | What it is                                                       |
+| -------------------------------------------------- | ---------------------------------------------------------------- |
+| [`activities/seatwork-1/`](activities/seatwork-1/) | Seatwork 1 — Linux CLI Fundamentals                              |
 | [`activities/assignment-1/`](activities/assignment-1/) | Assignment 1 — Course Materials Portal: Diagnose, Fix, and Look Ahead |
-| [`templates/`](templates/) | Shared templates (evidence write-ups, etc.) |
-| [`submissions/`](submissions/) | Where your work goes — one folder per person/group, per activity |
-| [`.github/`](.github/) | PR template and the CI workflow that checks submissions |
+| [`activities/lab-1/`](activities/lab-1/) | Lab 1: Write and Attach an IAM Policy |
+| [`activities/lab-2/`](activities/lab-2/) | Lab 2: Build an EC2 Auto Scaling Group |
+| [`templates/`](templates/)                         | Shared templates (evidence write-ups, etc.)                      |
+| [`submissions/`](submissions/)                     | Where your work goes — one folder per person/group, per activity |
+| [`.github/`](.github/)                             | PR template and the CI workflow that checks submissions          |
+
+Lab 1 and Lab 2 (Week 8) are the exception: you do them in the AWS console and send your evidence to the private class form or TBL Hub, not by Pull Request.
 
 Every activity works the same way: read its brief under `activities/<id>/`, submit
 under `submissions/<id>/<your-identifier>/`, and — if the activity has an automated
