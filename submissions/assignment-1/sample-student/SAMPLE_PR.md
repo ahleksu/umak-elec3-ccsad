@@ -1,7 +1,6 @@
 ## Activity
 
 Activity ID (e.g. `seatwork-1`, `lab-1`): `assignment-1`
-Brief used (Lab Activity 1 only): N/A
 
 ## Screenshots
 

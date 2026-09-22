@@ -1,23 +1,18 @@
-## Activity
-
+## Activity Details
 Activity ID (e.g. `seatwork-1`, `lab-1`):
-Brief used (Lab Activity 1 only):
 
-## Screenshots
+## Evidence / Screenshots
+- Check the specific submission instructions under `activities/<activity-id>/` for required evidence.
+- **For terminal checks:** Paste your `check.sh` output showing `PASS` below.
+- **For labs requiring screenshots:** Attach or drag-and-drop your screenshots below, or make sure they are embedded in your `submission.md`.
 
-Attach 1 or 2 screenshots of you (and your group) actually doing the work in your terminal:
-
-<drag and drop screenshots here>
-
-## Evidence
-
-Paste your `check.sh` output showing `PASS`:
-
-```
-<paste here>
+```text
+<paste terminal output or drag and drop screenshots here>
 ```
 
 ## Checklist
 
-- [ ] All group members (if applicable) worked on this submission.
-- [ ] This only adds files inside our own folder under `submissions/`.
+- [ ] We have read and followed the submission instructions for this specific activity.
+- [ ] If required by the activity, all screenshots and evidence files are attached or embedded.
+- [ ] All group members (if applicable) contributed to this submission.
+- [ ] This PR only adds or modifies files inside our own designated folder.
