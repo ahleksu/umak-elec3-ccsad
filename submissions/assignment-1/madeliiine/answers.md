@@ -1,0 +1,8 @@
+ANSWER_1: The Course Materials Portal tried to read its config file at /etc/course-portal/portal.conf, but the operation failed with a Permission denied error.
+ANSWER_2: The user course-portal is not the file's owner. Root is the owner. However, course-portal is a member of the file's group, which is also named course-portal. The file's permissions are 600. The owner has read and write permissions (6), while the group has no access (0) and others have no access (0). Since course-portal only qualifies as a group member and not the owner, and the group has zero permissions, it cannot read the file.
+ANSWER_3: 640
+ANSWER_3_WHY: 400 still denies the group access, so it does not solve the problem. 755 and 777 both give execute permission, which is unnecessary for a configuration file. 777 also gives write and execute permissions to everyone on the system, creating more access than needed. 640 is the smallest and most appropriate change because it gives the group read access without granting unnecessary permissions.
+ANSWER_4_ORDER: B, G, E, D, F, A, I, C, H
+ANSWER_5: Since 777 gives any user write access to the config file, this unauthorized access could lead to damage to the settings inside it. A config file stores sensitive information such as database connections and passwords, so unwanted changes there could break or compromise the whole application.
+ANSWER_6: After applying the fix, I would check the actual portal to confirm that the course descriptions and other content load correctly. This verifies that the service is functioning properly, not just that the chmod command completed without errors.
+ANSWER_7_BRIDGE: component=permissions/access control, detect=monitoring and alerting, recover=rollback, proof=verification
