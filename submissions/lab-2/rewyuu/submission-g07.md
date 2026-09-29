@@ -20,7 +20,7 @@
 
 ## Questions
 1. Why did the group stop at 2 instances?
-  - The Auto Scaling group stopped expanding because its Maximum capacity parameter was explicitly configured to 2 during setup. Regardless of how high CPU usage spiked, the group strictly obeys this cap to prevent uncontrolled resource growth.
+   - The Auto Scaling group stopped expanding because its Maximum capacity parameter was explicitly configured to 2 during setup. Regardless of how high CPU usage spiked, the group strictly obeys this cap to prevent uncontrolled resource growth.
 2. Why did terminating an instance by hand not remove the cost?
    - Manually terminating an instance caused the group to drop below its configured Desired capacity of 2 instances. To maintain its target state, the Auto Scaling group immediately launched a replacement instance, keeping active compute resources running.
 3. Why is the target value set to your assigned value (e.g., 30-85 percent) instead of 99 percent?
