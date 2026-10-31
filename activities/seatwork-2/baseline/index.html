@@ -1388,7 +1388,7 @@
             url: "https://aws.amazon.com/lambda/"
           }
         },
-        {
+       {
           name: "Lars Ulrich J. Pons",
           role: "Frontend Developer",
           photo: "../img/lars.jpg",
@@ -1397,8 +1397,9 @@
           motto: "Ship it sharp.",
           bio: "Turns clean layouts into fast pages.",
           skills: ["HTML", "CSS", "JavaScript"],
-          github: "https://github.com/",
-          linkedin: "https://www.linkedin.com/",
+          github: "https://github.com/LarsUlrichPons",
+          linkedin: "https://www.linkedin.com/in/lars-ulrich-pons/",
+          portfolio: "https://larsulrichponsportfolio.netlify.app/?utm_source=ig&utm_medium=social&utm_content=link_in_bio",
           aws: {
             icon: "EC2",
             name: "Amazon EC2",
@@ -1579,11 +1580,12 @@
                 return '<li>' + esc(skill) + '</li>';
               }).join("") +
             '</ul>' +
-            '<p class="p-label">Find them online</p>' +
-            '<div class="links">' +
-              '<a href="' + esc(member.github) + '" target="_blank" rel="noopener noreferrer">GitHub</a>' +
-              '<a href="' + esc(member.linkedin) + '" target="_blank" rel="noopener noreferrer">LinkedIn</a>' +
-            '</div>' +
+           '<p class="p-label">Find them online</p>' +
+          '<div class="links">' +
+            '<a href="' + esc(member.github) + '" target="_blank" rel="noopener noreferrer">GitHub</a>' +
+            '<a href="' + esc(member.linkedin) + '" target="_blank" rel="noopener noreferrer">LinkedIn</a>' +
+            (member.portfolio ? '<a href="' + esc(member.portfolio) + '" target="_blank" rel="noopener noreferrer">Portfolio</a>' : '') +
+          '</div>' +
             '<a class="aws" href="' + esc(member.aws.url) + '" target="_blank" rel="noopener noreferrer">' +
               '<span class="aws-icon">' + esc(member.aws.icon) + '</span>' +
               '<span>' +
