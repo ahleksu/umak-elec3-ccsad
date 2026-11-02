@@ -198,7 +198,8 @@
         transition: transform 0.25s ease, box-shadow 0.25s ease;
       }
 
-      .portrait:focus {
+      .portrait:focus,
+      .portrait.active {
         z-index: 11;
         transform: scale(1.05) rotate(-3deg);
         box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
@@ -455,7 +456,7 @@
         
         <div class="container">
           <div class="portraits">
-            <img class="portrait" tabindex="0" data-bg="bg-carl" src="https://github.com/Andre-Arcilla/Sketch-Cast-Assets/blob/main/UI%20Assets/credits_carl.png?raw=true" alt="bg-carl">
+            <img class="portrait active" tabindex="0" data-bg="bg-carl" src="https://github.com/Andre-Arcilla/Sketch-Cast-Assets/blob/main/UI%20Assets/credits_carl.png?raw=true" alt="bg-carl">
             <img class="portrait" tabindex="0" data-bg="bg-rhenz" src="https://github.com/Andre-Arcilla/Sketch-Cast-Assets/blob/main/UI%20Assets/credits_rinz.png?raw=true" alt="bg-rhenz">
             <img class="portrait" tabindex="0" data-bg="bg-andre" src="https://github.com/Andre-Arcilla/Sketch-Cast-Assets/blob/main/UI%20Assets/credits_dre.png?raw=true" alt="bg-andre">
             <img class="portrait" tabindex="0" data-bg="bg-paulyn" src="https://github.com/Andre-Arcilla/Sketch-Cast-Assets/blob/main/UI%20Assets/credits_pau.png?raw=true" alt="bg-paulyn">
@@ -581,6 +582,8 @@
 
         portrait.addEventListener('focusin', () => {
           pic.style.display = 'block';
+          document.querySelectorAll('.portrait.active').forEach(p => p.classList.remove('active'));
+          portrait.classList.add('active');
           if (!member) return;
           document.querySelectorAll('.member.active').forEach(m => m.classList.remove('active'));
           member.classList.add('active');
