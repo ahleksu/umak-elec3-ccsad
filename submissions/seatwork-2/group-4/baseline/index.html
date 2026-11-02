@@ -44,7 +44,6 @@
         position: relative;
       }
 
-      /* ---------- Horizontal scrollers (one per "scene") ---------- */
       .scene {
         position: fixed;
         inset: 0;
@@ -69,12 +68,11 @@
         background: #d69c7a;
       }
 
-      /* Stage = the BG image at full viewport height, native aspect ratio */
       .stage {
         position: relative;
         flex: none;
         height: var(--vh);
-        margin: 0 auto;           /* centers on ultra-wide screens, scrolls otherwise */
+        margin: 0 auto;
         display: flex;
         flex-direction: column;
         background-repeat: no-repeat;
@@ -104,7 +102,6 @@
       body.looked-up main.scene   { transform: translateY(100%); }
       body.looked-up .about.scene { transform: none; }
 
-      /* ---------- Look up / down button ---------- */
       body.looked-up .swipe {
         top: auto;
         bottom: 12px;
@@ -143,7 +140,6 @@
         transform: translateX(-50%) translateY(3px);
       }
 
-      /* ---------- Flash GIFs (cover the viewport) ---------- */
       .pic {
         display: none;
         position: absolute;
@@ -166,7 +162,6 @@
         100% { opacity: 0; }
       }
 
-      /* ---------- Credits scene ---------- */
       .container {
         width: 100%;
         flex: 1;
@@ -361,7 +356,6 @@
         paint-order: stroke fill;
       }
 
-      /* ---------- About scene ---------- */
       .about h2 {
         margin: calc(15 * var(--s)) 0;
         color: var(--peach);
@@ -415,7 +409,6 @@
         box-shadow: 0 14px 30px rgba(0, 0, 0, 0.5);
       }
 
-      /* ---------- Lightbox ---------- */
       .lightbox {
         position: fixed;
         inset: 0;
@@ -595,10 +588,6 @@
         });
       });
 
-
-      //====================================================== 
-
-      // Use each BG image's real aspect ratio so the stage never distorts it
       function applyRatio(url, cssVar) {
         const img = new Image();
         img.onload = () => {
@@ -609,9 +598,7 @@
         img.src = url;
       }
       applyRatio('https://github.com/Andre-Arcilla/Sketch-Cast-Assets/blob/main/UI%20Assets/background_credits.png?raw=true', '--main-ratio');
-      applyRatio('https://github.com/Andre-Arcilla/Sketch-Cast-Assets/blob/main/UI%20Assets/background_table.png?raw=true', '--table-ratio');
-
-      //====================================================== 
+      applyRatio('https://github.com/Andre-Arcilla/Sketch-Cast-Assets/blob/main/UI%20Assets/background_table.png?raw=true', '--table-ratio'); 
 
       const swipeBtns = document.querySelectorAll('.swipe');
       const mainEl = document.querySelector('main');
@@ -626,8 +613,6 @@
           document.querySelectorAll('.pic').forEach(p => p.style.display = 'none');
         });
       });
-
-      //====================================================== 
 
       const lightbox = document.createElement('div');
       lightbox.className = 'lightbox';
