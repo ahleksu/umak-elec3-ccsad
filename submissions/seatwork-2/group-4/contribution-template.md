@@ -9,8 +9,8 @@ How to use this template:
 4. Write GitHub usernames, not full names or student numbers.
 -->
 
-- Group number: <answer>
-- Section: <answer>
+- Group number: Group #4
+- Section: IV-CCSAD
 
 | GitHub username | What this groupmate did |
 | --- | --- |
