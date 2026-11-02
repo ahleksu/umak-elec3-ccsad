@@ -14,7 +14,7 @@ How to use this template:
 
 | GitHub username | What this groupmate did |
 | --- | --- |
-| Andre Arcilla | Planned the page's contents |
-| Carl Jamero | Implemented the design into code |
-| Paulyn Blanco | Designed the user interface |
-| Rhenz Ganotice | Wrote documentation and tested features |
+| Andre-Arcilla | Planned the page's contents |
+| ScarlettRed6 | Implemented the design into code |
+| paupausiopau | Designed the user interface |
+| StDevRhenz | Wrote documentation and tested features |
