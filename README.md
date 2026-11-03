@@ -49,6 +49,7 @@ currently-active ones are:
 | [`activities/assignment-3/`](activities/assignment-3/) | Assignment 3: Price the Database Before You Build It |
 | [`activities/seatwork-4/`](activities/seatwork-4/) | Seatwork 4: Write Your First Lambda Function |
 | [`activities/lab-4/`](activities/lab-4/) | Lab 4: Guided Serverless Endpoint |
+| [`activities/assignment-4/`](activities/assignment-4/) | Assignment 4: Price the Serverless Endpoint |
 | [`templates/`](templates/)                         | Shared templates (evidence write-ups, etc.)                      |
 | [`submissions/`](submissions/)                     | Where your work goes — one folder per person/group, per activity |
 | [`.github/`](.github/)                             | PR template and the CI workflow that checks submissions          |
