@@ -9,11 +9,12 @@ How to use this template:
 4. Write GitHub usernames, not full names or student numbers.
 -->
 
-- Group number: <answer>
-- Section: <answer>
+- Group number: 2
+- Section: IV-CCSAD
 
 | GitHub username | What this groupmate did |
 | --- | --- |
-| <answer> | <answer> |
-| <answer> | <answer> |
-| <answer> | <answer> |
+| rssnjade | Updated the HTML structure and inputted the new group members' details, roles, and bios. |
+| saromoAndreiLuis | Modified the CSS styling, adjusted hover transitions, and verified the responsive layout. |
+| DietherUrdas | Researched and integrated the correct SVG icons for AWS services and social media links. |
+| RalphEspartero3 | Managed the GitHub repository, created the group folder, committed the files, and prepared the Pull Request. |
