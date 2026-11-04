@@ -12,11 +12,11 @@ How to use this template:
 
 ## About us
 
-- Group number: <answer>
-- Section: <answer>
-- Group IAM user: <answer>
-- Bucket name: <answer>
-- Website endpoint: <answer>
+- Group number: 7
+- Section: IV - CCSAD
+- Group IAM user: ccsad-g07
+- Bucket name: umak-elec3-ccsad-g07-linktree
+- Website endpoint: http://umak-elec3-ccsad-g07-linktree.s3-website-ap-southeast-1.amazonaws.com/
 
 ## Screenshots
 
@@ -30,6 +30,7 @@ How to use this template:
 
 | GitHub username | What this groupmate did |
 | --- | --- |
-| <answer> | <answer> |
-| <answer> | <answer> |
-| <answer> | <answer> |
+| rewyuu  | Created the bucket, uploaded the html page and handled permissions |
+| LarsUlrichPons | Created the index.html page for the static website demo |
+| romeonspotify | Made the correct bucket policy and checked the website if it opens on his side |
+| VobAviso | Made the submission.md and recorded the correct details |
