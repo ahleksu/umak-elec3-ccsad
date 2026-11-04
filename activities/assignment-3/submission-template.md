@@ -18,8 +18,6 @@ Share link of our estimate: https://calculator.aws/#/estimate?id=ec341cd225000b8
 
 ## Recommendation
 
-Five sentences. Which option fits our client, and why? Use the client's users, the cost of downtime for that client, and the read load.
-
 We recommend Option B (High availability) for the barangay health center records system. The client expects a localized user base of community health workers, which requires reliable but moderate compute power rather than massive scale. Because their application is focused on balanced data entry and retrieval for patient records rather than heavy public web traffic, read replicas are unnecessary. However, downtime or data loss for a health center could severely disrupt patient care and medical tracking, fully justifying the cost of a Multi-AZ deployment. Therefore, Option B provides the best balance of essential data reliability and necessary infrastructure for critical community health services.
 
 
