@@ -5,12 +5,12 @@ counts_toward: Final Class Standing, Seatwork/Assignment/Recitation (10%)
 duration: 30 to 40 minutes, in class, right after the Lambda and API Gateway lecture
 mode: Group. Sign in with your group IAM user. One Pull Request per group in this repository, then the Pull Request link in the Google Form.
 coverage: AWS Lambda functions, handlers and events, execution roles, test events, CloudWatch Logs, the REPORT line, cold starts and warm starts
-due: 2026-11-07, 11:59 PM (Asia/Manila)
+due: 2026-11-08, 11:59 PM (Asia/Manila)
 ---
 
 # Seatwork 4: Write Your First Lambda Function
 
-> Submit one Pull Request per group to this repository. Then one groupmate submits the Pull Request link in the Google Form: https://docs.google.com/forms/d/e/1FAIpQLSeSwZ4hrYrWUqaG4KM4s6KFqmPGFsAFBaF4hrwqQYRJsxEsqw/viewform. Both are due on Saturday, November 7, 2026, at 11:59 PM (Asia/Manila). Do not merge your own Pull Request.
+> Submit one Pull Request per group to this repository. Then one groupmate submits the Pull Request link in the Google Form: https://forms.gle/Rqpn9rvGzTb99Lp76. Both are due on Sunday, November 8, 2026, at 11:59 PM (Asia/Manila). Do not merge your own Pull Request.
 
 This is a self-guided activity. Your group creates an AWS Lambda function, runs it with a test event, and finds its REPORT lines in Amazon CloudWatch. [Lab 4](../lab-4/lab.md) starts from this function. Read [`README.md`](README.md) before you start. It explains the Lambda ideas that each step uses.
 
@@ -116,7 +116,7 @@ Take all three screenshots before you start Lab 4. Lab 4 replaces your handler c
    - `report.png`: the log events with both REPORT lines.
 3. Crop the AWS console top bar out of all three screenshots, because it shows the account number. Also cover every ARN (Amazon Resource Name), a long name that starts with `arn:aws:`, because it holds the account number too.
 4. Copy [`submission-template.md`](submission-template.md) to the same folder as `submission.md`. Fill in your section, group number, group IAM user, function name, handler code, both REPORT lines, the answer to the question, and one line per groupmate (GitHub username and what each one did).
-5. Open one Pull Request. One groupmate submits its link in the Google Form for the whole group: https://docs.google.com/forms/d/e/1FAIpQLSeSwZ4hrYrWUqaG4KM4s6KFqmPGFsAFBaF4hrwqQYRJsxEsqw/viewform.
+5. Open one Pull Request. One groupmate submits its link in the Google Form for the whole group: https://forms.gle/Rqpn9rvGzTb99Lp76.
 
 | Check | Points |
 | --- | --- |

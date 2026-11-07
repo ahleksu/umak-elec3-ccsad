@@ -10,7 +10,7 @@ due: End of class on 2026-11-07. If your group does not finish in class, 2026-11
 
 # Lab 4: Guided Serverless Endpoint
 
-> **Submission format:** One Pull Request per group, with your `submission.md`, `contribution.md`, and four screenshots. When the Pull Request is open, one groupmate submits its link in the Google Form: https://docs.google.com/forms/d/e/1FAIpQLSd4AnOoOGccW0_EyjD-MV-0YkOzdEiBBCBcUntEHsiQOIiqNw/viewform. Finish in class if you can. If your group does not finish in class, both are due on Sunday, November 8, 2026, at 11:59 PM (Asia/Manila). Do not merge your own Pull Request.
+> **Submission format:** One Pull Request per group, with your `submission.md`, `contribution.md`, and four screenshots. When the Pull Request is open, one groupmate submits its link in the Google Form: https://forms.gle/VAUNTZE9fq6Jo8gU9. Finish in class if you can. If your group does not finish in class, both are due on Sunday, November 8, 2026, at 11:59 PM (Asia/Manila). Do not merge your own Pull Request.
 
 This is a self-guided lab. Your group builds a small API (application programming interface) for messages. An HTTP (Hypertext Transfer Protocol) API in Amazon API Gateway sits in front of your Seatwork 4 Lambda function, and Amazon DynamoDB stores the messages. The steps follow the pattern of the AWS tutorial [Create a CRUD HTTP API with Lambda and DynamoDB](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-dynamo-db.html). That tutorial has four routes to create, read, update, and delete (CRUD) items. Your API has two routes, and it uses your group's names. Read [`README.md`](README.md) before you start. It explains the ideas that each step uses.
 
@@ -249,7 +249,7 @@ Answer in `submission.md`.
 4. Keep your invoke URL out of the Pull Request, because anyone can read this repository and post to your API. Cover your API ID in every screenshot: in `post.png`, in `get.png`, and on the **Routes** page. The full invoke URL goes only in the Google Form.
 5. Copy [`submission-template.md`](submission-template.md) to that folder as `submission.md`, and [`contribution-template.md`](contribution-template.md) as `contribution.md`. Fill in both.
 6. Commit, push your branch, and open one Pull Request to this repository. Title: `Lab 4: Group <number>`.
-7. One groupmate submits the Pull Request link and your invoke URL in the Google Form: https://docs.google.com/forms/d/e/1FAIpQLSd4AnOoOGccW0_EyjD-MV-0YkOzdEiBBCBcUntEHsiQOIiqNw/viewform.
+7. One groupmate submits the Pull Request link and your invoke URL in the Google Form: https://forms.gle/VAUNTZE9fq6Jo8gU9.
 
 | Check | Points |
 | --- | --- |
