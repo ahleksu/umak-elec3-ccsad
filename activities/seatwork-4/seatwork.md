@@ -64,7 +64,7 @@ def lambda_handler(event, context):
     }
 ```
 
-Change `Group 3 of IV-ACSAD` to your group's name. Keep the quotes around it. Then choose **Deploy**, and wait for the message that says that the function was updated.
+Change `Group 3 of IV-ACSAD` to your group's name. Keep the quotes around it. Then choose **Deploy**, and wait for the message that says that the function was updated. Take the screenshot `code.png` of the **Code** tab now, because Lab 4 replaces this code.
 
 ![Code tab with the handler, the group name, and the Deploy button marked](images/seatwork-4-03-deploy.png)
 

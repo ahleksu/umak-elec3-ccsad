@@ -157,7 +157,7 @@ Open the API Gateway console. Choose **APIs**, then your API `umak-elec3-<group 
 
 - **Integration type**: **Lambda function**
 - **AWS Region**: keep `ap-southeast-1`
-- **Lambda function**: choose your function `umak-elec3-<group user>-api`
+- **Lambda function**: choose your own function `umak-elec3-<group user>-api`. The list shows the functions of every group, so check the name
 - **Advanced settings**: open it and keep **Payload format version** at **2.0**
 - **Invoke permissions**: keep **Grant API Gateway permission to invoke your Lambda function** turned on. API Gateway then gives itself permission to call your function.
 
@@ -172,6 +172,8 @@ Choose **Create**.
 **Check the stage.** In the left menu, under **Deploy**, choose **Stages**, then `$default`. Under **Attached deployment**, **Automatic Deployment** must say **Enabled**. Each change to your routes then goes live by itself, so you do not choose **Deploy**.
 
 ![Stages page with the $default stage and Automatic Deployment: Enabled marked](images/lab-4-07-stage.png)
+
+In the left menu, choose **Routes** again. Take the screenshot `routes.png` now: the **Routes** page with `GET /messages` and `POST /messages`. Cover your API ID before you save it.
 
 ## Step 5. Copy the invoke URL (2 minutes)
 
@@ -294,6 +296,7 @@ If your group made a second table by mistake, delete the extra one now. Keep onl
 | `ResourceNotFoundException` in the test result | `TABLE_NAME` and your table name differ, or the table is not **Active** yet |
 | The test result still shows your Seatwork 4 greeting | You did not choose **Deploy** after you pasted the new code |
 | `Access Denied` when you create a route or an integration | You opened another group's API. Choose **APIs** and open `umak-elec3-<group user>-api` |
+| An error that names `lambda:AddPermission` when you create the integration, or `{"message":"Internal Server Error"}` with no new lines in your log group | Your integration calls another group's function. In the left menu, choose **Integrations**, then **Manage integrations**. Select your integration and choose **Edit**. Choose your own function `umak-elec3-<group user>-api`. If the page shows **Grant API Gateway permission to invoke your Lambda function**, keep it turned on. Choose **Save** |
 | **Unable to load content** in the API Gateway console | Refresh the page. If it stays, choose **Routes** or **Integrations** in the left menu again |
 | `{"message":"Not Found"}` from `/messages` | The route path has a typo. Open **Routes** and check `/messages` |
 | `{"message":"Internal Server Error"}` | The function failed. Open the log group `/aws/lambda/umak-elec3-<group user>-api` and read the newest error lines |
