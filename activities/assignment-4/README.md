@@ -57,7 +57,7 @@ Lab 2 had no load balancer, so the EC2 estimate has none. Both estimates leave o
 
 ## How you submit
 
-Submit one Pull Request per group to this repository. Then one groupmate submits the Pull Request link in the Google Form: https://docs.google.com/forms/d/e/1FAIpQLSdev8rYJiMfbe4mw-w64i39TUxPnYvCs0fCVNAcH_vnpyBZ_g/viewform. Both are due on Tuesday, November 10, 2026, at 11:59 PM (Asia/Manila).
+Submit one Pull Request per group to this repository. Then one groupmate submits the Pull Request link in the Google Form: https://forms.gle/rJ65gHyxdz6UCzC99. Both are due on Monday, November 9, 2026, at 11:59 PM (Asia/Manila).
 
 ## Files in this folder
 

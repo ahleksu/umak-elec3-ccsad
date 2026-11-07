@@ -10,7 +10,7 @@ due: End of class on 2026-11-07. If your group does not finish in class, 2026-11
 
 # Lab 4: Guided Serverless Endpoint
 
-> **Submission format:** One Pull Request per group, with your `submission.md`, `contribution.md`, and four screenshots. When the Pull Request is open, one groupmate submits its link in the Google Form: https://docs.google.com/forms/d/e/1FAIpQLSd4AnOoOGccW0_EyjD-MV-0YkOzdEiBBCBcUntEHsiQOIiqNw/viewform. Finish in class if you can. If your group does not finish in class, both are due on Sunday, November 8, 2026, at 11:59 PM (Asia/Manila). Do not merge your own Pull Request.
+> **Submission format:** One Pull Request per group, with your `submission.md`, `contribution.md`, and four screenshots. When the Pull Request is open, one groupmate submits its link in the Google Form: https://forms.gle/VAUNTZE9fq6Jo8gU9. Finish in class if you can. If your group does not finish in class, both are due on Sunday, November 8, 2026, at 11:59 PM (Asia/Manila). Do not merge your own Pull Request.
 
 This is a self-guided lab. Your group builds a small API (application programming interface) for messages. An HTTP (Hypertext Transfer Protocol) API in Amazon API Gateway sits in front of your Seatwork 4 Lambda function, and Amazon DynamoDB stores the messages. The steps follow the pattern of the AWS tutorial [Create a CRUD HTTP API with Lambda and DynamoDB](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-dynamo-db.html). That tutorial has four routes to create, read, update, and delete (CRUD) items. Your API has two routes, and it uses your group's names. Read [`README.md`](README.md) before you start. It explains the ideas that each step uses.
 
@@ -157,7 +157,7 @@ Open the API Gateway console. Choose **APIs**, then your API `umak-elec3-<group 
 
 - **Integration type**: **Lambda function**
 - **AWS Region**: keep `ap-southeast-1`
-- **Lambda function**: choose your function `umak-elec3-<group user>-api`
+- **Lambda function**: choose your own function `umak-elec3-<group user>-api`. The list shows the functions of every group, so check the name
 - **Advanced settings**: open it and keep **Payload format version** at **2.0**
 - **Invoke permissions**: keep **Grant API Gateway permission to invoke your Lambda function** turned on. API Gateway then gives itself permission to call your function.
 
@@ -172,6 +172,8 @@ Choose **Create**.
 **Check the stage.** In the left menu, under **Deploy**, choose **Stages**, then `$default`. Under **Attached deployment**, **Automatic Deployment** must say **Enabled**. Each change to your routes then goes live by itself, so you do not choose **Deploy**.
 
 ![Stages page with the $default stage and Automatic Deployment: Enabled marked](images/lab-4-07-stage.png)
+
+In the left menu, choose **Routes** again. Take the screenshot `routes.png` now: the **Routes** page with `GET /messages` and `POST /messages`. Cover your API ID before you save it.
 
 ## Step 5. Copy the invoke URL (2 minutes)
 
@@ -249,7 +251,7 @@ Answer in `submission.md`.
 4. Keep your invoke URL out of the Pull Request, because anyone can read this repository and post to your API. Cover your API ID in every screenshot: in `post.png`, in `get.png`, and on the **Routes** page. The full invoke URL goes only in the Google Form.
 5. Copy [`submission-template.md`](submission-template.md) to that folder as `submission.md`, and [`contribution-template.md`](contribution-template.md) as `contribution.md`. Fill in both.
 6. Commit, push your branch, and open one Pull Request to this repository. Title: `Lab 4: Group <number>`.
-7. One groupmate submits the Pull Request link and your invoke URL in the Google Form: https://docs.google.com/forms/d/e/1FAIpQLSd4AnOoOGccW0_EyjD-MV-0YkOzdEiBBCBcUntEHsiQOIiqNw/viewform.
+7. One groupmate submits the Pull Request link and your invoke URL in the Google Form: https://forms.gle/VAUNTZE9fq6Jo8gU9.
 
 | Check | Points |
 | --- | --- |
@@ -294,6 +296,7 @@ If your group made a second table by mistake, delete the extra one now. Keep onl
 | `ResourceNotFoundException` in the test result | `TABLE_NAME` and your table name differ, or the table is not **Active** yet |
 | The test result still shows your Seatwork 4 greeting | You did not choose **Deploy** after you pasted the new code |
 | `Access Denied` when you create a route or an integration | You opened another group's API. Choose **APIs** and open `umak-elec3-<group user>-api` |
+| An error that names `lambda:AddPermission` when you create the integration, or `{"message":"Internal Server Error"}` with no new lines in your log group | Your integration calls another group's function. In the left menu, choose **Integrations**, then **Manage integrations**. Select your integration and choose **Edit**. Choose your own function `umak-elec3-<group user>-api`. If the page shows **Grant API Gateway permission to invoke your Lambda function**, keep it turned on. Choose **Save** |
 | **Unable to load content** in the API Gateway console | Refresh the page. If it stays, choose **Routes** or **Integrations** in the left menu again |
 | `{"message":"Not Found"}` from `/messages` | The route path has a typo. Open **Routes** and check `/messages` |
 | `{"message":"Internal Server Error"}` | The function failed. Open the log group `/aws/lambda/umak-elec3-<group user>-api` and read the newest error lines |

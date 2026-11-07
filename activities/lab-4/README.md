@@ -86,7 +86,7 @@ None of the three services charges by the hour. Each one charges per request, an
 
 ## How you submit
 
-Submit one Pull Request per group to this repository. Then one groupmate submits the Pull Request link and your invoke URL in the Google Form: https://docs.google.com/forms/d/e/1FAIpQLSd4AnOoOGccW0_EyjD-MV-0YkOzdEiBBCBcUntEHsiQOIiqNw/viewform. Finish in class if you can. If your group does not finish in class, both are due on Sunday, November 8, 2026, at 11:59 PM (Asia/Manila).
+Submit one Pull Request per group to this repository. Then one groupmate submits the Pull Request link and your invoke URL in the Google Form: https://forms.gle/VAUNTZE9fq6Jo8gU9. Finish in class if you can. If your group does not finish in class, both are due on Sunday, November 8, 2026, at 11:59 PM (Asia/Manila).
 
 ## Files in this folder
 

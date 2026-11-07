@@ -5,12 +5,12 @@ counts_toward: Final Class Standing, Seatwork/Assignment/Recitation (10%)
 duration: 45 to 60 minutes
 mode: Group. No AWS sign-in. One Pull Request per group in this repository, then the Pull Request link in the Google Form.
 coverage: Pricing per request and per hour, Amazon API Gateway HTTP API, AWS Lambda, and Amazon DynamoDB on-demand pricing, Amazon EC2 On-Demand and EBS pricing, cost estimates in the AWS Pricing Calculator
-due: 2026-11-10, 11:59 PM (Asia/Manila)
+due: 2026-11-09, 11:59 PM (Asia/Manila)
 ---
 
 # Assignment 4: Price the Serverless Endpoint
 
-> Submit one Pull Request per group to this repository. Then one groupmate submits the Pull Request link in the Google Form: https://docs.google.com/forms/d/e/1FAIpQLSdev8rYJiMfbe4mw-w64i39TUxPnYvCs0fCVNAcH_vnpyBZ_g/viewform. Both are due on Tuesday, November 10, 2026, at 11:59 PM (Asia/Manila). Do not merge your own Pull Request.
+> Submit one Pull Request per group to this repository. Then one groupmate submits the Pull Request link in the Google Form: https://forms.gle/rJ65gHyxdz6UCzC99. Both are due on Monday, November 9, 2026, at 11:59 PM (Asia/Manila). Do not merge your own Pull Request.
 
 This is a self-guided activity. Your group prices the [Lab 4](../lab-4/lab.md) endpoint at 1 million requests a month, and the [Lab 2](../lab-2/lab.md) EC2 setup for the same month, in the AWS Pricing Calculator. You create nothing in AWS, so this activity costs nothing. Read [`README.md`](README.md) before you start. It explains the numbers that you enter and why.
 
@@ -107,7 +107,7 @@ On the summary page, check that the estimate lists four services, all in Asia Pa
    - The answer to this question: in a month with no requests at all, which costs remain in each setup, and why?
    - A recommendation of five sentences: which setup fits the Lab 4 message API at 1 million requests a month, and why? Use your two totals, your answer to the question, and the work that each setup needs from your group, such as patching a server or handling a sudden spike in traffic.
    - One line per groupmate: GitHub username and what each one did.
-3. Open one Pull Request. One groupmate submits its link in the Google Form for the whole group: https://docs.google.com/forms/d/e/1FAIpQLSdev8rYJiMfbe4mw-w64i39TUxPnYvCs0fCVNAcH_vnpyBZ_g/viewform.
+3. Open one Pull Request. One groupmate submits its link in the Google Form for the whole group: https://forms.gle/rJ65gHyxdz6UCzC99.
 
 | Check | Points |
 | --- | --- |

@@ -72,7 +72,7 @@ Lambda charges for each run and for each millisecond of run time. A few test run
 
 ## How you submit
 
-Submit one Pull Request per group to this repository. Then one groupmate submits the Pull Request link in the Google Form: https://docs.google.com/forms/d/e/1FAIpQLSeSwZ4hrYrWUqaG4KM4s6KFqmPGFsAFBaF4hrwqQYRJsxEsqw/viewform. Both are due on Saturday, November 7, 2026, at 11:59 PM (Asia/Manila).
+Submit one Pull Request per group to this repository. Then one groupmate submits the Pull Request link in the Google Form: https://forms.gle/Rqpn9rvGzTb99Lp76. Both are due on Sunday, November 8, 2026, at 11:59 PM (Asia/Manila).
 
 ## Files in this folder
 
