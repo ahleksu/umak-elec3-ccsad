@@ -46,17 +46,17 @@ During the first run (cold start), AWS Lambda has to initialize a new execution 
 
 ## Screenshots
 
-![Code tab with our deployed handler](code.png)
+![Code tab with our deployed handler](screenshots/code.PNG)
 
-![Test result with Executing function: succeeded](test.png)
+![Test result with Executing function: succeeded](screenshots/test.PNG)
 
-![The two REPORT lines in CloudWatch](report.png)
+![The two REPORT lines in CloudWatch](screenshots/logs.PNG)
 
 ## Contribution
 
 | GitHub username | What this groupmate did |
 | --- | --- |
-| <VobAviso> | <code> |
-| <LarsUlrichPons> | <test> |
-| <rewyuu> | <report> |
-| <JeromeMagno> | <research> |
+| VobAviso | code |
+| LarsUlrichPons | test |
+| rewyuu | report |
+| JeromeMagno | research |
