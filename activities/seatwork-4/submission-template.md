@@ -1,4 +1,4 @@
-# Seatwork 4 Submission
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/190e9042-3149-444c-b9a0-74e3d1711653" /># Seatwork 4 Submission
 
 <!--
 How to use this template:
@@ -15,7 +15,7 @@ How to use this template:
 - Group number: Group - 2  
 - Section: IV - CCSAD
 - Group IAM user: ccsad-g02
-- Function name: <answer>
+- Function name: umak-elec3-ccsad-g02-api
 
 ## Handler code
 
