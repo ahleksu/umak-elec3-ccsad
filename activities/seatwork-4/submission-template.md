@@ -1,4 +1,4 @@
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/190e9042-3149-444c-b9a0-74e3d1711653" /># Seatwork 4 Submission
+Seatwork 4 Submission
 
 <!--
 How to use this template:
