@@ -1,16 +1,5 @@
 # Lab 4 Submission
 
-<!--
-How to use this template:
-
-1. Copy this file to submissions/lab-4/group-<number>/submission.md
-2. Replace every <answer> with your group's answer. Delete the angle brackets too.
-3. Save routes.png, post.png, get.png, and items.png in the same folder.
-4. Crop the AWS console top bar out of routes.png and items.png, and cover every ARN.
-5. Cover your API ID, the part between https:// and .execute-api, in routes.png, post.png, and get.png. Your invoke URL goes only in the Google Form, never in this repository.
-6. Do not write full names or student numbers in this file.
--->
-
 ## About us
 
 - Group number: 4
