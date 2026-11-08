@@ -76,7 +76,7 @@ def lambda_handler(event, context):
 
 ## Screenshots
 
-![The Routes page with GET /messages and POST /messages](routes.png)
+![The Routes page - GET /messages](routes.png)
 
 ![Our curl POST commands and the answers](post.png)
 
