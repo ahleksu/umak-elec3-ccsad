@@ -81,12 +81,12 @@ def lambda_handler(event, context):
 
 1. Both routes call the same function. How does your code know which route a request came through?
 
-   <answer>
+   API Gateway puts the matched route in the event it sends to Lambda, in the `routeKey` field (for example `"GET /messages"` or `"POST /messages"`) because we use payload format 2.0. Our handler reads `event.get("routeKey")` and uses `if` checks to run the GET code (scan the table) or the POST code (validate and save a message). Any other value falls through to the 404 response at the end.
 
 2. What answer do you get when you open the invoke URL without `/messages`? Why does API Gateway answer this way, and not your function?
 
-   <answer>
+   We get `{"message":"Not Found"}` with HTTP status 404. API Gateway answers this itself because it only forwards requests that match a route, and we created only `GET /messages` and `POST /messages`. The bare URL (`GET /`) matches neither, and there is no `$default` route, so the request is rejected at the gateway and never reaches our Lambda function. This is different from our function's own 404 (`No route for ...`), which only runs for requests the gateway has already forwarded.
 
 3. Your `GET /messages` route uses Scan. What happens to the cost of each GET request as the table grows to thousands of messages? Why?
 
-   <answer>
+   The cost grows with the table. Scan reads every item in the table (it is billed for the amount of data read, in read capacity units, and returns at most 1 MB per call, so large tables need several calls). With thousands of messages, each GET reads and returns all of them, so every request gets slower, uses more read capacity, costs more in on-demand billing, and sends a bigger response. It does this even when the user only wants a few recent messages. Query on a key, or paginating and limiting results, avoids reading the whole table.
