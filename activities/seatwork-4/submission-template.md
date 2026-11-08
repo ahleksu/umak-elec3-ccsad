@@ -15,7 +15,7 @@ How to use this template:
 - Group number: Group - 2  
 - Section: IV - CCSAD
 - Group IAM user: ccsad-g02
-- Function name: <answer>
+- Function name: umak-elec3-ccsad-g02-api
 
 ## Handler code
 
