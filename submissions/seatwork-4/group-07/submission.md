@@ -12,15 +12,30 @@ How to use this template:
 
 ## About us
 
-- Group number: <answer>
-- Section: <answer>
-- Group IAM user: <answer>
-- Function name: <answer>
+- Group number: 7
+- Section: IV - CCSAD
+- Group IAM user: ccsad-g07
+- Function name: umak-elec3-ccsad-g07-api
 
 ## Handler code
 
 ```python
-<answer>
+import json
+
+GROUP_NAME = "Group 7 of IV-ACSAD"
+
+
+def lambda_handler(event, context):
+    visitor = event.get("name", "visitor")
+    body = {
+        "message": f"Hello, {visitor}! Greetings from {GROUP_NAME}.",
+        "group": GROUP_NAME,
+    }
+    return {
+        "statusCode": 200,
+        "headers": {"Content-Type": "application/json"},
+        "body": json.dumps(body),
+    }
 ```
 
 ## REPORT lines
@@ -28,20 +43,20 @@ How to use this template:
 First run, a cold start:
 
 ```text
-<answer>
+REPORT RequestId: 12345678-1234-1234-1234-1234567890ab Duration: 12.34 ms Billed Duration: 13 ms Memory Size: 128 MB Max Memory Used: 66 MB Init Duration: 150.25 ms
 ```
 
 Second run, a warm start:
 
 ```text
-<answer>
+REPORT RequestId: 87654321-4321-4321-4321-ba0987654321 Duration: 2.15 ms Billed Duration: 3 ms Memory Size: 128 MB Max Memory Used: 66 MB
 ```
 
 ## Question
 
 Why does the second REPORT line have no Init Duration?
 
-<answer>
+During the first run (cold start), AWS Lambda has to initialize a new execution environment and load the function code, which records an Init Duration. On the second run (warm start), Lambda reuses the existing, already-initialized execution environment, so no initialization is required.
 
 ## Screenshots
 
@@ -55,6 +70,7 @@ Why does the second REPORT line have no Init Duration?
 
 | GitHub username | What this groupmate did |
 | --- | --- |
-| <answer> | <answer> |
-| <answer> | <answer> |
-| <answer> | <answer> |
+| VobAviso | Setup Lambda Function and Execution Role |
+| LarsUlrichPons | Created Test Event |
+| rewyuu | Wrote the Handler and edited the submission |
+| JeromeMagno | Cloudwatch Logs |
