@@ -1,0 +1,431 @@
+[33m2c5be20[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/submissions-seatwork-4-group-07[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m feat: add seatwork-4 submission under submissions/seatwork-4/group-07
+[33mb0a1036[m[33m ([m[1;31morigin/submissions-lab-4-group-07[m[33m)[m fix: flatten folder structure to submissions/lab-4/group-07
+[33ma0f5cf3[m feat: move lab 4 files to submissions/lab-4/group-07
+[33m023004f[m refactor: move lab-4 files into submissions/lab-4/group-07
+[33m9926792[m fix: add screenshots folder path and update extensions to PNG
+[33mcb4260f[m restore separate contribution, lab, and submission markdown files
+[33mee61e13[m refactor: merge lab-4 submission files and clean up folder structure
+[33m2a99b9b[m[33m ([m[1;32msubmission-group-07-final[m[33m)[m fix: remove accidental nested activities folder
+[33ma07070e[m docs: update lab 4 submission directly on main
+[33me1c2faf[m fix: remove duplicate contribution.md from root
+[33m49cfa03[m docs: submit lab 4 files and contribution log for group 07
+[33m4c3ab19[m docs: finalize lab 4 submission and contribution log
+[33m4fe6085[m fix: add screenshot images for lab 4
+[33me9f697f[m docs: finalize lab 4 submission and screenshots
+[33mdc66f60[m Revert "Delete screenshots folder"
+[33m0729eb1[m Delete screenshots folder
+[33mca156e9[m Fix broken image paths and make contribution table visible
+[33m02d3d18[m Remove angle brackets so text renders correctly
+[33mdbe251d[m Update submission template with final details
+[33meca2e53[m Add Seatwork 4 screenshots
+[33mc9469b9[m docs: clarify the Seatwork 4 and Lab 4 screenshot and integration steps
+[33m8e07a2a[m docs: use short form links and the new Week 15 deadlines
+[33mecdbb70[m feat(assignment-4): add Price the Serverless Endpoint
+[33m1ed5e4a[m feat(lab-4): add Guided Serverless Endpoint
+[33m683bec0[m feat(seatwork-4): add Write Your First Lambda Function
+[33maf06961[m docs: add the Google Form links to Seatwork 2, Seatwork 3, and Assignment 3
+[33mf602106[m docs: show the light-mode baseline page in the Seatwork 3 screenshot
+[33mdc053e2[m docs: refer to the class channel as the group chat
+[33mb4551e3[m feat(assignment-3): add Price the Database Before You Build It
+[33m366153d[m feat(seatwork-3): add Host Your Linktree Page on Amazon S3
+[33m28891c1[m feat(seatwork-2): add Build Your Group Linktree Page
+[33mc47bd86[m Set the Lab 3 deadline to Thursday 2026-10-29, 11:59 PM
+[33m23000d7[m Add Lab 3: VPC Subnet Planning Case Study
+[33m45badd1[m chore: restore the graded Assignment 2 answers of RalphEspartero3
+[33m3967cda[m chore: organize the midterm submissions after merging the graded PRs
+[33m16b7a20[m Merge pull request #123 from Andre-Arcilla/Activity-1
+[33m31509da[m Merge pull request #122 from Jsmnt/main
+[33m7a0477e[m Merge pull request #121 from gracefeliciano/assignment-1-gracefeliciano
+[33mb2a8a73[m Merge pull request #120 from eson-gcia/assignment-2-eson-gcia
+[33ma038099[m Merge pull request #119 from DeviDo2/seatwork-1-rdevera
+[33m378f3af[m Merge pull request #118 from DietherUrdas/assignment-1-DietherUrdas
+[33m37e57cb[m Merge pull request #117 from eson-gcia/seatwork-1-eson-gcia
+[33mdc0853e[m Merge pull request #115 from kadirisubs/assignment-2-kadirisubs
+[33m1a12f11[m Merge pull request #114 from romeonspotify/assignment-2-romeonspotify
+[33m687cf35[m Merge pull request #113 from DietherUrdas/assignment-2-DietherUrdas
+[33meb17735[m Merge pull request #111 from lurrenggg/assignment-2-lurrenggg
+[33mc839d2a[m Merge pull request #110 from Jsmnt/assignment-2-fiona
+[33m3dba67a[m Merge pull request #109 from saromoAndreiLuis/assignment-2-clean
+[33mae973b0[m Merge pull request #108 from malorian-arms3516/assignment-2-malorian-arms3516
+[33mc2f309c[m Merge pull request #107 from NotLathrell/assignment-2-NotLathrell
+[33ma9986ee[m Merge pull request #106 from h0pSpaint/assignment-2-h0pSpaint
+[33madb5019[m Merge pull request #105 from Flaaa01/assignment-2-flaaa01
+[33m8ce1f92[m Merge pull request #104 from yajiiiii/assignment-2-yajiiiii
+[33mf202ece[m Merge pull request #103 from madeliiine/assignment-2-madeliiine
+[33mc371f1f[m Merge pull request #102 from NathanielCamachoUmak/Assignment-2-NathanielCamachoUMAK
+[33mac89cab[m Merge pull request #101 from gracefeliciano/assignment-2-gracefeliciano
+[33m0734e20[m Merge pull request #100 from salgadojamesvan/assignment-2-salgadojamesvan
+[33md144068[m Merge pull request #99 from DeviDo2/assignment-2-DeviDo2
+[33m0ed06ce[m Merge pull request #98 from Andre-Arcilla/main
+[33mf4074c5[m Merge pull request #97 from GlorianaSkye/assignment-2-GlorianaSkye
+[33m9a3d8e9[m Merge pull request #96 from dcchristine/assignment-2-dcchristine
+[33m92d633d[m Merge pull request #95 from Tajarros-Zed/assignment-2-Tajarros-Zed
+[33mf054d65[m Merge pull request #92 from PalattaoMekylla/assignment-2-PalattaoMekylla
+[33m13b2baf[m Merge pull request #91 from VobAviso/assignment-2-VobAviso
+[33mf97f117[m Merge pull request #90 from deejay-torres/assignment-2-deejay-torres
+[33m2f235d0[m Merge pull request #89 from paupausiopau/assignment-2-paupausiopau
+[33mc39ec56[m Merge pull request #88 from ScarlettRed6/assignment-2-ScarlettRed6
+[33m015878c[m Merge pull request #87 from shamKirzon/assignment-2-shamKirzon
+[33mcda2506[m Merge pull request #85 from StDevRhenz/assignment-2-StDevRhenz
+[33m9c8b049[m Merge pull request #84 from RalphEspartero3/assignment-2-RalphEspartero3
+[33me2070b6[m Merge pull request #83 from rssnjade/assignment-2-rssnjade
+[33m4bce1f6[m Merge pull request #82 from keiameere/assignment-2-keiameere
+[33m801cd45[m Merge pull request #81 from Flaaa01/Lab02---G1
+[33me6d21b0[m Merge pull request #80 from rssnjade/lab-2-group-2
+[33m4852852[m Merge pull request #79 from NotLathrell/main
+[33m5dfb462[m Merge pull request #78 from StDevRhenz/lab-2-group-4
+[33me6241fd[m Merge pull request #77 from DeviDo2/lab-2-group-5
+[33m8fa6a96[m Merge pull request #76 from dcchristine/lab-2-group3
+[33m6a8872b[m Merge pull request #75 from rewyuu/lab-2
+[33md544fea[m Merge pull request #74 from shamKirzon/lab-2-group-8
+[33mb6d9aec[m Merge pull request #73 from keiameere/ccsad-g06-lab2
+[33med9de72[m Merge pull request #71 from StDevRhenz/lab-1-group-4
+[33m9cac694[m Merge pull request #70 from rssnjade/lab-1-group-2
+[33m8e4ca18[m Merge pull request #69 from DeviDo2/lab-1-group-5
+[33m350fb4b[m Merge pull request #68 from Jsmnt/patch-1
+[33m317dc0b[m Merge pull request #67 from NathanielCamachoUmak/Lab-1
+[33medc6512[m Merge pull request #66 from dcchristine/lab-1-group3
+[33m49fa337[m Merge pull request #65 from rewyuu/lab-1
+[33m748ce5a[m Merge pull request #64 from keiameere/ccsad-g06
+[33m6dde8ff[m Merge pull request #63 from h0pSpaint/lab-1-group-8
+[33m4e43a33[m Merge pull request #62 from yajiiiii/assignment-1-yajiiii
+[33m35e330a[m Merge pull request #61 from NotLathrell/assignment-1-NotLathrell
+[33mb4d65f3[m Merge pull request #59 from NathanielCamachoUmak/Assignment-1
+[33m3ffba01[m Merge pull request #58 from romeonspotify/assignment-1
+[33mb74b40d[m Merge pull request #57 from malorian-arms3516/assignment-1
+[33m683a119[m Merge pull request #55 from Andre-Arcilla/Assignment-1
+[33m25a881a[m Merge pull request #54 from DeviDo2/assignment-1-rdevera
+[33m439c089[m Merge pull request #53 from keiameere/assignment-1-tucker
+[33m52e8180[m Merge pull request #52 from Tajarros-Zed/assignment-1-tajarros-zed
+[33mbf0ef8b[m Merge pull request #51 from Flaaa01/assignment-1-submit
+[33m94cf90d[m Merge pull request #50 from salgadojamesvan/assignment-1-jsalgado
+[33mafdfe4f[m Merge pull request #49 from rewyuu/assignment-1
+[33m9c0ae9a[m Merge pull request #47 from paupausiopau/assignment-1-submission
+[33m3ae0801[m Merge pull request #46 from dcchristine/assignment-1-cdorado
+[33mae56a7f[m Merge pull request #45 from rssnjade/main
+[33m220e328[m Merge pull request #44 from deejay-torres/assignment-1-8uZle7hsAhS
+[33m7c43b4e[m Merge pull request #43 from h0pSpaint/assignment-1-h0pSpaint
+[33m5126d32[m Merge pull request #42 from shamKirzon/assignment-1-shamKirzon
+[33m9b191e9[m Merge pull request #40 from madeliiine/assignment-1-madeliiine
+[33m7bdceeb[m Merge pull request #39 from eson-gcia/assignment-1-edison
+[33m2b07ec1[m Merge pull request #38 from ScarlettRed6/assignment-1-ScarlettRed6
+[33m2b9d566[m Merge pull request #37 from StDevRhenz/assignment-1-StDevRhenz
+[33m74a7172[m Merge pull request #35 from Flaaa01/main
+[33mc5e8209[m Merge pull request #34 from ItsuDev/seatwork-1-ItsuDev
+[33m6a4062c[m Merge pull request #33 from saromoAndreiLuis/main
+[33mae5b7db[m Merge pull request #32 from lurrenggg/main
+[33m3147070[m Merge pull request #31 from MadBunBun/main
+[33mfd64a26[m Merge pull request #30 from kcalicaa12346055-sudo/main
+[33m84c2b3a[m Merge pull request #28 from DietherUrdas/seatwork-1-DietherUrdas
+[33m0ca9f52[m Merge pull request #27 from ScarlettRed6/seatwork-1-ScarlettRed6
+[33m6b5c991[m Merge pull request #25 from rewyuu/main
+[33mdd87741[m Merge pull request #23 from NathanielCamachoUmak/main
+[33m31d8d35[m Merge pull request #22 from Tajarros-Zed/seatwork-1-ztajarros
+[33mf9e6e87[m Merge pull request #21 from paupausiopau/main
+[33m641b756[m Merge pull request #20 from VobAviso/main
+[33me374bba[m Merge pull request #19 from PalattaoMekylla/main
+[33m779972c[m Merge pull request #18 from rssnjade/seatwork-1-rssnjade
+[33m64df12e[m Merge pull request #17 from gracefeliciano/gracefeliciano-submission-for-seatwork-1
+[33m09d5aa3[m Merge pull request #16 from GlorianaSkye/main
+[33m2d89466[m Merge pull request #15 from StDevRhenz/seatwork-1-StDevRhenz
+[33m6c18428[m Merge pull request #14 from keiameere/seatwork-1-tucker
+[33m30b6bac[m Merge pull request #13 from RalphEspartero3/main
+[33m8d953c4[m Merge pull request #12 from h0pSpaint/seatwork-1-h0pSpaint
+[33mf647e91[m Merge pull request #11 from kadirisubs/main
+[33m4e5b067[m Merge pull request #10 from madeliiine/main
+[33mc1fb0ab[m Merge pull request #9 from deejay-torres/seatwork-1-8uZle7hsAhS
+[33m739312d[m Merge pull request #8 from shamKirzon/seatwork-1-shamKirzon
+[33m9d3e753[m Merge pull request #7 from LarsUlrichPons/main
+[33m18e1006[m Merge pull request #6 from yajiiiii/seatwork-1-ijaculbe
+[33m584eff6[m Merge pull request #5 from Jsmnt/seatwork-1-fiona
+[33mde0165f[m Merge pull request #4 from NotLathrell/seatwork-1-NotLathrell
+[33mbc0a06d[m Merge pull request #3 from salgadojamesvan/seatwork-1-jsalgado
+[33m83f95cd[m Merge pull request #2 from dcchristine/seatwork-1-cdorado
+[33mbb6c349[m Fix image path for subnet screenshot in template
+[33m2fec593[m Modify subnet CIDR for assignment template
+[33m7f8a24d[m Create seatwork #1
+[33m4c78eb3[m Delete submissions/seatwork-1/Andre-Arcilla directory
+[33me8c52b9[m Create Seatwork #1
+[33m518d352[m Add files via upload
+[33m99e9831[m Delete submissions/assignment-1 directory
+[33m02f3513[m[33m ([m[1;31morigin/assignment-2-VobAviso[m[33m)[m fix: updated vpc diagram with local routes and NAT flow
+[33m92c03ca[m fix: replace screenshots with console captures and update A2 AZs
+[33mc3f6b3e[m assignment-1: submit answers.md
+[33m7999ec1[m assignment-1: submit answers.md
+[33m187afa7[m assignment-2: fixed  submit submission.md
+[33mf20a962[m Update assignment 2 submission with missing images and corrected subnets
+[33mec09153[m seatwork-1: submit seatwork-1.sh
+[33m7c37c9d[m assignment-1: submit answers.md
+[33md82f3ac[m submission seatwork-1
+[33m55dc85e[m Fill in submission template for assignment 2
+[33mbb0bbbd[m Assignment 2
+[33m65796cf[m Complete Assignment 2 submission
+[33m346b357[m assignment-2: submit submission.md
+[33mc64b3ca[m Update submission.md
+[33mcfcfb80[m Add files via upload
+[33m5e5a201[m assignment-2: submit submission.md
+[33md33d7fc[m assignment-2: submit submission.md
+[33m71cb24f[m assignment-2: submit submission.md
+[33md3b248b[m Update image links in submission.md
+[33m496757a[m assignment-2: submit submission.md
+[33mf7d765d[m assignment-2: submit submission.md
+[33m3ff894c[m assignment-2: submit submission.md
+[33mec5fbef[m Merge branch 'ahleksu:main' into main
+[33md9d29f1[m assignment-2: submit submission.md
+[33m98d1834[m Add files via upload
+[33m8e9d59b[m Merge pull request #1 from kcalicaa12346055-sudo/kcalicaa12346055-sudo-patch-1
+[33m522ad1e[m Update submission template with answer for X
+[33m3f6602b[m Update submission.md
+[33m5e2e5ef[m Update submission.md
+[33mbace1ba[m Fill in answers for assignment 2 submission template
+[33m1cf57ec[m assignment-2: submit submission.md
+[33m850af18[m assignment-2: submit submission.md
+[33ma4c23a7[m Assignment 2
+[33mef2cc28[m Merge branch 'ahleksu:main' into main
+[33mfcafa34[m assignment-2: submit submission.md
+[33m7ba11f6[m assignment-2: submit submission.md
+[33ma5a3cba[m Update submission.md
+[33mc1e0f03[m Merge branch 'ahleksu:main' into main
+[33m4079fff[m Update submission.md
+[33medf49cb[m assignment-2: submit submission.md
+[33m21c8565[m Create submission.md
+[33mb04a909[m submission
+[33m270d0f5[m Merge branch 'ahleksu:main' into main
+[33m7f73961[m assignment-2: submit submission.md
+[33mc0ab100[m assignment-2: submit submission.md
+[33m1839854[m Merge branch 'ahleksu:main' into main
+[33m1b5d38d[m assignment-2: submit submission.md
+[33m598d9ab[m assignment-2: submit submission.md
+[33mf1a08ec[m Merge branch 'ahleksu:main' into main
+[33mc0786e0[m submission
+[33mbdadf75[m assignment-2: submit submission.md
+[33m244b028[m Merge branch 'ahleksu:main' into main
+[33mb83a24d[m Complete assignment 2 submission with details
+[33m28f9e8a[m Add files via upload
+[33mc1aca51[m assignment-2: initial setup and submission.md
+[33me5a52e3[m Submit Seatwork 1
+[33mdafd0cb[m Merge branch 'ahleksu:main' into main
+[33mc64aa93[m my submission for assignment 2
+[33m55e6c09[m assignment-2: submit submission.md
+[33m0335fb4[m Merge branch 'ahleksu:main' into main
+[33m50b08bd[m Merge branch 'ahleksu:main' into main
+[33mbd13f35[m assignment-2: complete submission with screenshots and diagram
+[33ma5b3aaa[m assignment-2: submit submission.md
+[33m0b28e34[m assignment-2: submit submission.md
+[33m96868f7[m assignment-2: submit submission.md
+[33m0f347d0[m Merge branch 'ahleksu:main' into main
+[33m2fd69ee[m assignment-2: submit submission.md
+[33m4322088[m Merge branch 'ahleksu:main' into main
+[33mba9f94b[m assignment-2: submit submission.md
+[33mc367622[m Merge branch 'ahleksu:main' into main
+[33mde10b22[m assignment-2: submit submission.md
+[33m14cc0bf[m submit assignment 2
+[33m03aed2b[m Delete activities/assignment-2/RalphEspartero3
+[33m163d160[m Create RalphEspartero3
+[33m644376f[m Assignment-2: submit submission.md
+[33mc885a47[m assignment-2: submit submission.md
+[33m1911d44[m assignment-2: submit submission.md
+[33m91c07e9[m Merge branch 'ccsad-g06-lab2'
+[33md0464af[m Merge branch 'main' of https://github.com/keiameere/umak-elec3-ccsad
+[33mabfffaa[m Refine submission template with network details
+[33m59096a8[m Update submission-template.md
+[33m9dac4d6[m Update submission-template.md
+[33m399d517[m Revise NAT gateway section in submission template
+[33mca290f3[m Update submission-template.md
+[33mc224d75[m Update submission-template.md
+[33mb07efa6[m Update submission-template.md
+[33ma061804[m Fix typo in submission-template.md
+[33m94d3191[m Format IPv4 addresses and add explanations
+[33m404abcb[m Update available IPv4 addresses in submission template
+[33m2016f53[m Update screenshot reference in submission template
+[33m9ddc391[m Update IAM user name in submission template
+[33m3b6511e[m Fix image tag for subnet screenshot
+[33m476a6c7[m Update Screenshot 1 image source in template
+[33m8f82014[m Fill in subnet details for assignment 2
+[33m9bcc76e[m Update submission-template.md
+[33me9445b1[m Change default VPC IPv4 CIDR to 172.31.0.0/16
+[33m9fe6524[m Modify IAM user name and X in submission template
+[33m3eee325[m Update personal information in submission template
+[33m71684ce[m merge latest upstream changes
+[33mdaa98aa[m Resolve merge conflicts with upstream
+[33mce16282[m Merge remote-tracking branch 'upstream/main' necessary
+[33m4aa8b80[m Add Assignment 2: Explore a VPC
+[33mf5858df[m Add files via upload
+[33m9bc7071[m Add lab 2 group submission
+[33me9ca21f[m Accomplished Contribution
+[33m01d8a0a[m Complete Lab 2 submission with instance info and answers
+[33m2481bba[m lab-2: submit group-4
+[33m6919720[m Merge branch 'ahleksu:main' into main
+[33m27d3679[m Fix markdown syntax for screenshots in submission.md
+[33m45e9b70[m Revise screenshot references in submission.md
+[33m1e3ff68[m lab-2: submit submission.md
+[33m41a99f9[m lab-2: submit submission.md and contribution.md
+[33ma4c6543[m Merge branch 'lab-2-group3' of https://github.com/dcchristine/umak-elec3-ccsad into lab-2-group3
+[33m77ee97b[m lab-2: submit submission.md and contribution.md
+[33m0a1ce60[m lab-2: submit submission.md and contribution.md
+[33m3cdd91c[m add submissions for lab-2
+[33mc623f18[m add submissions for lab-2
+[33m58d843d[m Add Lab 2 submission for group 8
+[33m1d81967[m ccsad-g06 lab6 submission
+[33m97fab16[m Merge branch 'main' of https://github.com/keiameere/umak-elec3-ccsad
+[33md238b90[m Merge branch 'ahleksu:main' into main
+[33mbbbd418[m Merge branch 'ahleksu:main' into main
+[33mb2854af[m docs: release lab 2 with visual guides
+[33maa5978b[m Add Lab 1 evidence screenshots
+[33mabba704[m Merge remote-tracking branch 'upstream/main' into lab-1-group-4
+[33mc2d30fe[m lab-1: submit group-4
+[33m5d5c272[m lab-1: submit group-2
+[33me315dac[m Add second running instance screenshot
+[33m4816a7e[m Merge branch 'lab-1-group-5' of https://github.com/DeviDo2/umak-elec3-ccsad into lab-1-group-5
+[33me6b5072[m Create part-d-instance2.png
+[33m4dbdf97[m Update team contribution log with member names
+[33mdc5773f[m Update Lab 1 submission with error details and screenshots
+[33m104f71a[m lab-1: submit contribution.md and submission.md
+[33med24d4e[m Merge remote-tracking branch 'upstream/main' into lab-1-group-2
+[33m8b10622[m Refine EC2 error messages in submission.md
+[33m8c3126e[m lab-1:submit submission.md and contribution.md
+[33mc01a187[m Update error messages and add screenshots in submission
+[33m507ffef[m Merge branch 'ccsad-g06' of https://github.com/keiameere/umak-elec3-ccsad into ccsad-g06
+[33mef17718[m ccsad-g06 lab 1
+[33m2f11817[m add submissions for lab-1
+[33m62f6e76[m lab-1: submit for group-8
+[33m10bf45d[m lab-1: submit for group-8
+[33ma731d09[m lab-01 submission
+[33mc3f7c65[m revert contribution-template.md
+[33me17f066[m contribution input
+[33mdd790de[m Merge branch 'ahleksu:main' into main
+[33mcdc4b89[m Merge branch 'main' of https://github.com/rewyuu/umak-elec3-ccsad into lab-1
+[33md7d212a[m Merge branch 'ahleksu:main' into main
+[33md68b73e[m Merge branch 'ahleksu:main' into main
+[33maafe7bf[m docs: update PR template and lab-1 screenshot instructions
+[33m803b7a0[m Merge branch 'ahleksu:main' into main
+[33m08a702e[m docs: update section title and clarify lab-1 instructions
+[33m6686dc3[m Update PR template to clear up AWS Lab confusion
+[33m525352d[m Hotfix: Fix broken IAM User navigation instruction in Part D
+[33maf08752[m Sync Lab 1 & 2 instructions, templates, and PR rules
+[33mb8a0d84[m Add Lab 1 and Lab 2: IAM policy and EC2 Auto Scaling group
+[33m5f17cd6[m Delete submissions/assignment-1/yajiiiii/answer.md
+[33mc895534[m Assignment 1-Delos Santos
+[33m9d4fb71[m assignment-1: correct submission username to yajiiiii
+[33m8963ba5[m assignment-1: submit answers for yajiiii
+[33m0db4310[m Assignment-1
+[33m92102fd[m Merge branch 'ahleksu:main' into main
+[33mc1f5296[m remove extra files
+[33m9c0c56a[m submit assignment 1
+[33m992cec5[m resolve merge conflict in check.sh
+[33mf0c4ce3[m Merge remote-tracking branch 'upstream/main' into assignment-1
+[33m264224f[m Merge branch 'ahleksu:main' into main
+[33m1007ff8[m submit assignment 1
+[33m4085ab1[m Title 6
+[33m59cc27e[m submission of assignment 1
+[33m6ce936e[m Submit Assignment 1
+[33md392940[m ls activities Merge remote-tracking branch 'upstream/main'
+[33m1c13ee8[m assignment-1: submit answers.md
+[33m49837de[m assignment 1 - tucker
+[33m24f3ff5[m assignment 1 - tucker
+[33m0ba805b[m assignment-1: add checker screenshot
+[33m706e91f[m assignment-1: submit answers.md
+[33m351d147[m Submit Assignment 1 answers
+[33mdb59435[m Update answers.md
+[33me35c0fa[m Create answers.md
+[33m2773c0b[m Merge branch 'ahleksu:main' into main
+[33m3e47e6c[m assignment-1: submit answers.md
+[33m53b18b5[m Merge branch 'ahleksu:main' into main
+[33mfdfa3a2[m add my assignment-1 submission
+[33mb6589d1[m Merge branch 'ahleksu:main' into main
+[33m3e04cf7[m Added submission for assignment-1
+[33m14573dd[m Add Assignment 1 answers - paupausiopau
+[33ma5f2f07[m assignment-1: submit answers.md
+[33mb37ff5b[m Merge branch 'ahleksu:main' into main
+[33mf5b074c[m Assignment 1 answers
+[33m4ba4d71[m assignment-1: submit answers.md
+[33m972caaa[m Submit Assignment 1 answers
+[33m84afdc5[m assignment-1: submit answer.md
+[33m1f4a175[m submission act 1
+[33m77280b9[m Merge branch 'main' of https://github.com/LarsUlrichPons/umak-elec3-ccsad
+[33mcb851d7[m added pr
+[33m5898908[m Merge branch 'ahleksu:main' into seatwork-1-shamKirzon
+[33mdbee36d[m Merge branch 'ahleksu:main' into main
+[33m54cd03f[m chore
+[33m660f1ff[m Submit assignment 1
+[33m5dc3b8a[m Submit assignment 1
+[33mdba361e[m Submit assignment 1
+[33m25aa933[m Merge branch 'ahleksu:main' into main
+[33me22d386[m Add Assignment 1 submission
+[33m77344d7[m Move Assignment 1 submission to its own branch/PR
+[33mfe52a66[m Fix assignment-1
+[33m1c5a599[m :wqMerge remote-tracking branch 'upstream/main' into assignment-1-edison
+[33mf66715f[m assignment-1
+[33m808b245[m Add Assignment 1 submission
+[33m143d251[m Merge remote-tracking branch 'upstream/main'
+[33md3bae92[m assignment-1: submit answers.md
+[33m66211fb[m assignment-1: submit answers.md
+[33m6cfbb87[m Merge branch 'main' of https://github.com/keiameere/umak-elec3-ccsad into seatwork-1-tucker
+[33m21a6cd1[m Add Assignment 1 answers
+[33m2bd89ea[m Remove answers.md to redo
+[33m56fa99f[m Complete Assignment 1
+[33m2f7431b[m Add Assignment 1 answers
+[33m09a4aff[m Merge branch 'ahleksu:main' into main
+[33m1ad01e6[m Update answers in assignment-1 for clarity and detail
+[33m9b3552b[m Update answers.md with additional content
+[33m883e1ce[m update md file
+[33md71acab[m Submission of act-1
+[33mff6da49[m Merge branch 'ahleksu:main' into main
+[33mde12de3[m Add assignment 1 answers
+[33m9036eb9[m Merge branch 'ahleksu:main' into main
+[33mf871c38[m[33m ([m[1;31morigin/Assingment-1[m[33m)[m Add Assignment 1: Course Materials Portal — Diagnose, Fix, and Look Ahead
+[33mf4f4d9b[m seatwork-1: submit seatwork.sh
+[33m5b76077[m Complete Seatwork 1
+[33m999e0f8[m Submit Seatwork 1
+[33m570e96f[m Submit Seatwork 1
+[33m996e67a[m KEAN SANTOS CCSAD: MY SUBMISSION
+[33mbd7662a[m Kenichi calica seatwork 1
+[33m4b3f430[m seatwork-1 submit seatwork.sh
+[33m1fa0a47[m Seatwork 1
+[33m29e5d55[m Add Seatwork 1 submission
+[33mc9366de[m seatwork-1: submit seatwork.sh
+[33m3c7d406[m update
+[33m80d62bd[m Revise Seatwork 1 submission details and formatting
+[33mf9c6291[m Update Seatwork 1 documentation with evidence
+[33m08c205f[m Add files via upload
+[33m87ce2be[m Fix image path and formatting in markdown file
+[33maf3eb65[m Update Seatwork 1 submission with image path fix
+[33m5277ed4[m seatwork-1: submit seatwork.sh
+[33m173d4a7[m Add files via upload
+[33m5edd73d[m Enhance Seatwork 1 documentation with screenshot and cleanup
+[33maf9a626[m Add files via upload
+[33m14ccafd[m gumption
+[33md6dea04[m Merge branch 'main' of https://github.com/LarsUlrichPons/umak-elec3-ccsad
+[33m8dfd65f[m update
+[33m7c24fae[m added seatwork,eunjin69 and screenshot
+[33m605c699[m Delete submissions/seatwork-1/NathanielCamachoUmak
+[33m0abce74[m Create NathanielCamachoUmak
+[33m3993efc[m seatwork-1: submit seatwork.sh
+[33m041fae7[m Update README.md
+[33m983cbac[m Added seatwork,README and screenshot
+[33m20883cb[m Submit Seatwork 1 - Linux CLI Fundamentals
+[33m4629758[m Add Seatwork 1 submission
+[33me53fdd4[m Create seatwork.sh
+[33m522f78c[m Delete submissions/seatwork-1/seatwork.sh
+[33m24ff9fe[m Add seatwork 1 submission
+[33m1f69d57[m Add files via upload
+[33mac64f4c[m seatwork-1: submit seatwork.sh
+[33ma590d8b[m seatwork 1 - tucker
+[33mb301cc0[m Add seatwork.sh for Linux CLI practice
+[33m5f25443[m seatwork-1: submit seatwork.sh
+[33m2748475[m Complete seatwork 1
+[33mbbbccdd[m Seatwork 1 submission
+[33m0813cc1[m seatwork-1: submit seatwork.sh
+[33m9183e58[m Add Seatwork 1 submission
+[33mc87a385[m Add Seatwork 1 submission
+[33m35de848[m seatwork-1: submit seatwork.sh
+[33m325f936[m updated README.md
+[33m75b1c0c[m updated the README.md
+[33m7ae680c[m added README.md and screenshot
+[33md190363[m Done Seatwork-1
+[33mf2eff7f[m Complete Linux CLI seatwork
+[33mdf07bee[m Complete seatwork-1 submission for Fiona
+[33m8b5efa0[m Complete Seatwork 1 Linux CLI Fundamentals
+[33mee4917a[m seatwork-1: submit seatwork.sh
+[33mf15d320[m seatwork-1: submit seatwork.sh
+[33mdf53fc7[m Initial release: Seatwork 1
