@@ -76,13 +76,10 @@ def lambda_handler(event, context):
 ```
 ## Screenshots
 
-![The Routes page - GET /messages](routes.png)
-
-![Our curl POST commands and the answers](post.png)
-
-![Our messages in the browser](get.png)
-
-![The items in our DynamoDB table](items.png)
+![The Routes page - GET /messages](screenshots/routes.PNG)
+![Our curl POST commands and the answers](screenshots/post.PNG)
+![Our messages in the browser](screenshots/get.PNG)
+![The items in our DynamoDB table](screenshots/items.PNG)
 
 ## Questions
 
