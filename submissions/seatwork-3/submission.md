@@ -12,25 +12,25 @@ How to use this template:
 
 ## About us
 
-- Group number: 05
+- Group number: 1
 - Section: IV-CCSAD
-- Group IAM user: ccsad-g05
-- Bucket name: umak-elec3-ccsad-g05-linktree
-- Website endpoint: http://umak-elec3-ccsad-g05-linktree.s3-website-ap-southeast-1.amazonaws.com/
+- Group IAM user: AURELIUS
+- Bucket name: umak-elec3-ccsad-g01-linktree
+- Website endpoint: https://umak-elec3-ccsad-g01-linktree.s3.ap-southeast-1.amazonaws.com/index.html
 
 ## Screenshots
 
-![Static website hosting with the endpoint](hosting.png)
+![Static website hosting with the endpoint]![alt text](image-2.png)
 
-![Saved bucket policy](policy.png)
+![Saved bucket policy]![alt text](image-1.png)
 
-![Our page open in the browser](site.png)
+![Our page open in the browser]![alt text](image-3.png)
 
 ## Contribution
 
 | GitHub username | What this groupmate did |
 | --- | --- |
-| DeviDo2 | Lead the group and navigated the AWS site |
-| gracefeliciano | Guided the navigator through each step |
-| PalattaoMekylla | Provided the html file |
-| GlorianaSkye | Compiled the screenshots |
+| NathanielCamachoUmak | Created the webpage |
+| kcalicaa12346055-sudo | Planned the webpage and Tested |
+| madeliiine | Provided the design motifs |
+| Flaaa01 | Wrote documentation and tested features |
