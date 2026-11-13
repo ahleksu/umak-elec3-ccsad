@@ -12,10 +12,10 @@ How to use this template:
 
 ## About us
 
-- Group number: Group - 2  
-- Section: IV - CCSAD
-- Group IAM user: ccsad-g02
-- Function name: umak-elec3-ccsad-g02-api
+- Group number: <answer>
+- Section: <answer>
+- Group IAM user: <answer>
+- Function name: <answer>
 
 ## Handler code
 
