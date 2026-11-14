@@ -110,7 +110,7 @@ You create nothing in AWS, so this seatwork costs nothing.
 
 Your group opens one Pull Request with `template.yaml`, `main.tf`, and `submission.md`. Then one groupmate submits its link in the Google Form for the group: https://forms.gle/ERqQ87uD2XDLUj5d6.
 
-It is due on Saturday, November 21, 2026, at 11:59 PM (Asia/Manila), the same deadline as Lab 5 and Assignment 5.
+It is due on Thursday, November 19, 2026, at 11:59 PM (Asia/Manila), the same deadline as Lab 5 and Assignment 5.
 
 ## Files in this folder
 

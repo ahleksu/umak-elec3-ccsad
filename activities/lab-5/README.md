@@ -1,6 +1,6 @@
 # Lab 5: Add a Guestbook to Your Group Site
 
-This is a self-guided lab, and it is the last build of the semester. Your group joins two things that it already made. Your [Seatwork 3](../seatwork-3/README.md) site on Amazon S3 gets a guestbook, and the guestbook reads and posts messages through your [Lab 4](../lab-4/README.md) API. Then your group protects the API with a throttle. You start in class on Saturday, November 14, 2026, and your Pull Request is due on Saturday, November 21, 2026, at 11:59 PM.
+This is a self-guided lab, and it is the last build of the semester. Your group joins two things that it already made. Your [Seatwork 3](../seatwork-3/README.md) site on Amazon S3 gets a guestbook, and the guestbook reads and posts messages through your [Lab 4](../lab-4/README.md) API. Then your group protects the API with a throttle. You start in class on Saturday, November 14, 2026, and your Pull Request is due on Thursday, November 19, 2026, at 11:59 PM.
 
 Work through this page first. It explains the ideas that each step uses. Then follow the steps in [`lab.md`](lab.md).
 
@@ -72,7 +72,7 @@ You add no new service. Your site, your API, your function, and your table cost 
 
 ## How you submit
 
-Submit one Pull Request per group to this repository. Then one groupmate submits the Pull Request link and your website endpoint in the Google Form: https://forms.gle/5qgFnysjh89qZ1ir5. If your group finishes in class, demo your site to me before you leave. Both are due on Saturday, November 21, 2026, at 11:59 PM (Asia/Manila).
+Submit one Pull Request per group to this repository. Then one groupmate submits the Pull Request link and your website endpoint in the Google Form: https://forms.gle/5qgFnysjh89qZ1ir5. If your group finishes in class, demo your site to me before you leave. Both are due on Thursday, November 19, 2026, at 11:59 PM (Asia/Manila).
 
 ## Files in this folder
 

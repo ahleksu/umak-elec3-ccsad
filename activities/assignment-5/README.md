@@ -88,7 +88,7 @@ The calculator fills in its own defaults, and some of them are wrong for this as
 
 ## How you submit
 
-Submit one Pull Request per group to this repository. Then one groupmate submits the Pull Request link in the Google Form: https://forms.gle/atFDyiKdxAePcGDH7. Both are due on Saturday, November 21, 2026, at 11:59 PM (Asia/Manila), the same time as Lab 5.
+Submit one Pull Request per group to this repository. Then one groupmate submits the Pull Request link in the Google Form: https://forms.gle/atFDyiKdxAePcGDH7. Both are due on Thursday, November 19, 2026, at 11:59 PM (Asia/Manila), the same time as Lab 5.
 
 ## Files in this folder
 

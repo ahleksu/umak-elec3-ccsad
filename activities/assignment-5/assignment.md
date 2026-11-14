@@ -5,12 +5,12 @@ counts_toward: Final Class Standing, Seatwork/Assignment/Recitation (10%)
 duration: 60 to 90 minutes
 mode: Group. No AWS sign-in. One Pull Request per group in this repository, then the Pull Request link in the Google Form.
 coverage: Architecture diagrams with the AWS Architecture Icons, Amazon S3 website endpoints, CORS, throttling on an API Gateway stage, cost estimates in the AWS Pricing Calculator for Amazon S3, Amazon API Gateway, AWS Lambda, and Amazon DynamoDB, cost growth with traffic, the Well-Architected pillars
-due: 2026-11-21, 11:59 PM (Asia/Manila), the same time as Lab 5
+due: 2026-11-19, 11:59 PM (Asia/Manila), the same time as Lab 5
 ---
 
 # Assignment 5: Design and Price Your Lab 5 Architecture
 
-> Submit one Pull Request per group to this repository. Then one groupmate submits the Pull Request link in the Google Form: https://forms.gle/atFDyiKdxAePcGDH7. Both are due on Saturday, November 21, 2026, at 11:59 PM (Asia/Manila), the same time as Lab 5. Do not merge your own Pull Request.
+> Submit one Pull Request per group to this repository. Then one groupmate submits the Pull Request link in the Google Form: https://forms.gle/atFDyiKdxAePcGDH7. Both are due on Thursday, November 19, 2026, at 11:59 PM (Asia/Manila), the same time as Lab 5. Do not merge your own Pull Request.
 
 This is a self-guided activity. Your group draws the architecture that it builds in Lab 5, prices one month of it in the AWS Pricing Calculator, and answers two questions about cost and design. You create nothing in AWS, so this activity costs nothing. Read [`README.md`](README.md) before you start. It explains what Lab 5 builds, the names of your parts, and the numbers that you enter.
 

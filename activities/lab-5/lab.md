@@ -5,12 +5,12 @@ counts_toward: Final Class Standing, Lab Activities (30%)
 duration: About 105 minutes. Start in class on Saturday 2026-11-14. A 3-minute demo if your group finishes in class
 mode: Group. Sign in with your group IAM user. One Pull Request per group in this repository, then the Pull Request link in the Google Form.
 coverage: Origins and CORS (cross-origin resource sharing), the preflight OPTIONS request, CORS settings of an HTTP API, calling an API from a web page with fetch, stage throttling, the token bucket, and the 429 Too Many Requests answer
-due: 2026-11-21, 11:59 PM (Asia/Manila). Your group IAM user stops working at that time.
+due: 2026-11-19, 11:59 PM (Asia/Manila). Your group IAM user stops working at that time.
 ---
 
 # Lab 5: Add a Guestbook to Your Group Site
 
-> **Submission format:** One Pull Request per group, with your `submission.md`, `contribution.md`, and four screenshots. When the Pull Request is open, one groupmate submits its link and your website URL in the Google Form: https://forms.gle/5qgFnysjh89qZ1ir5. If your group finishes in class, demo your site to me before you leave. Both are due on Saturday, November 21, 2026, at 11:59 PM (Asia/Manila). Do not merge your own Pull Request.
+> **Submission format:** One Pull Request per group, with your `submission.md`, `contribution.md`, and four screenshots. When the Pull Request is open, one groupmate submits its link and your website URL in the Google Form: https://forms.gle/5qgFnysjh89qZ1ir5. If your group finishes in class, demo your site to me before you leave. Both are due on Thursday, November 19, 2026, at 11:59 PM (Asia/Manila). Do not merge your own Pull Request.
 
 This is a self-guided lab, and it joins two things that your group already built. Your [Seatwork 3](../seatwork-3/seatwork.md) site on Amazon S3 gets a guestbook. The guestbook reads and posts messages through your [Lab 4](../lab-4/lab.md) API. The site and the API are on different origins, so the browser blocks the calls until your API allows your site. Then you add one improvement: a throttle that protects your API from a flood of requests. Read [`README.md`](README.md) before you start. It explains the ideas that each step uses.
 

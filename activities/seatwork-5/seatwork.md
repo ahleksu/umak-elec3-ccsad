@@ -5,12 +5,12 @@ counts_toward: Final Class Standing, Seatwork/Assignment/Recitation (10%)
 duration: About 1 hour, self-guided
 mode: Group. No AWS sign-in. One Pull Request for each group, and one groupmate submits its link in the Google Form.
 coverage: Infrastructure as Code, AWS CloudFormation templates, Terraform resources, the Lab 4 DynamoDB table and the Seatwork 3 S3 website bucket as code, tags for cost allocation
-due: Saturday, November 21, 2026, 11:59 PM (Asia/Manila)
+due: Thursday, November 19, 2026, 11:59 PM (Asia/Manila)
 ---
 
 # Seatwork 5: Write Your Group's Resources as Code
 
-> Due on Saturday, November 21, 2026, at 11:59 PM (Asia/Manila). Your group opens one Pull Request. Then one groupmate submits its link in the Google Form for the group: https://forms.gle/ERqQ87uD2XDLUj5d6.
+> Due on Thursday, November 19, 2026, at 11:59 PM (Asia/Manila). Your group opens one Pull Request. Then one groupmate submits its link in the Google Form for the group: https://forms.gle/ERqQ87uD2XDLUj5d6.
 
 This is a self-guided activity. Your group writes its Lab 4 table and its Seatwork 3 site bucket as code, once in AWS CloudFormation and once in Terraform. You do not sign in to AWS, so this activity costs nothing. Read [`README.md`](README.md) before you start. It explains the two tools and the example that you start from.
 
