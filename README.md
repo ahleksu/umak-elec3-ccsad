@@ -52,6 +52,7 @@ currently-active ones are:
 | [`activities/assignment-4/`](activities/assignment-4/) | Assignment 4: Price the Serverless Endpoint |
 | [`activities/lab-5/`](activities/lab-5/) | Lab 5: Add a Guestbook to Your Group Site |
 | [`activities/assignment-5/`](activities/assignment-5/) | Assignment 5: Design and Price Your Lab 5 Architecture |
+| [`activities/seatwork-5/`](activities/seatwork-5/) | Seatwork 5: Write Your Group's Resources as Code |
 | [`templates/`](templates/)                         | Shared templates (evidence write-ups, etc.)                      |
 | [`submissions/`](submissions/)                     | Where your work goes — one folder per person/group, per activity |
 | [`.github/`](.github/)                             | PR template and the CI workflow that checks submissions          |
