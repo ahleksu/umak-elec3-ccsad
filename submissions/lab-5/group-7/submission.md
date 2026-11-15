@@ -18,7 +18,7 @@ How to use this template:
 - Section: IV - CCSAD
 - Group IAM user: ccsad-g07
 - Website endpoint: http://umak-elec3-ccsad-g07-linktree.s3-website-ap-southeast-1.amazonaws.com
-- HTTP API name: https://xb6eybrj3i.execute-api.ap-southeast-1.amazonaws.com
+- HTTP API name: umak-elec3-ccsad-g07-api
 
 ## Screenshots
 
