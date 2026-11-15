@@ -25,9 +25,9 @@ A change in a template is written down and reviewed by groupmates in a Pull Requ
 
 ## Contribution
 
-| GitHub username | What this groupmate did |
-| --- | --- |
-| shamKirzon | Made the branch and folder, answered Question 1, and pushed the submission |
-| h0pSpaint | Wrote `template.yaml` (the table, the site bucket, and the bucket policy) |
-| deejay-torres | Wrote `main.tf` (the same table and bucket in Terraform) |
-| lurrenggg | Filled in `submission.md`, answered Question 2, and opened the Pull Request |
+| GitHub username | What this groupmate did                                                           |
+| --------------- | --------------------------------------------------------------------------------- |
+| shamKirzon      | Made the branch and folder, and pushed the submission, open the Pull Request      |
+| h0pSpaint       | Wrote `template.yaml` (the table, the site bucket, and the bucket policy)         |
+| deejay-torres   | Wrote `main.tf` (the same table and bucket in Terraform)                          |
+| lurrenggg       | Filled in `submission.md`, answered Question 1 and 2, and opened the Pull Request |
