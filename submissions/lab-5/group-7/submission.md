@@ -42,4 +42,4 @@ How to use this template:
 
 3. Your guestbook shows each message with `textContent`. What could a visitor do if the page put each message into the page as HTML with `innerHTML`?
 
-   A visitor could post a message that contains HTML or JavaScript, such as <img src=x onerror="...">, and the browser would run it in every later visitor’s page. This is called cross-site scripting (XSS). The attacker’s code could then steal data from the page, redirect visitors to another site, or change what the page shows. textContent avoids this by treating the message as plain text, so it displays as typed instead of running.
+   A visitor could post a message that contains HTML or JavaScript, such as "<img src=x onerror="...">", and the browser would run it in every later visitor’s page. This is called cross-site scripting (XSS). The attacker’s code could then steal data from the page, redirect visitors to another site, or change what the page shows. textContent avoids this by treating the message as plain text, so it displays as typed instead of running.
