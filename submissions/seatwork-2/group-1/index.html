@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Group 1 — ELEC3 Cloud Computing Seatwork 2. Meet the team members of Group 1, IV-CCSAD." />
+  <meta name="theme-color" content="#0D0B1A" />
+  <title>Group 1 Links | IV-CCSAD | ELEC3 Cloud Computing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─────────────────────────────────────────────
+       CSS CUSTOM PROPERTIES — Neon Synthwave Dark Theme
+    ───────────────────────────────────────────── */
+    :root {
+      --bg:            #0D0B1A;
+      --bg-surface:    #15112A;
+      --card-bg:       #1A1530;
+      --card-border:   #2A2245;
+      --nav-bg:        #130F25;
+      --text:          #F3F4F6;
+      --muted:         #9CA3AF;
+      --dim:           #6B7280;
+
+      --cyan:   #00FFFF;
+      --gold:   #FFD700;
+      --pink:   #FF1493;
+      --green:  #00FF00;
+      --purple: #B026FF;
+
+      --font-pixel: 'Press Start 2P', monospace;
+      --font-body:  'Inter', sans-serif;
+
+      --transition: 0.3s ease;
+      --radius-card: 1rem;
+    }
+
+    /* ─────────────────────────────────────────────
+       BASE RESET
+    ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; zoom: 1.25; }
+
+    body {
+      font-family: var(--font-body);
+      background: linear-gradient(180deg, #0D0B1A 0%, #1A0E2E 50%, #0D0B1A 100%);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ─────────────────────────────────────────────
+       SCANLINE RETRO OVERLAY
+    ───────────────────────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 200;
+      opacity: 0.10;
+      background-image: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.2) 2px,
+        rgba(0, 0, 0, 0.2) 4px
+      );
+    }
+
+    /* ─────────────────────────────────────────────
+       GRID BACKGROUND PATTERN
+    ───────────────────────────────────────────── */
+    .grid-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image:
+        linear-gradient(rgba(0, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    /* ─────────────────────────────────────────────
+       AMBIENT GLOW ORBS
+    ───────────────────────────────────────────── */
+    .orbs {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.07;
+    }
+    .orb-1 { width: 500px; height: 500px; background: var(--cyan);   top: 5%;  left: 10%; }
+    .orb-2 { width: 400px; height: 400px; background: var(--pink);   bottom: 5%; right: 8%; }
+    .orb-3 { width: 300px; height: 300px; background: var(--purple); top: 45%; left: 50%; transform: translateX(-50%); }
+
+    /* ─────────────────────────────────────────────
+       LAYOUT WRAPPER
+    ───────────────────────────────────────────── */
+    .page-wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 5rem;
+    }
+
+    /* ─────────────────────────────────────────────
+       ARCADE HEADER
+    ───────────────────────────────────────────── */
+    .site-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+      padding-top: 1rem;
+    }
+
+    /* Main heading */
+    .site-title {
+      font-family: var(--font-pixel);
+      font-size: clamp(1rem, 3vw, 1.65rem);
+      color: var(--cyan);
+      letter-spacing: 0.1em;
+      line-height: 1.5;
+      text-shadow: 0 0 12px rgba(0,255,255,0.5), 0 0 35px rgba(0,255,255,0.25);
+      margin-bottom: 1rem;
+    }
+
+    .site-subtitle {
+      font-family: var(--font-pixel);
+      font-size: 0.45rem;
+      color: var(--muted);
+      letter-spacing: 0.25em;
+      margin-bottom: 1.2rem;
+    }
+
+    .site-tagline {
+      font-size: 0.88rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .site-tagline em {
+      color: var(--gold);
+      font-style: normal;
+    }
+
+    /* Divider */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0,255,255,0.25), transparent);
+      margin: 2.5rem 0;
+    }
+
+    /* ─────────────────────────────────────────────
+       SECTION HEADING
+    ───────────────────────────────────────────── */
+    .section-label {
+      font-family: var(--font-pixel);
+      font-size: 0.5rem;
+      letter-spacing: 0.3em;
+      color: var(--muted);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    /* ─────────────────────────────────────────────
+       MEMBER CARDS GRID
+    ───────────────────────────────────────────── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 4rem;
+    }
+
+    /* Individual member card */
+    .member-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-card);
+      padding: 1.5rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    /* Left accent bar */
+    .member-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 100%;
+      background: var(--accent);
+    }
+    .member-card:hover {
+      transform: translateY(-6px);
+    }
+
+    /* Avatar */
+    .avatar-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .avatar-circle {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      background: rgba(255,255,255,0.04);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-pixel);
+      font-size: 0.65rem;
+      color: var(--accent);
+      flex-shrink: 0;
+      box-shadow: 0 0 10px var(--accent-glow);
+    }
+    .avatar-meta { display: flex; flex-direction: column; gap: 0.3rem; }
+
+    /* Name */
+    .member-name {
+      font-family: var(--font-pixel);
+      font-size: 0.58rem;
+      color: var(--text);
+      letter-spacing: 0.05em;
+      line-height: 1.6;
+    }
+
+    /* Class badge */
+    .class-badge {
+      display: inline-block;
+      font-family: var(--font-pixel);
+      font-size: 0.38rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      background: rgba(255,255,255,0.03);
+      letter-spacing: 0.15em;
+    }
+
+    /* Role */
+    .member-role {
+      font-size: 0.72rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* Bio */
+    .member-bio {
+      font-size: 0.72rem;
+      color: var(--dim);
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    /* AWS badge */
+    .aws-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.5rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      transition: background var(--transition), border-color var(--transition);
+      cursor: default;
+    }
+    .aws-badge:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.14);
+    }
+    .aws-badge svg { width: 22px; height: 22px; flex-shrink: 0; }
+    .aws-badge-label { display: flex; flex-direction: column; gap: 0.1rem; }
+    .aws-badge-service {
+      font-family: var(--font-pixel);
+      font-size: 0.35rem;
+      letter-spacing: 0.08em;
+      color: var(--text);
+    }
+    .aws-badge-category {
+      font-size: 0.6rem;
+      color: var(--dim);
+    }
+
+    /* Social links row */
+    .social-row {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .social-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.45rem 0.75rem;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.04);
+      font-size: 0.68rem;
+      color: var(--muted);
+      transition: background var(--transition), border-color var(--transition), color var(--transition);
+    }
+    .social-btn:hover {
+      background: rgba(255,255,255,0.09);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .social-btn svg { width: 14px; height: 14px; fill: currentColor; }
+
+    /* ─────────────────────────────────────────────
+       SHOWCASE SECTION
+    ───────────────────────────────────────────── */
+    .showcase {
+      background: var(--card-bg);
+      border: 1px solid #2A2245;
+      border-radius: var(--radius-card);
+      padding: 2rem 1.75rem;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 4rem;
+    }
+    .showcase::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cyan), var(--pink), var(--gold), var(--green));
+    }
+
+    .showcase-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .showcase-title {
+      font-family: var(--font-pixel);
+      font-size: clamp(0.6rem, 2vw, 0.85rem);
+      color: var(--cyan);
+      text-shadow: 0 0 10px rgba(0,255,255,0.4);
+      letter-spacing: 0.1em;
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+    }
+    .showcase-subtitle {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .play-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.4rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--cyan);
+      background: rgba(0, 255, 255, 0.07);
+      color: var(--cyan);
+      font-family: var(--font-pixel);
+      font-size: 0.4rem;
+      letter-spacing: 0.1em;
+      transition: background var(--transition), box-shadow var(--transition);
+      white-space: nowrap;
+    }
+    .play-btn:hover {
+      background: rgba(0, 255, 255, 0.15);
+      box-shadow: 0 0 18px rgba(0,255,255,0.25);
+    }
+    .play-btn svg { width: 14px; height: 14px; fill: currentColor; }
+
+    .showcase-desc {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Feature pills */
+    .feature-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .pill {
+      font-size: 0.62rem;
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+    }
+    .pill.cyan  { border-color: rgba(0,255,255,0.3);   color: var(--cyan); }
+    .pill.pink  { border-color: rgba(255,20,147,0.3);  color: var(--pink); }
+    .pill.gold  { border-color: rgba(255,215,0,0.3);   color: var(--gold); }
+    .pill.green { border-color: rgba(0,255,0,0.3);     color: var(--green); }
+    .pill.purple{ border-color: rgba(176,38,255,0.3);  color: var(--purple); }
+
+    /* ─────────────────────────────────────────────
+       FOOTER
+    ───────────────────────────────────────────── */
+    .site-footer {
+      text-align: center;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(0,255,255,0.1);
+    }
+    .site-footer p {
+      font-family: var(--font-pixel);
+      font-size: 0.38rem;
+      color: var(--dim);
+      letter-spacing: 0.2em;
+      line-height: 2;
+    }
+    .footer-logo {
+      font-family: var(--font-pixel);
+      font-size: 0.55rem;
+      color: var(--cyan);
+      margin-bottom: 0.5rem;
+    }
+
+    /* ─────────────────────────────────────────────
+       SCROLLBAR
+    ───────────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--card-border); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3A3265; }
+
+    /* ─────────────────────────────────────────────
+       RESPONSIVE
+    ───────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .showcase-header { flex-direction: column; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .social-row { gap: 0.4rem; }
+      .social-btn { padding: 0.4rem 0.6rem; font-size: 0.62rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- BACKGROUND LAYERS                           -->
+  <div class="grid-bg"></div>
+  <div class="orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- INLINE SVG SYMBOL LIBRARY                   -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <!-- GitHub -->
+    <symbol id="icon-github" viewBox="0 0 24 24">
+      <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.38 7.86 10.9.57.1.78-.25.78-.55v-2c-3.19.69-3.86-1.54-3.86-1.54-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.25 3.33.95.1-.74.4-1.25.72-1.54-2.55-.29-5.23-1.27-5.23-5.67 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.14 1.17A10.93 10.93 0 0 1 12 6.6c.97 0 1.95.13 2.87.38 2.18-1.48 3.14-1.17 3.14-1.17.62 1.58.23 2.75.11 3.04.73.8 1.18 1.82 1.18 3.07 0 4.41-2.68 5.38-5.24 5.66.41.35.78 1.05.78 2.11v3.13c0 .3.21.66.79.55C20.22 21.38 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/>
+    </symbol>
+
+    <!-- LinkedIn -->
+    <symbol id="icon-linkedin" viewBox="0 0 24 24">
+      <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.25 2.36 4.25 5.43v6.31zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45C23.21 24 24 23.23 24 22.28V1.72C24 .77 23.21 0 22.22 0z"/>
+    </symbol>
+
+    <!-- Gamepad / Play icon (3rd bonus icon) -->
+    <symbol id="icon-gamepad" viewBox="0 0 24 24">
+      <path d="M17 4H7C3.13 4 0 7.13 0 11s3.13 7 7 7h10c3.87 0 7-3.13 7-7s-3.13-7-7-7zm-7.5 9H8v1.5a.5.5 0 0 1-1 0V13H5.5a.5.5 0 0 1 0-1H7v-1.5a.5.5 0 0 1 1 0V12h1.5a.5.5 0 0 1 0 1zm6 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm2-2a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+    </symbol>
+
+    <!-- AWS EC2 -->
+    <symbol id="aws-ec2" viewBox="0 0 80 80">
+      <g fill="none">
+        <rect width="80" height="80" rx="15" fill="#ED7100"/>
+        <path d="M26 22h28v4H26v-4zm0 8h28v4H26v-4zm0 8h18v4H26v-4zm0 8h28v4H26v-4zm24-8h4v4h-4v-4zm0-8h4v4h-4v-4zm0 16h4v4h-4v-4z" fill="#fff"/>
+        <rect x="16" y="16" width="48" height="48" rx="4" stroke="#fff" stroke-width="2.5" fill="none"/>
+      </g>
+    </symbol>
+
+    <!-- AWS ECS -->
+    <symbol id="aws-ecs" viewBox="0 0 80 80">
+      <g fill="none">
+        <rect width="80" height="80" rx="15" fill="#ED7100"/>
+        <rect x="16" y="16" width="22" height="22" rx="3" stroke="#fff" stroke-width="2.5" fill="rgba(255,255,255,0.1)"/>
+        <rect x="42" y="16" width="22" height="22" rx="3" stroke="#fff" stroke-width="2.5" fill="rgba(255,255,255,0.1)"/>
+        <rect x="16" y="42" width="22" height="22" rx="3" stroke="#fff" stroke-width="2.5" fill="rgba(255,255,255,0.1)"/>
+        <rect x="42" y="42" width="22" height="22" rx="3" stroke="#fff" stroke-width="2.5" fill="rgba(255,255,255,0.1)"/>
+      </g>
+    </symbol>
+
+    <!-- AWS CloudFront -->
+    <symbol id="aws-cloudfront" viewBox="0 0 80 80">
+      <g fill="none">
+        <rect width="80" height="80" rx="15" fill="#8C4FFF"/>
+        <circle cx="40" cy="40" r="18" stroke="#fff" stroke-width="2.5"/>
+        <ellipse cx="40" cy="40" rx="9" ry="18" stroke="#fff" stroke-width="2"/>
+        <path d="M22 40h36M40 22v36" stroke="#fff" stroke-width="2"/>
+      </g>
+    </symbol>
+
+    <!-- AWS S3 -->
+    <symbol id="aws-s3" viewBox="0 0 80 80">
+      <g fill="none">
+        <rect width="80" height="80" rx="15" fill="#3F8624"/>
+        <path d="M40 14l22 10v32L40 66 18 56V24L40 14z" stroke="#fff" stroke-width="2.5"/>
+        <path d="M18 24l22 10 22-10M40 34v32" stroke="#fff" stroke-width="2"/>
+      </g>
+    </symbol>
+  </svg>
+
+  <!-- PAGE CONTENT                                -->
+  <div class="page-wrapper">
+    <!--                HEADER                       -->
+    <header class="site-header">
+      <!-- Glitch effect renders here; JS below drives it -->
+      <pre id="glitch-title" class="site-title" aria-label="MEET GROUP 1"
+           style="font-family:'Courier New',monospace; font-size:clamp(0.38rem,1.1vw,0.62rem);
+                  line-height:1.15; letter-spacing:0.12em; white-space:pre;
+                  color:var(--cyan); text-shadow:0 0 12px rgba(0,255,255,0.5),0 0 35px rgba(0,255,255,0.25);
+                  display:block; overflow:hidden; user-select:none;
+                  transform:scaleX(1.25); transform-origin:top center;"></pre>
+      <p class="site-subtitle">IV-CCSAD · ELEC3 Cloud Computing</p>
+    </header>
+
+    <div class="divider"></div>
+    <!--            MEMBER CARDS                     -->
+    <p class="section-label">// TEAM.MEMBERS</p>
+    <div class="cards-grid">
+
+      <!-- ─── CARD 1: Nathaniel — SPEEDSTER (Cyan) ─── -->
+      <article class="member-card" style="--accent:#00FFFF; --accent-glow:rgba(0,255,255,0.25);">
+        <div class="avatar-wrap">
+          <div class="avatar-circle">NAT</div>
+          <div class="avatar-meta">
+            <span class="member-name">NATHANIEL</span>
+            <span class="class-badge">⚡ SPEEDSTER</span>
+          </div>
+        </div>
+
+        <p class="member-role">Lead Engine Architect &amp; Core Developer</p>
+        <p class="member-bio">
+          Designed and built the core logic, system architecture, and real-time multiplayer features of the group's CS thesis project, leading end-to-end technical implementation.
+        </p>
+
+        <!-- AWS Favorite Service Badge -->
+        <!-- EDIT LINK HERE: Replace href with the official AWS EC2 docs or service page URL -->
+        <a href="<!-- PASTE EC2 LINK HERE -->" target="_blank" rel="noopener" class="aws-badge">
+          <svg><use href="#aws-ec2"/></svg>
+          <div class="aws-badge-label">
+            <span class="aws-badge-service">AMAZON EC2</span>
+            <span class="aws-badge-category">Compute · Favorite Service</span>
+          </div>
+        </a>
+
+        <!-- Social Links -->
+        <div class="social-row">
+          <!-- EDIT LINK HERE: Replace href with Nathaniel's GitHub profile URL -->
+          <a href="https://github.com/NathanielCamachoUmak" target="_blank" rel="noopener" class="social-btn">
+            <svg><use href="#icon-github"/></svg> GitHub
+          </a>
+
+          <!-- EDIT LINK HERE: Replace href with Nathaniel's LinkedIn profile URL -->
+          <a href="https://www.linkedin.com/in/roberto-nathaniel-camacho-b40a983b3/" target="_blank" rel="noopener" class="social-btn">
+            <svg><use href="#icon-linkedin"/></svg> LinkedIn
+          </a>
+        </div>
+      </article>
+
+      <!-- ─── CARD 2: Kenichi — SENTINEL (Gold) ─── -->
+      <article class="member-card" style="--accent:#FFD700; --accent-glow:rgba(255,215,0,0.2);">
+        <div class="avatar-wrap">
+          <div class="avatar-circle">KEN</div>
+          <div class="avatar-meta">
+            <span class="member-name">KENICHI</span>
+            <span class="class-badge">🛡 SENTINEL</span>
+          </div>
+        </div>
+
+        <p class="member-role">Systems &amp; Real-Time Backend Engineer</p>
+        <p class="member-bio">
+          Developed the server-side real-time infrastructure, event-driven messaging architecture, and backend data synchronization for the group's thesis project.
+        </p>
+
+        <!-- AWS Favorite Service Badge -->
+        <!-- EDIT LINK HERE: Replace href with the official AWS ECS docs or service page URL -->
+        <a href="<!-- PASTE ECS LINK HERE -->" target="_blank" rel="noopener" class="aws-badge">
+          <svg><use href="#aws-ecs"/></svg>
+          <div class="aws-badge-label">
+            <span class="aws-badge-service">AMAZON ECS</span>
+            <span class="aws-badge-category">Containers · Favorite Service</span>
+          </div>
+        </a>
+
+        <!-- Social Links -->
+        <div class="social-row">
+          <!-- EDIT LINK HERE: Replace href with Kenichi's GitHub profile URL -->
+          <a href="https://github.com/kcalicaa12346055-sudo" target="_blank" rel="noopener" class="social-btn">
+            <svg><use href="#icon-github"/></svg> GitHub
+          </a>
+
+          <!-- EDIT LINK HERE: Replace href with Kenichi's LinkedIn profile URL -->
+          <a href="<!-- PASTE LINKEDIN LINK HERE -->" target="_blank" rel="noopener" class="social-btn">
+            <svg><use href="#icon-linkedin"/></svg> LinkedIn
+          </a>
+        </div>
+      </article>
+
+      <!-- ─── CARD 3: Elisha — SUPPORT (Green) ─── -->
+      <article class="member-card" style="--accent:#00FF00; --accent-glow:rgba(0,255,0,0.18);">
+        <div class="avatar-wrap">
+          <div class="avatar-circle">ELI</div>
+          <div class="avatar-meta">
+            <span class="member-name">ELISHA</span>
+            <span class="class-badge">💚 SUPPORT</span>
+          </div>
+        </div>
+
+        <p class="member-role">Frontend &amp; UI/UX Designer</p>
+        <p class="member-bio">
+          Crafted the visual interface, responsive screen layouts, and interactive UI components for the group's thesis project with a retro-cyberpunk aesthetic.
+        </p>
+
+        <!-- AWS Favorite Service Badge -->
+        <!-- EDIT LINK HERE: Replace href with the official AWS CloudFront docs or service page URL -->
+        <a href="<!-- PASTE CLOUDFRONT LINK HERE -->" target="_blank" rel="noopener" class="aws-badge">
+          <svg><use href="#aws-cloudfront"/></svg>
+          <div class="aws-badge-label">
+            <span class="aws-badge-service">AMAZON CLOUDFRONT</span>
+            <span class="aws-badge-category">CDN / Edge · Favorite Service</span>
+          </div>
+        </a>
+
+        <!-- Social Links -->
+        <div class="social-row">
+          <!-- EDIT LINK HERE: Replace href with Elisha's GitHub profile URL -->
+          <a href="https://github.com/madeliiine" target="_blank" rel="noopener" class="social-btn">
+            <svg><use href="#icon-github"/></svg> GitHub
+          </a>
+
+          <!-- EDIT LINK HERE: Replace href with Elisha's LinkedIn profile URL -->
+          <a href="<!-- PASTE LINKEDIN LINK HERE -->" target="_blank" rel="noopener" class="social-btn">
+            <svg><use href="#icon-linkedin"/></svg> LinkedIn
+          </a>
+        </div>
+      </article>
+
+      <!-- ─── CARD 4: Felam — SABOTEUR (Pink) ─── -->
+      <article class="member-card" style="--accent:#FF1493; --accent-glow:rgba(255,20,147,0.22);">
+        <div class="avatar-wrap">
+          <div class="avatar-circle">FEL</div>
+          <div class="avatar-meta">
+            <span class="member-name">FELAM</span>
+            <span class="class-badge">💣 SABOTEUR</span>
+          </div>
+        </div>
+
+        <p class="member-role">Technical Documentation</p>
+        <p class="member-bio">
+          Compiled and maintained comprehensive technical documentation spanning system architecture, feature specifications, API references, and onboarding guides for the group's project.
+        </p>
+
+        <!-- AWS Favorite Service Badge -->
+        <!-- EDIT LINK HERE: Replace href with the official AWS S3 docs or service page URL -->
+        <a href="<!-- PASTE S3 LINK HERE -->" target="_blank" rel="noopener" class="aws-badge">
+          <svg><use href="#aws-s3"/></svg>
+          <div class="aws-badge-label">
+            <span class="aws-badge-service">AMAZON S3</span>
+            <span class="aws-badge-category">Storage · Favorite Service</span>
+          </div>
+        </a>
+
+        <!-- Social Links -->
+        <div class="social-row">
+          <!-- EDIT LINK HERE: Replace href with Felam's GitHub profile URL -->
+          <a href="https://github.com/Flaaa01" target="_blank" rel="noopener" class="social-btn">
+            <svg><use href="#icon-github"/></svg> GitHub
+          </a>
+
+          <!-- EDIT LINK HERE: Replace href with Felam's LinkedIn profile URL -->
+          <a href="<!-- PASTE LINKEDIN LINK HERE -->" target="_blank" rel="noopener" class="social-btn">
+            <svg><use href="#icon-linkedin"/></svg> LinkedIn
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <!--                FOOTER                       -->
+    <footer class="site-footer">
+      <p class="footer-logo">GROUP 1</p>
+      <p>HOSTED ON AMAZON S3 STATIC WEBSITE HOSTING</p>
+      <p>SEATWORK 2 &amp; 3 · IV-CCSAD · ELEC3 CLOUD COMPUTING · 2026</p>
+    </footer>
+
+  </div>
+  <!-- /page-wrapper -->
+
+  <script>
+    (function () {
+      // ── 5×7 pixel font (base-32 packed) ──────────────────────────────────
+      const PACKED =
+        "0ehjlphe14c4444e2eh1248v3v2421he426aiv225vgu11he668guhhe7v1248888ehhehhe9ehhf12c" +
+        "AehhvhhhBuhhuhhuCehgggheDuhhhhhuEvgguggvFvggugggGehgnhhfHhhhvhhhIe44444eJ72222ic" +
+        "KhikokihLggggggvMhrllhhhNhhpljhhOehhhhhePuhhugggQehhhlidRuhhukihSfgge11uTv444444" +
+        "UhhhhhheVhhhhha4WhhhlllaXhha4ahhYhha4444Zv1248gv.0000004,0000048:0040040!4444404" +
+        "?eh12404-000e000'4400000\"aa00000/11248gg&cik8lid+044v440\u00B70004000*04lel40#aavavaa" +
+        "(2488842)8422248@ehnlngf%op248j3=00v0v00_000000v 0000000";
+
+      const FONT = {};
+      for (let i = 0; i < PACKED.length; i += 8) {
+        FONT[PACKED[i]] = [...PACKED.slice(i + 1, i + 8)].map((d) => parseInt(d, 32));
+      }
+
+      // ── Layout constants ──────────────────────────────────────────────────
+      const COLS = 64, ROWS = 13, FPS = 15;
+      const PERIOD = 7, STEPS = 15;
+      const BURSTS = [
+        [0.8,  1.2, 0.55],
+        [2.75, 3.3, 1.0 ],
+        [4.85, 5.3, 0.75],
+      ];
+      const NOISE = "▓▒░▚▞▙▟▛▜#%=+";
+
+      // ── Seeded RNG ────────────────────────────────────────────────────────
+      function mulberry32(a) {
+        return () => {
+          a = (a + 0x6d2b79f5) | 0;
+          let t = Math.imul(a ^ (a >>> 15), 1 | a);
+          t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+          return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+        };
+      }
+
+      // ── Rasterise text into a 7-row pixel grid ────────────────────────────
+      function bitmap(text) {
+        const px = [[], [], [], [], [], [], []];
+        for (const ch of text.toUpperCase()) {
+          const g = FONT[ch] || FONT["?"];
+          let lo = 4, hi = 0;
+          for (let x = 0; x < 5; x++)
+            if (g.some((b) => b & (16 >> x))) { lo = Math.min(lo, x); hi = Math.max(hi, x); }
+          if (ch === " ") { lo = 0; hi = 2; }
+          if (px[0].length) px.forEach((row) => row.push(0));
+          for (let y = 0; y < 7; y++)
+            for (let x = lo; x <= hi; x++)
+              px[y].push(g[y] & (16 >> x) ? 1 : 0);
+        }
+        return px;
+      }
+
+      // ── Pre-render clean bitmap ───────────────────────────────────────────
+      const TEXT = "MEET GROUP 1";
+      const px  = bitmap(TEXT);
+      const w   = px[0].length;
+      const sx  = w * 2 <= COLS - 8 ? 2 : 1;
+      const x0  = Math.max(0, (COLS - w * sx) >> 1);
+      const y0  = (ROWS - 7) >> 1;
+
+      const clean = new Uint8Array(COLS * ROWS);
+      for (let y = 0; y < 7; y++)
+        for (let c = 0; c < COLS; c++) {
+          const x = Math.floor((c - x0) / sx);
+          if (c >= x0 && x < w && px[y][x]) clean[(y0 + y) * COLS + c] = 1;
+        }
+
+      const ink = (r, c) =>
+        r >= 0 && r < ROWS && c >= 0 && c < COLS && clean[r * COLS + c] === 1;
+
+      // ── Burst envelope ────────────────────────────────────────────────────
+      function strength(u) {
+        for (const [s, e, peak] of BURSTS)
+          if (u >= s && u < e)
+            return peak * (0.35 + 0.65 * Math.sin((Math.PI * (u - s)) / (e - s)));
+        return 0;
+      }
+
+      // ── Render one frame ──────────────────────────────────────────────────
+      function renderFrame(t) {
+        const u    = ((t % PERIOD) + PERIOD) % PERIOD;
+        const step = Math.floor(u * STEPS + 1e-6);
+        const rand = mulberry32(step * 7919 + 17);
+        let s = strength(step / STEPS);
+        if (s > 0 && rand() < 0.12) s = 0;   // clean flicker inside a burst
+
+        const out   = new Array(COLS * ROWS).fill(" ");
+        const shift = new Int8Array(ROWS);
+
+        // ── Clean state ──────────────────────────────────────────────────
+        if (!s) {
+          for (let k = 0; k < out.length; k++) if (clean[k]) out[k] = "█";
+          return joinGrid(out);
+        }
+
+        // ── Bands sliding sideways ───────────────────────────────────────
+        const bands = 1 + Math.floor(rand() * (1 + 2 * s));
+        for (let b = 0; b < bands; b++) {
+          const top = y0 - 1 + Math.floor(rand() * 8);
+          const h   = 1 + Math.floor(rand() * 3);
+          const dx  = (rand() < 0.5 ? -1 : 1) * (3 + Math.floor(rand() * (2 + 8 * s)));
+          for (let r = top; r < top + h && r < ROWS; r++) shift[r] += dx;
+        }
+
+        // ── Draw shifted slices + corruption ────────────────────────────
+        const split = rand() < 0.4 + 0.5 * s;
+        const sub   = 0.02 + 0.08 * s * rand();
+        const holes = 0.01 + 0.04 * s;
+        for (let r = 0; r < ROWS; r++) {
+          for (let c = 0; c < COLS; c++) {
+            const k = r * COLS + c;
+            if (ink(r, c - shift[r])) {
+              const v = rand();
+              out[k] = v < sub
+                ? NOISE[Math.floor(rand() * NOISE.length)]
+                : v < sub + holes ? " " : "█";
+            }
+          }
+        }
+
+        // ── Channel split ghost ──────────────────────────────────────────
+        const main = out.slice();
+        const bare = (k, c) =>
+          main[k] === " " &&
+          (c === 0 || main[k - 1] === " ") &&
+          (c === COLS - 1 || main[k + 1] === " ");
+        for (let r = 0; split && r < ROWS; r++)
+          for (let c = 0; Math.abs(shift[r]) >= 5 && c < COLS; c++) {
+            const k = r * COLS + c;
+            if (bare(k, c) && ink(r, c)) out[k] = "▒";
+          }
+
+        // ── Smears ───────────────────────────────────────────────────────
+        const smears = rand() < 0.45 * s ? 1 + Math.floor(rand() * 2) : 0;
+        for (let i = 0; i < smears; i++) {
+          const r = y0 + Math.floor(rand() * 7);
+          let c = Math.floor(rand() * COLS);
+          while (c < COLS - 1 && out[r * COLS + c] !== "█") c++;
+          const len = 4 + Math.floor(rand() * 14 * s);
+          for (let j = 1; j <= len && c + j < COLS; j++)
+            out[r * COLS + c + j] = j > len - 2 ? "░" : j > len - 5 ? "▒" : "▓";
+        }
+
+        // ── Macroblocks ──────────────────────────────────────────────────
+        const blocks = rand() < 0.5 * s ? 1 + Math.floor(rand() * 2) : 0;
+        for (let i = 0; i < blocks; i++) {
+          const bw = 3 + Math.floor(rand() * 10), bh = 1 + Math.floor(rand() * 2);
+          const br = y0 + Math.floor(rand() * 7), bc = Math.floor(rand() * (COLS - bw));
+          const dr = Math.floor(rand() * 5) - 2,  dc = Math.floor(rand() * 21) - 10;
+          for (let r = br; r < br + bh && r < ROWS; r++)
+            for (let c = bc; c < bc + bw; c++) {
+              const from = ink(r + dr, c + dc);
+              out[r * COLS + c] = from
+                ? (rand() < 0.3 ? "▓" : "█")
+                : rand() < 0.15 * s ? "░" : " ";
+            }
+        }
+
+        // ── Tear line ────────────────────────────────────────────────────
+        if (rand() < 0.5 * s) {
+          const r   = y0 - 1 + Math.floor(rand() * 9);
+          const a   = Math.floor(rand() * COLS * 0.6);
+          const len = 6 + Math.floor(rand() * COLS * 0.5);
+          const g   = "▀▄─═"[Math.floor(rand() * 4)];
+          for (let c = a; c < Math.min(COLS, a + len); c++)
+            if (out[r * COLS + c] === " " || rand() < 0.5) out[r * COLS + c] = g;
+        }
+
+        // ── Full-frame row jump ───────────────────────────────────────────
+        if (s > 0.7 && rand() < 0.25) {
+          const dir  = rand() < 0.5 ? 1 : -1;
+          const copy = out.slice();
+          for (let r = 0; r < ROWS; r++) {
+            const from = r - dir;
+            for (let c = 0; c < COLS; c++)
+              out[r * COLS + c] = from >= 0 && from < ROWS ? copy[from * COLS + c] : " ";
+          }
+        }
+
+        return joinGrid(out);
+      }
+
+      function joinGrid(out) {
+        const lines = [];
+        for (let r = 0; r < ROWS; r++)
+          lines.push(out.slice(r * COLS, (r + 1) * COLS).join(""));
+        return lines.join("\n");
+      }
+
+      // ── Drive the animation ───────────────────────────────────────────────
+      const el = document.getElementById("glitch-title");
+      if (!el) return;
+
+      let startTime = null;
+      const INTERVAL = 1000 / FPS;
+      let lastTick = 0;
+
+      function tick(now) {
+        if (startTime === null) startTime = now;
+        if (now - lastTick >= INTERVAL) {
+          lastTick = now;
+          const t = (now - startTime) / 1000;
+          el.textContent = renderFrame(t);
+        }
+        requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    })();
+  </script>
+
+</body>
+</html>
