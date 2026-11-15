@@ -1,0 +1,124 @@
+<!--
+  Lab 5 guestbook. Paste this whole block into your Seatwork 3 index.html, right before </body>.
+  Then change API_URL below to your own invoke URL from Lab 4, with no slash at the end.
+  Your page reads and posts messages through your API, so your API must allow your site in its CORS settings.
+-->
+<section id="guestbook" aria-labelledby="gb-title">
+  <h2 id="gb-title">Guestbook</h2>
+  <p class="gb-note">Leave a message for our group. Our AWS Lambda function stores it in our Amazon DynamoDB table.</p>
+  <form id="gb-form">
+    <label for="gb-author">Your name</label>
+    <input id="gb-author" name="author" maxlength="40" autocomplete="name" required>
+    <label for="gb-text">Message</label>
+    <textarea id="gb-text" name="text" maxlength="280" rows="3" required></textarea>
+    <button id="gb-send" type="submit">Post message</button>
+    <p id="gb-status" role="status"></p>
+  </form>
+  <ul id="gb-list" aria-live="polite"></ul>
+</section>
+
+<style>
+  #guestbook {
+    max-width: 720px;
+    margin: 32px auto;
+    padding: 24px;
+    background: var(--card, #ffffff);
+    color: var(--text, #222222);
+    border-radius: 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  }
+  #guestbook h2 { margin: 0 0 4px; color: var(--accent, #e8692c); }
+  #guestbook .gb-note { margin: 0 0 16px; color: var(--muted, #555555); }
+  #gb-form { display: grid; gap: 8px; }
+  #gb-form label { font-weight: 600; }
+  #gb-form input, #gb-form textarea {
+    font: inherit;
+    padding: 10px;
+    border: 2px solid var(--ring, #f4c3a8);
+    border-radius: 8px;
+  }
+  #gb-send {
+    justify-self: start;
+    font: inherit;
+    padding: 10px 18px;
+    color: #ffffff;
+    background: var(--accent, #e8692c);
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  #gb-send:disabled { opacity: 0.6; cursor: wait; }
+  #gb-status { min-height: 1.4em; margin: 0; color: var(--muted, #555555); }
+  #gb-list { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 10px; }
+  #gb-list li { padding: 12px; border: 2px solid var(--ring, #f4c3a8); border-radius: 10px; }
+  #gb-list .gb-meta { display: block; color: var(--muted, #555555); font-size: 0.85rem; margin-bottom: 4px; }
+</style>
+
+<script>
+  // Change this to your invoke URL, for example https://a1b2c3d4e5.execute-api.ap-southeast-1.amazonaws.com
+  const API_URL = "https://YOUR-API-ID.execute-api.ap-southeast-1.amazonaws.com";
+
+  const base = API_URL.replace(/\/+$/, "");
+  const list = document.getElementById("gb-list");
+  const status = document.getElementById("gb-status");
+  const form = document.getElementById("gb-form");
+  const send = document.getElementById("gb-send");
+
+  // textContent shows a message as plain text, so a message that holds HTML cannot run code on your page.
+  function render(messages) {
+    list.replaceChildren();
+    messages
+      .sort((a, b) => String(b.createdAt).localeCompare(String(a.createdAt)))
+      .slice(0, 50)
+      .forEach((m) => {
+        const item = document.createElement("li");
+        const meta = document.createElement("span");
+        meta.className = "gb-meta";
+        meta.textContent = `${m.author || "Visitor"} · ${new Date(m.createdAt).toLocaleString()}`;
+        const text = document.createElement("span");
+        text.textContent = m.text;
+        item.append(meta, text);
+        list.append(item);
+      });
+    if (!list.children.length) status.textContent = "No messages yet. Be the first.";
+  }
+
+  async function loadMessages() {
+    try {
+      const response = await fetch(`${base}/messages`);
+      if (!response.ok) throw new Error(`the API answered ${response.status}`);
+      render(await response.json());
+    } catch (error) {
+      status.textContent = `Could not load the messages (${error.message}). Check API_URL and the CORS settings of your API.`;
+    }
+  }
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    send.disabled = true;
+    status.textContent = "Posting...";
+    try {
+      const response = await fetch(`${base}/messages`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ author: form.author.value.trim(), text: form.text.value.trim() }),
+      });
+      if (response.status === 429) {
+        status.textContent = "Too many requests. Wait a moment, then try again.";
+      } else if (!response.ok) {
+        const body = await response.json().catch(() => ({}));
+        status.textContent = body.error || `The API answered ${response.status}.`;
+      } else {
+        form.text.value = "";
+        status.textContent = "Posted.";
+        await loadMessages();
+      }
+    } catch (error) {
+      status.textContent = "Could not reach the API. Check API_URL and the CORS settings of your API.";
+    } finally {
+      send.disabled = false;
+    }
+  });
+
+  loadMessages();
+</script>
