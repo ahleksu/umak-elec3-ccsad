@@ -15,8 +15,8 @@ How to use this template:
 - Group number: 7
 - Section: IV - CCSAD
 - Group IAM user: ccsad-g07
-- Table name: <answer>
-- Bucket name: <answer>
+- Table name: umak-elec3-ccsad-g07-messages
+- Bucket name: umak-elec3-ccsad-g07-linktree
 
 ## Files
 
