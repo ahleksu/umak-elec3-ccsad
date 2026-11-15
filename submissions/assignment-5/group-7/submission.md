@@ -30,7 +30,7 @@ Asia Pacific (Singapore), one month: 100,000 page views and 5,000 posts.
 | Amazon API Gateway | HTTP API, 0.105 million requests, 1 KB each | 0.13 USD |
 | AWS Lambda | Without Free Tier, x86, 105,000 requests, 100 ms, 128 MB | 0.04 USD |
 | Amazon DynamoDB | On-demand, Standard, 1 GB, 1 KB items, 0.005 million writes, 0.1 million eventually consistent reads | 0.29 USD |
-| **Total** | | 0.53 USD Monthly cost |
+| **Total** | | 0.53 USD |
 
 Share link of our estimate: https://calculator.aws/#/estimate?id=619cbb0b54a1c01bcf9daf98be351f0fcb93fa20
 
