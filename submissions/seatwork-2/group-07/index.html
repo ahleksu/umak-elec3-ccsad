@@ -1,0 +1,2019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Group 7 | Aquamarine</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --text: #e8f3ff;
+      --body-text: #cfe0f5;
+      --muted: #8aa0bd;
+      --panel: #04122a;
+      --mono: "JetBrains Mono", monospace;
+      --serif: "Cinzel", Georgia, serif;
+      --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      background: #030711;
+      overflow: hidden;
+    }
+
+    body {
+      --member-accent: #3d8bff;
+      color: var(--text);
+      font-family: var(--mono);
+      background:
+        radial-gradient(
+          ellipse at 50% 8%,
+          color-mix(in srgb, var(--member-accent) 26%, transparent),
+          transparent 50%
+        ),
+        radial-gradient(
+          ellipse at 10% 80%,
+          color-mix(in srgb, var(--member-accent) 15%, transparent),
+          transparent 45%
+        ),
+        radial-gradient(
+          ellipse at 90% 75%,
+          color-mix(in srgb, var(--member-accent) 10%, transparent),
+          transparent 45%
+        ),
+        linear-gradient(
+          180deg,
+          #030711 0%,
+          #07101f 58%,
+          #020610 100%
+        );
+      transition: background 0.65s ease;
+    }
+
+    /* ==========================================
+       FULL-PAGE VERTICAL SCROLL-SNAP CONTAINER
+       ========================================== */
+    .snap-container {
+      height: 100vh;
+      height: 100dvh;
+      width: 100%;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+      scrollbar-width: thin;
+      scrollbar-color: color-mix(in srgb, var(--member-accent) 50%, transparent) transparent;
+    }
+
+    .snap-container::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .snap-container::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .snap-container::-webkit-scrollbar-thumb {
+      background: color-mix(in srgb, var(--member-accent) 45%, transparent);
+      border-radius: 999px;
+    }
+
+    .snap-section {
+      position: relative;
+      min-height: 100vh;
+      height: 100dvh;
+      width: 100%;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ==========================================
+       ENTRANCE ANIMATIONS ON SCROLL
+       ========================================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition:
+        opacity 0.8s var(--ease-out-expo),
+        transform 0.8s var(--ease-out-expo);
+      transition-delay: var(--delay, 0s);
+      will-change: opacity, transform;
+    }
+
+    .snap-section.is-visible .reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==========================================
+       FLOATING SECTION NAVIGATION DOTS (RIGHT)
+       ========================================== */
+    .section-nav {
+      position: fixed;
+      right: 22px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 40;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .section-nav-btn {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      border: 1px solid color-mix(in srgb, var(--member-accent) 60%, rgba(255,255,255,0.4));
+      background: rgba(255, 255, 255, 0.18);
+      cursor: pointer;
+      padding: 0;
+      transition: all 0.35s var(--ease-out-expo);
+    }
+
+    .section-nav-btn.active {
+      height: 28px;
+      background: var(--member-accent);
+      border-color: var(--member-accent);
+      box-shadow: 0 0 12px color-mix(in srgb, var(--member-accent) 70%, transparent);
+    }
+
+    /* ==========================================
+       SECTION 1: HEADER, INTRO & MARQUEE
+       ========================================== */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      padding-top: clamp(24px, 4vh, 42px);
+    }
+
+    header h1 {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: clamp(1.7rem, 4.5vw, 2.75rem);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--member-accent);
+      transition: color 0.45s ease;
+    }
+
+    header p {
+      margin-top: 8px;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .logo {
+      width: 85px;
+      height: 85px;
+      object-fit: contain;
+      flex-shrink: 0;
+      display: block;
+      filter: drop-shadow(0 0 12px color-mix(in srgb, var(--member-accent) 45%, transparent));
+      transition: filter 0.45s ease, transform 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.06);
+    }
+
+    .logo g {
+      transition: fill 0.45s ease;
+    }
+
+    .logo .logo-layer-1 {
+      fill: var(--member-accent);
+    }
+
+    .logo .logo-layer-2 {
+      fill: color-mix(in srgb, var(--member-accent) 72%, #ffffff);
+    }
+
+    /* INTRO GRID */
+    .intro-wrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.15fr);
+      gap: clamp(24px, 4vw, 48px);
+      align-items: center;
+      width: 100%;
+    }
+
+    .photo {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      max-height: 46vh;
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid color-mix(in srgb, var(--member-accent) 45%, transparent);
+      background: linear-gradient(
+        145deg,
+        color-mix(in srgb, var(--member-accent) 68%, white),
+        color-mix(in srgb, var(--member-accent) 55%, #050d1a),
+        #03102b
+      );
+      box-shadow:
+        0 24px 60px rgba(0, 0, 0, 0.55),
+        0 0 40px color-mix(in srgb, var(--member-accent) 18%, transparent);
+      transition:
+        border-color 0.45s ease,
+        background 0.55s ease,
+        box-shadow 0.45s ease,
+        transform 0.45s var(--ease-out-expo);
+    }
+
+    .photo:hover {
+      transform: translateY(-4px);
+    }
+
+    .photo-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-align: center;
+      padding: 20px;
+      color: rgba(255, 255, 255, 0.9);
+      pointer-events: none;
+    }
+
+    .photo-placeholder-badge {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+    }
+
+    .photo-placeholder-sub {
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      opacity: 0.8;
+    }
+
+    .photo img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: linear-gradient(
+        180deg,
+        transparent 50%,
+        rgba(0, 5, 12, 0.65)
+      );
+      pointer-events: none;
+    }
+
+    .about {
+      font-family: var(--serif);
+      font-size: clamp(0.98rem, 1.35vw, 1.15rem);
+      line-height: 1.85;
+      color: var(--body-text);
+    }
+
+    .about p + p {
+      margin-top: 16px;
+    }
+
+    .scroll-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 24px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid color-mix(in srgb, var(--member-accent) 50%, transparent);
+      background: color-mix(in srgb, var(--member-accent) 12%, rgba(4, 18, 42, 0.6));
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.35s var(--ease-out-expo);
+    }
+
+    .scroll-cta:hover {
+      background: var(--member-accent);
+      color: #030711;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px color-mix(in srgb, var(--member-accent) 35%, transparent);
+    }
+
+    .scroll-cta svg {
+      width: 15px;
+      height: 15px;
+      animation: bounce-down 1.8s infinite;
+    }
+
+    @keyframes bounce-down {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(4px); }
+    }
+
+    /* ==========================================
+       7 - AQUAMARINE INFINITE MARQUEE RIBBON
+       ========================================== */
+    .marquee {
+      position: relative;
+      width: 100%;
+      margin-top: 36px;
+      margin-bottom: clamp(48px, 9vh, 96px);
+      border-block: 1px solid color-mix(in srgb, var(--member-accent) 42%, transparent);
+      background: color-mix(in srgb, var(--member-accent) 6%, rgba(3, 7, 17, 0.75));
+      backdrop-filter: blur(8px);
+      overflow: hidden;
+      padding: 13px 0;
+      transition: border-color 0.45s ease, background 0.45s ease;
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      will-change: transform;
+      animation: marquee-scroll 18s linear infinite !important;
+    }
+
+    .marquee-group {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .marquee-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 1.4rem;
+      padding-right: 1.4rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      color: var(--member-accent);
+      transition: color 0.45s ease;
+    }
+
+    .marquee-item .bullet {
+      color: var(--member-accent);
+      opacity: 0.75;
+      transition: color 0.45s ease;
+    }
+
+    @keyframes marquee-scroll {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      100% {
+        transform: translate3d(-50%, 0, 0);
+      }
+    }
+
+    .marquee:hover .marquee-track {
+      animation-play-state: paused !important;
+    }
+
+    /* ==========================================
+       SECTION 2: 3D STACKED TEAM CAROUSEL
+       ========================================== */
+    .team-section-inner {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding-top: 10px;
+    }
+
+    .team-stage {
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .team-title {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 900;
+      font-size: clamp(3.4rem, 11vw, 7.8rem);
+      line-height: 0.88;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      user-select: none;
+      pointer-events: none;
+      margin-bottom: -42px;
+      background: linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--member-accent) 48%, rgba(255, 255, 255, 0.85)) 0%,
+        color-mix(in srgb, var(--member-accent) 22%, transparent) 68%,
+        transparent 100%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      transition: background 0.45s ease;
+    }
+
+    .carousel-container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: clamp(310px, 46vh, 410px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 1200px;
+    }
+
+    .carousel-track {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform-style: preserve-3d;
+    }
+
+    .card {
+      position: absolute;
+      width: clamp(210px, 26vw, 275px);
+      height: clamp(290px, 42vh, 375px);
+      padding: 0;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 22px;
+      overflow: hidden;
+      background: #0c1424;
+      cursor: pointer;
+      color: #fff;
+      font: inherit;
+      text-align: left;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      will-change: transform, opacity, filter;
+      transition:
+        transform 0.65s var(--ease-out-expo),
+        opacity 0.65s var(--ease-out-expo),
+        filter 0.65s ease,
+        border-color 0.45s ease,
+        box-shadow 0.45s ease;
+    }
+
+    .card-art {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding-bottom: 96px;
+      background: var(--grad);
+      transition: transform 0.6s var(--ease-out-expo);
+    }
+
+    .card-art img {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      opacity: 1;
+      display: block;
+    }
+
+    .card-art::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      background: linear-gradient(
+        180deg,
+        transparent 38%,
+        rgba(0, 5, 12, 0.88) 100%
+      );
+      pointer-events: none;
+    }
+
+    .card-initial {
+      position: relative;
+      z-index: 1;
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: clamp(4.8rem, 8vw, 6.5rem);
+      color: rgba(255, 255, 255, 0.92);
+      text-shadow: 0 8px 28px rgba(0, 0, 0, 0.42);
+      transition: transform 0.45s var(--ease-out-expo);
+    }
+
+    /* Name, role and links on the card face */
+    .card-info {
+      position: absolute;
+      z-index: 4;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 14px 16px 16px;
+    }
+
+    .card-name {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .card-role {
+      margin-top: 3px;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .card-links {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .card-link {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 9px;
+      background: rgba(3, 7, 17, 0.55);
+      backdrop-filter: blur(6px);
+      color: #fff;
+      transition: background 0.25s ease, color 0.25s ease, transform 0.25s var(--ease-out-expo);
+    }
+
+    .card-link:hover {
+      background: var(--member-accent);
+      color: #030711;
+      transform: translateY(-2px);
+    }
+
+    .card-link svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    .card-link.aws-link svg {
+      width: 22px;
+      height: 22px;
+      border-radius: 5px;
+    }
+
+    .card-hint {
+      position: absolute;
+      z-index: 4;
+      left: 50%;
+      top: 14px;
+      transform: translateX(-50%) translateY(-8px);
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(3, 7, 17, 0.68);
+      backdrop-filter: blur(6px);
+      border: 1px solid color-mix(in srgb, var(--member-accent) 55%, transparent);
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      opacity: 0;
+      transition:
+        opacity 0.35s ease,
+        transform 0.35s var(--ease-out-expo),
+        background 0.3s ease,
+        color 0.3s ease;
+    }
+
+    /* 3D POSITIONAL STATES */
+    .card.center {
+      z-index: 10;
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+      filter: grayscale(0%) brightness(1);
+      border-color: var(--member-accent);
+      box-shadow:
+        0 26px 60px rgba(0, 0, 0, 0.65),
+        0 0 45px color-mix(in srgb, var(--member-accent) 28%, transparent);
+    }
+
+    .card.center:hover .card-art {
+      transform: scale(1.04);
+    }
+
+    .card.center:hover .card-hint {
+      background: var(--member-accent);
+      color: #030711;
+    }
+
+    .card.center .card-hint {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .card.left-1 {
+      z-index: 5;
+      opacity: 0.82;
+      transform: translate3d(-175px, 0, -90px) scale(0.84);
+      filter: grayscale(100%) brightness(0.68) contrast(1.05);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .card.right-1 {
+      z-index: 5;
+      opacity: 0.82;
+      transform: translate3d(175px, 0, -90px) scale(0.84);
+      filter: grayscale(100%) brightness(0.68) contrast(1.05);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .card.left-2 {
+      z-index: 2;
+      opacity: 0.42;
+      transform: translate3d(-310px, 0, -180px) scale(0.7);
+      filter: grayscale(100%) brightness(0.48);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+    }
+
+    .card.right-2 {
+      z-index: 2;
+      opacity: 0.42;
+      transform: translate3d(310px, 0, -180px) scale(0.7);
+      filter: grayscale(100%) brightness(0.48);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+    }
+
+    .card.hidden {
+      z-index: 0;
+      opacity: 0;
+      pointer-events: none;
+      transform: translate3d(0, 0, -260px) scale(0.5);
+    }
+
+    .card.left-1:hover,
+    .card.right-1:hover,
+    .card.left-2:hover,
+    .card.right-2:hover {
+      opacity: 0.95;
+      filter: grayscale(60%) brightness(0.82);
+    }
+
+    .card:focus-visible {
+      outline: 2px solid var(--member-accent);
+      outline-offset: 4px;
+    }
+
+    /* NAVIGATION ARROWS */
+    .nav-arrow {
+      position: absolute;
+      top: 50%;
+      z-index: 20;
+      width: 44px;
+      height: 44px;
+      transform: translateY(-50%);
+      border: 1px solid color-mix(in srgb, var(--member-accent) 45%, rgba(255, 255, 255, 0.2));
+      border-radius: 50%;
+      background: color-mix(in srgb, var(--member-accent) 22%, rgba(15, 28, 55, 0.85));
+      backdrop-filter: blur(8px);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      line-height: 1;
+      padding-bottom: 3px;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+      transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s var(--ease-out-expo),
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .nav-arrow:hover {
+      background: var(--member-accent);
+      border-color: var(--member-accent);
+      color: #030711;
+      transform: translateY(-50%) scale(1.12);
+      box-shadow: 0 0 24px color-mix(in srgb, var(--member-accent) 55%, transparent);
+    }
+
+    .nav-arrow:active {
+      transform: translateY(-50%) scale(0.96);
+    }
+
+    .nav-arrow.left {
+      left: clamp(8px, 3vw, 32px);
+    }
+
+    .nav-arrow.right {
+      right: clamp(8px, 3vw, 32px);
+    }
+
+    /* MEMBER CAPTION & FLAIR */
+    .member-info {
+      text-align: center;
+      margin-top: 18px;
+      min-height: 62px;
+    }
+
+    .member-name {
+      position: relative;
+      display: inline-block;
+      font-family: var(--mono);
+      font-weight: 700;
+      font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--member-accent);
+      transition:
+        opacity 0.25s ease,
+        transform 0.25s var(--ease-out-expo),
+        color 0.35s ease;
+    }
+
+    .member-name::before,
+    .member-name::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: clamp(40px, 7vw, 85px);
+      height: 2px;
+      border-radius: 2px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--member-accent)
+      );
+      transition: background 0.35s ease;
+    }
+
+    .member-name::before {
+      right: calc(100% + 16px);
+    }
+
+    .member-name::after {
+      left: calc(100% + 16px);
+      background: linear-gradient(
+        90deg,
+        var(--member-accent),
+        transparent
+      );
+    }
+
+    .member-role {
+      margin-top: 8px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--body-text);
+      transition:
+        opacity 0.25s ease,
+        transform 0.25s var(--ease-out-expo);
+    }
+
+    .dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border: 0;
+      padding: 0;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.22);
+      cursor: pointer;
+      transition:
+        width 0.35s var(--ease-out-expo),
+        background 0.35s ease,
+        transform 0.35s ease;
+    }
+
+    .dot.active {
+      width: 28px;
+      background: var(--member-accent);
+      box-shadow: 0 0 12px color-mix(in srgb, var(--member-accent) 65%, transparent);
+    }
+
+    footer {
+      width: 100%;
+      padding: 16px 24px 22px;
+      text-align: center;
+      font-family: var(--serif);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    /* ==========================================
+       SECTION 3: WHAT WE'RE LEARNING
+       ========================================== */
+    .learn-inner {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      padding-top: 24px;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: clamp(1.7rem, 4.5vw, 2.75rem);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--member-accent);
+      transition: color 0.45s ease;
+    }
+
+    .section-sub {
+      margin-top: 8px;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .learn-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .learn-card {
+      padding: 22px;
+      border: 1px solid color-mix(in srgb, var(--member-accent) 35%, transparent);
+      border-radius: 16px;
+      background: color-mix(in srgb, var(--member-accent) 7%, rgba(4, 18, 42, 0.7));
+      transition: transform 0.35s var(--ease-out-expo), border-color 0.35s ease;
+    }
+
+    .learn-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--member-accent);
+    }
+
+    .learn-card svg {
+      width: 36px;
+      height: 36px;
+      display: block;
+      margin-bottom: 14px;
+      border-radius: 8px;
+    }
+
+    .learn-card svg.plain {
+      fill: var(--member-accent);
+    }
+
+    .learn-card h3 {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .learn-card p {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: var(--body-text);
+    }
+
+    /* ==========================================
+       PROFILE DIALOG (FIXED & CENTERED)
+       ========================================== */
+    dialog {
+      --grad: linear-gradient(160deg, #9bffe3, #19b8a6 50%, #032a3c);
+      position: fixed;
+      inset: 0;
+      width: min(520px, calc(100vw - 32px));
+      max-height: calc(100vh - 32px);
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: var(--text);
+      overflow: visible;
+      margin: auto;
+    }
+
+    dialog::backdrop {
+      background: rgba(2, 6, 16, 0.82);
+      backdrop-filter: blur(6px);
+      animation: fade-in 0.25s ease-out;
+    }
+
+    dialog[open] {
+      animation: rise 0.32s var(--ease-out-expo);
+    }
+
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .p-wrap {
+      position: relative;
+      max-height: calc(100vh - 32px);
+      overflow-y: auto;
+      background: var(--panel);
+      border: 1px solid var(--member-accent);
+      border-radius: 18px;
+      box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.75),
+        0 0 40px color-mix(in srgb, var(--member-accent) 22%, transparent);
+    }
+
+    .p-photo {
+      position: relative;
+      height: 220px;
+      display: grid;
+      place-items: center;
+      background: var(--grad);
+      overflow: hidden;
+    }
+
+    .p-photo img {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      opacity: 1;
+      display: block;
+    }
+
+    .p-photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      background: linear-gradient(
+        180deg,
+        transparent 35%,
+        var(--panel) 100%
+      );
+      pointer-events: none;
+    }
+
+    .p-photo span {
+      position: relative;
+      z-index: 1;
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 5.5rem;
+      color: rgba(255, 255, 255, 0.92);
+      text-shadow: 0 8px 26px rgba(0, 0, 0, 0.4);
+    }
+
+    .p-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      z-index: 5;
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      background: rgba(0, 5, 10, 0.6);
+      backdrop-filter: blur(4px);
+      color: #fff;
+      font-size: 1.35rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    .p-close:hover {
+      background: var(--member-accent);
+      border-color: var(--member-accent);
+      color: #000;
+      transform: rotate(90deg);
+    }
+
+    .p-body {
+      padding: 6px 28px 28px;
+    }
+
+    .p-body h2 {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1.55rem;
+      line-height: 1.2;
+    }
+
+    .p-role {
+      margin-top: 6px;
+      color: var(--member-accent);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .p-motto {
+      margin: 18px 0;
+      padding-left: 14px;
+      border-left: 3px solid var(--member-accent);
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      line-height: 1.5;
+      color: var(--body-text);
+    }
+
+    .p-bio {
+      color: var(--body-text);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+
+    .p-label {
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+      list-style: none;
+    }
+
+    .chips li {
+      padding: 4px 12px;
+      border: 1px solid var(--member-accent);
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--member-accent) 10%, transparent);
+      color: var(--member-accent);
+      font-size: 0.78rem;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 0.8rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .links a:hover {
+      background: var(--member-accent);
+      color: #000;
+      border-color: var(--member-accent);
+      transform: translateY(-2px);
+    }
+
+    .links svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    .aws {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 12px;
+      color: var(--text);
+      text-decoration: none;
+      transition: border-color 0.25s ease, transform 0.25s ease;
+    }
+
+    .aws:hover {
+      border-color: var(--member-accent);
+      transform: translateY(-2px);
+    }
+
+    .aws svg {
+      width: 42px;
+      height: 42px;
+      flex-shrink: 0;
+      border-radius: 8px;
+    }
+
+    .aws small {
+      display: block;
+      color: var(--muted);
+      font-size: 0.7rem;
+    }
+
+    .aws strong {
+      font-size: 0.9rem;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--member-accent);
+      outline-offset: 3px;
+    }
+
+    /* ==========================================
+       RESPONSIVE BREAKPOINTS
+       ========================================== */
+    @media (max-width: 820px) {
+      .intro {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .photo {
+        max-height: 28vh;
+      }
+
+      .team-title {
+        margin-bottom: -24px;
+      }
+
+      .card.left-1 {
+        transform: translate3d(-115px, 0, -90px) scale(0.82);
+      }
+
+      .card.right-1 {
+        transform: translate3d(115px, 0, -90px) scale(0.82);
+      }
+
+      .card.left-2 {
+        transform: translate3d(-195px, 0, -180px) scale(0.66);
+      }
+
+      .card.right-2 {
+        transform: translate3d(195px, 0, -180px) scale(0.66);
+      }
+
+      .section-nav {
+        right: 10px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .logo {
+        width: 48px;
+        height: 48px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .wrap {
+        padding: 0 18px;
+      }
+
+      header {
+        padding-top: 18px;
+      }
+
+      .about {
+        font-size: 0.9rem;
+        line-height: 1.65;
+      }
+
+      .scroll-cta {
+        margin-top: 14px;
+      }
+
+      .carousel-container {
+        height: 300px;
+      }
+
+      .card {
+        width: 195px;
+        height: 270px;
+      }
+
+      .card.left-1 {
+        transform: translate3d(-78px, 0, -90px) scale(0.82);
+      }
+
+      .card.right-1 {
+        transform: translate3d(78px, 0, -90px) scale(0.82);
+      }
+
+      .card.left-2 {
+        transform: translate3d(-130px, 0, -180px) scale(0.66);
+      }
+
+      .card.right-2 {
+        transform: translate3d(130px, 0, -180px) scale(0.66);
+      }
+
+      .member-name::before,
+      .member-name::after {
+        display: none;
+      }
+
+      .section-nav {
+        display: none;
+      }
+
+      .learn-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .learn-card {
+        padding: 14px 16px;
+      }
+
+      .learn-card svg {
+        display: none;
+      }
+
+      .learn-card p {
+        font-size: 0.78rem;
+        line-height: 1.55;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- FLOATING SECTION INDICATOR DOTS -->
+  <nav class="section-nav" aria-label="Section navigation">
+    <button type="button" class="section-nav-btn active" data-target="hero-section" aria-label="Go to Introduction section"></button>
+    <button type="button" class="section-nav-btn" data-target="team-section" aria-label="Go to Team section"></button>
+    <button type="button" class="section-nav-btn" data-target="learn-section" aria-label="Go to What we are learning section"></button>
+  </nav>
+
+  <!-- VERTICAL SCROLL-SNAP CONTAINER -->
+  <main class="snap-container" id="snapContainer">
+
+    <!-- SECTION 1: HERO / INTRO / MARQUEE -->
+    <section class="snap-section is-visible" id="hero-section">
+
+      <div class="wrap">
+        <header class="reveal" style="--delay: 0.05s">
+          <div>
+            <h1>Group 7 &middot; IV-CCSAD</h1>
+            <p>Aquamarine &middot; ELEC3 Cloud Computing</p>
+          </div>
+
+          <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+               viewBox="0 0 1080.000000 1080.000000"
+               preserveAspectRatio="xMidYMid meet"
+               class="logo"
+               role="img"
+               aria-label="Aquamarine logo">
+            <g class="logo-layer-1" transform="translate(0.000000,1080.000000) scale(0.100000,-0.100000)" stroke="#030711">
+              <path d="M4700 8459 c-19 -5 -156 -33 -305 -63 -148 -31 -391 -81 -540 -111
+              -148 -31 -362 -74 -475 -97 -113 -23 -208 -44 -212 -47 -4 -3 -4 -11 0 -17 7
+              -12 69 1 1120 216 221 46 405 81 407 78 2 -2 -1 -62 -8 -132 l-12 -128 -175
+              -49 c-96 -27 -191 -53 -210 -59 -106 -30 -478 -131 -498 -136 -12 -2 -77 -20
+              -145 -40 -126 -37 -135 -39 -201 -56 -33 -8 -37 -12 -25 -23 12 -12 106 11
+              629 156 338 93 642 173 675 176 50 4 730 -25 965 -42 36 -2 124 -7 195 -10
+              177 -8 286 -15 309 -22 14 -4 3 -14 -50 -45 -38 -22 -80 -50 -94 -62 -14 -13
+              -54 -43 -90 -67 -36 -24 -81 -57 -100 -74 -20 -16 -53 -43 -74 -60 -60 -46
+              -207 -216 -290 -335 -255 -363 -432 -881 -501 -1467 l-13 -112 -82 -131 c-89
+              -141 -165 -248 -188 -266 -9 -6 -31 -17 -51 -24 -20 -7 -277 -108 -571 -225
+              -294 -117 -606 -241 -693 -275 -135 -53 -165 -62 -200 -57 -40 6 -1537 328
+              -1602 345 -34 9 -18 -33 -175 450 -95 293 -110 346 -98 359 18 22 162 169 707
+              718 571 576 548 552 534 566 -9 9 -37 -15 -112 -92 -56 -57 -341 -346 -634
+              -643 l-534 -538 -144 31 c-79 18 -172 37 -207 44 -35 7 -63 16 -63 21 -1 9
+              274 290 923 942 378 380 465 473 451 479 -14 5 -106 -83 -447 -427 -235 -238
+              -554 -559 -707 -713 -154 -154 -279 -288 -279 -297 0 -10 15 -59 34 -110 37
+              -98 313 -854 373 -1021 33 -90 65 -137 95 -137 4 0 32 -15 61 -34 47 -30 88
+              -54 257 -151 30 -18 90 -53 133 -78 43 -26 79 -47 81 -47 3 0 115 -64 156 -90
+              8 -5 52 -31 98 -57 46 -27 111 -65 145 -85 34 -20 85 -49 112 -64 28 -15 61
+              -35 74 -45 49 -39 72 -11 25 30 -65 56 -129 284 -146 518 -2 23 -1 40 2 39 3
+              -1 16 -7 30 -13 54 -24 117 -51 160 -68 25 -10 59 -23 75 -30 35 -15 245 -82
+              284 -91 171 -39 235 -47 406 -48 187 -1 224 2 340 29 211 49 455 175 641 330
+              97 82 236 218 306 300 33 39 67 79 77 90 70 80 263 356 346 494 36 60 39 74
+              57 210 31 254 88 519 154 721 15 47 29 90 30 95 14 52 107 267 150 350 22 42
+              65 116 127 220 66 111 212 275 372 419 88 79 326 221 440 261 28 10 53 21 57
+              24 23 19 -33 36 -497 146 -82 20 -177 42 -210 50 -89 21 -472 110 -695 161
+              -107 24 -202 46 -210 48 -8 2 -31 0 -50 -5z m143 -49 c110 -24 336 -77 872
+              -205 219 -52 407 -95 416 -95 10 0 21 -5 25 -11 5 -9 -11 -10 -57 -5 -35 3
+              -242 15 -459 26 -744 37 -921 47 -926 52 -3 4 14 200 22 236 2 12 7 22 9 22 3
+              0 47 -9 98 -20z m-3763 -2383 l194 -42 57 -170 c88 -266 199 -611 199 -622 0
+              -10 -235 -276 -247 -280 -5 -2 -55 126 -112 283 -58 158 -113 303 -123 322
+              -10 20 -18 42 -18 49 0 11 -67 200 -149 421 -27 72 -28 82 -13 81 9 0 105 -19
+              212 -42z m750 -915 c47 -11 371 -82 720 -157 349 -74 642 -140 650 -144 10 -6
+              20 -45 32 -132 9 -68 14 -128 11 -132 -6 -10 -95 -3 -233 19 -162 26 -444 118
+              -661 217 -76 35 -83 28 -75 -69 15 -171 57 -357 98 -437 l20 -41 -23 15 c-37
+              24 -568 331 -619 358 -25 13 -51 29 -59 35 -7 6 -95 58 -195 116 -99 58 -181
+              111 -181 117 0 11 161 197 227 263 l27 27 88 -17 c48 -10 126 -27 173 -38z
+              m1427 -314 c-3 -8 -6 -5 -6 6 -1 11 2 17 5 13 3 -3 4 -12 1 -19z m713 -78 c0
+              -5 -5 -10 -11 -10 -5 0 -7 5 -4 10 3 6 8 10 11 10 2 0 4 -4 4 -10z"/>
+              <path d="M7705 8056 c-108 -34 -206 -140 -295 -319 -32 -64 -63 -140 -70 -167
+              -12 -50 -12 -51 26 -110 28 -43 43 -58 54 -54 35 15 117 34 146 34 60 0 162
+              39 197 75 70 73 127 236 127 368 0 155 -60 212 -185 173z"/>
+              <path d="M2504 7828 l-29 -33 33 29 c30 28 37 36 29 36 -2 0 -16 -15 -33 -32z"/>
+              <path d="M6118 7742 c-15 -7 -253 -321 -246 -327 2 -1 50 7 108 17 131 24 471
+              30 595 9 674 -109 1098 -528 1291 -1276 29 -116 33 -124 33 -80 1 117 -41 339
+              -95 506 -173 537 -605 931 -1195 1093 -192 52 -434 81 -491 58z"/>
+              <path d="M9760 7211 c-202 -207 -509 -322 -965 -361 -304 -26 -436 -31 -655
+              -26 -212 5 -230 4 -186 -9 131 -37 457 -65 686 -58 476 14 926 190 1138 446
+              38 45 69 90 60 86 -2 -1 -37 -36 -78 -78z"/>
+              <path d="M6190 7223 c-168 -13 -412 -76 -605 -156 l-99 -41 109 -22 c229 -46
+              428 -117 635 -225 173 -92 386 -237 492 -337 21 -20 40 -33 43 -31 2 3 43 84
+              89 180 l84 174 163 74 c90 40 167 76 171 80 11 10 -133 104 -237 155 -246 121
+              -543 173 -845 149z"/>
+              <path d="M9994 6807 c-204 -172 -512 -275 -889 -297 -148 -9 -731 -5 -850 5
+              -87 7 -61 -7 65 -35 187 -41 317 -54 560 -55 203 0 252 3 357 23 319 58 575
+              174 748 335 66 62 72 76 9 24z"/>
+              <path d="M5342 6491 c-72 -163 -134 -303 -137 -312 -5 -13 3 -20 32 -29 49
+              -16 138 -65 185 -103 43 -35 104 -120 113 -159 l7 -26 66 23 c72 24 365 135
+              554 209 65 25 122 46 126 46 5 0 52 -34 103 -75 l94 -75 3 85 c7 204 -98 400
+              -277 519 -168 112 -376 169 -682 189 l-56 3 -131 -295z"/>
+              <path d="M7300 6657 l-85 -32 3 -70 3 -70 -222 -175 c-123 -96 -228 -179 -235
+              -185 -7 -5 -16 -44 -19 -86 l-7 -77 81 -41 c172 -88 314 -194 378 -284 l37
+              -52 185 28 c102 16 188 31 191 34 3 2 5 118 5 256 0 282 -14 375 -79 548 -41
+              110 -114 239 -135 238 -9 0 -54 -14 -101 -32z"/>
+              <path d="M6193 5828 l-92 -92 -309 20 -310 19 -62 -56 -62 -56 50 -104 c94
+              -195 136 -372 125 -519 l-5 -75 149 -107 c82 -59 156 -110 164 -113 11 -4 44
+              28 106 102 308 368 499 691 527 889 l6 40 -90 69 c-49 39 -93 71 -97 72 -5 2
+              -49 -38 -100 -89z"/>
+              <path d="M6746 5663 c-18 -341 -85 -683 -201 -1021 -25 -73 -45 -140 -45 -150
+              0 -34 200 -342 223 -342 5 0 50 8 98 17 l88 17 96 -44 96 -43 27 20 c39 28
+              137 146 188 225 173 268 274 656 262 1007 l-3 93 -90 34 c-49 19 -97 34 -105
+              34 -8 0 -75 -14 -149 -32 l-134 -33 -172 178 -172 178 -7 -138z"/>
+              <path d="M5225 5457 c-26 -44 -173 -194 -270 -276 -170 -144 -612 -467 -822
+              -601 l-70 -45 -33 -212 c-18 -117 -30 -219 -27 -227 3 -8 39 -37 80 -64 42
+              -29 111 -92 163 -147 l89 -97 110 6 c125 7 206 23 319 60 254 86 535 282 760
+              532 92 101 186 220 186 232 -1 4 -86 77 -190 162 l-190 154 1 56 c1 30 4 89 8
+              130 6 69 3 85 -37 215 -24 77 -47 143 -51 147 -4 4 -15 -7 -26 -25z"/>
+              <path d="M2504 4426 c0 -3 12 -38 26 -78 73 -202 189 -368 337 -479 169 -127
+              313 -182 573 -215 110 -14 151 -15 279 -6 127 10 314 38 365 56 8 3 35 10 59
+              16 l44 12 -160 161 -161 162 -7 162 -7 162 -50 -25 c-215 -109 -638 -94 -1154
+              42 -137 35 -144 37 -144 30z"/>
+              <path d="M6424 4183 c-70 -115 -241 -281 -384 -375 -150 -99 -220 -137 -395
+              -213 l-145 -63 38 -25 c21 -14 67 -39 103 -57 262 -133 517 -132 795 4 135 66
+              247 148 382 279 86 85 220 239 230 266 1 5 -86 16 -195 26 -109 9 -206 23
+              -215 29 -9 6 -51 55 -91 109 l-75 97 -48 -77z"/>
+            </g>
+            <g class="logo-layer-2" transform="translate(0.000000,1080.000000) scale(0.100000,-0.100000)" stroke="#030711">
+              <path d="M7705 8056 c-108 -34 -206 -140 -295 -319 -32 -64 -63 -140 -70 -167
+              -12 -50 -12 -51 26 -110 28 -43 43 -58 54 -54 35 15 117 34 146 34 60 0 162
+              39 197 75 70 73 127 236 127 368 0 155 -60 212 -185 173z"/>
+              <path d="M2504 7828 l-29 -33 33 29 c30 28 37 36 29 36 -2 0 -16 -15 -33 -32z"/>
+              <path d="M6118 7742 c-15 -7 -253 -321 -246 -327 2 -1 50 7 108 17 131 24 471
+              30 595 9 674 -109 1098 -528 1291 -1276 29 -116 33 -124 33 -80 1 117 -41 339
+              -95 506 -173 537 -605 931 -1195 1093 -192 52 -434 81 -491 58z"/>
+              <path d="M9760 7211 c-202 -207 -509 -322 -965 -361 -304 -26 -436 -31 -655
+              -26 -212 5 -230 4 -186 -9 131 -37 457 -65 686 -58 476 14 926 190 1138 446
+              38 45 69 90 60 86 -2 -1 -37 -36 -78 -78z"/>
+              <path d="M6190 7223 c-168 -13 -412 -76 -605 -156 l-99 -41 109 -22 c229 -46
+              428 -117 635 -225 173 -92 386 -237 492 -337 21 -20 40 -33 43 -31 2 3 43 84
+              89 180 l84 174 163 74 c90 40 167 76 171 80 11 10 -133 104 -237 155 -246 121
+              -543 173 -845 149z"/>
+              <path d="M9994 6807 c-204 -172 -512 -275 -889 -297 -148 -9 -731 -5 -850 5
+              -87 7 -61 -7 65 -35 187 -41 317 -54 560 -55 203 0 252 3 357 23 319 58 575
+              174 748 335 66 62 72 76 9 24z"/>
+              <path d="M5342 6491 c-72 -163 -134 -303 -137 -312 -5 -13 3 -20 32 -29 49
+              -16 138 -65 185 -103 43 -35 104 -120 113 -159 l7 -26 66 23 c72 24 365 135
+              554 209 65 25 122 46 126 46 5 0 52 -34 103 -75 l94 -75 3 85 c7 204 -98 400
+              -277 519 -168 112 -376 169 -682 189 l-56 3 -131 -295z"/>
+              <path d="M7300 6657 l-85 -32 3 -70 3 -70 -222 -175 c-123 -96 -228 -179 -235
+              -185 -7 -5 -16 -44 -19 -86 l-7 -77 81 -41 c172 -88 314 -194 378 -284 l37
+              -52 185 28 c102 16 188 31 191 34 3 2 5 118 5 256 0 282 -14 375 -79 548 -41
+              110 -114 239 -135 238 -9 0 -54 -14 -101 -32z"/>
+              <path d="M6193 5828 l-92 -92 -309 20 -310 19 -62 -56 -62 -56 50 -104 c94
+              -195 136 -372 125 -519 l-5 -75 149 -107 c82 -59 156 -110 164 -113 11 -4 44
+              28 106 102 308 368 499 691 527 889 l6 40 -90 69 c-49 39 -93 71 -97 72 -5 2
+              -49 -38 -100 -89z"/>
+              <path d="M6746 5663 c-18 -341 -85 -683 -201 -1021 -25 -73 -45 -140 -45 -150
+              0 -34 200 -342 223 -342 5 0 50 8 98 17 l88 17 96 -44 96 -43 27 20 c39 28
+              137 146 188 225 173 268 274 656 262 1007 l-3 93 -90 34 c-49 19 -97 34 -105
+              34 -8 0 -75 -14 -149 -32 l-134 -33 -172 178 -172 178 -7 -138z"/>
+              <path d="M5225 5457 c-26 -44 -173 -194 -270 -276 -170 -144 -612 -467 -822
+              -601 l-70 -45 -33 -212 c-18 -117 -30 -219 -27 -227 3 -8 39 -37 80 -64 42
+              -29 111 -92 163 -147 l89 -97 110 6 c125 7 206 23 319 60 254 86 535 282 760
+              532 92 101 186 220 186 232 -1 4 -86 77 -190 162 l-190 154 1 56 c1 30 4 89 8
+              130 6 69 3 85 -37 215 -24 77 -47 143 -51 147 -4 4 -15 -7 -26 -25z"/>
+              <path d="M2520 4426 c0 -3 12 -38 26 -78 73 -202 189 -368 337 -479 169 -127
+              313 -182 573 -215 110 -14 151 -15 279 -6 127 10 314 38 365 56 8 3 35 10 59
+              16 l44 12 -160 161 -161 162 -7 162 -7 162 -50 -25 c-215 -109 -638 -94 -1154
+              42 -137 35 -144 37 -144 30z"/>
+              <path d="M6424 4183 c-70 -115 -241 -281 -384 -375 -150 -99 -220 -137 -395
+              -213 l-145 -63 38 -25 c21 -14 67 -39 103 -57 262 -133 517 -132 795 4 135 66
+              247 148 382 279 86 85 220 239 230 266 1 5 -86 16 -195 26 -109 9 -206 23
+              -215 29 -9 6 -51 55 -91 109 l-75 97 -48 -77z"/>
+              <path d="M608 4112 c-3 -8 -6 -5 -6 6 -1 11 2 17 5 13 3 -3 4 -12 1 -19z"/>
+              <path d="M1321 4034 c0 -5 -5 -10 -11 -10 -5 0 -7 5 -4 10 3 6 8 10 11 10 2 0 4 -4 4 -10z"/>
+            </g>
+          </svg>
+        </header>
+      </div>
+
+      <div class="intro-wrapper">
+        <div class="wrap">
+          <div class="intro">
+
+            <figure class="photo reveal" style="--delay: 0.15s">
+              <img src="https://i.pinimg.com/736x/a3/2f/4a/a32f4aee612f40baf3075a85480f2f28.jpg" alt="Group 7 Aquamarine">
+            </figure>
+
+            <div class="about reveal" style="--delay: 0.25s">
+              <p>
+                We are Group 7 of IV-CCSAD, four classmates building and hosting
+                this page for ELEC3 Cloud Computing, Seatwork 3.
+              </p>
+
+              <p>
+                Every page you see here is served straight from Amazon S3.
+                Meet the team below and click a card to see more about each of us.
+              </p>
+
+              <a href="#team-section" class="scroll-cta">
+                <span>Meet The Team</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 5v14M19 12l-7 7-7-7"/>
+                </svg>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 - AQUAMARINE MOVING MARQUEE (filled by the script below) -->
+      <div class="marquee reveal" style="--delay: 0.35s" aria-hidden="true">
+        <div class="marquee-track" id="marquee"></div>
+      </div>
+
+    </section>
+
+    <!-- SECTION 2: THE TEAM (3D STACKED CAROUSEL) -->
+    <section class="snap-section" id="team-section">
+
+      <div class="wrap team-section-inner">
+        <div class="team-stage">
+
+          <h2 class="team-title reveal" style="--delay: 0.05s">Our Team</h2>
+
+          <div class="carousel-container reveal" style="--delay: 0.15s">
+
+            <button type="button" class="nav-arrow left" aria-label="Previous member">&lsaquo;</button>
+
+            <div class="carousel-track" id="track"></div>
+
+            <button type="button" class="nav-arrow right" aria-label="Next member">&rsaquo;</button>
+
+          </div>
+
+          <div class="member-info reveal" style="--delay: 0.25s" aria-live="polite">
+            <h3 class="member-name"></h3>
+            <p class="member-role"></p>
+          </div>
+
+          <div class="dots reveal" style="--delay: 0.3s" id="dots"></div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SECTION 3: WHAT WE'RE LEARNING -->
+    <section class="snap-section" id="learn-section">
+
+      <div class="wrap learn-inner">
+        <h2 class="section-title reveal" style="--delay: 0.05s">What we're learning</h2>
+        <p class="section-sub reveal" style="--delay: 0.1s">ELEC3 Cloud Computing &middot; Seatwork 3</p>
+
+        <div class="learn-grid">
+          <article class="learn-card reveal" style="--delay: 0.15s">
+            <svg aria-hidden="true"><use href="#aws-s3"></use></svg>
+            <h3>Static hosting on S3</h3>
+            <p>How a bucket becomes a website: an index document, public read access, and the S3 website endpoint that serves this page.</p>
+          </article>
+          <article class="learn-card reveal" style="--delay: 0.22s">
+            <svg aria-hidden="true"><use href="#aws-lambda"></use></svg>
+            <h3>Picking the right service</h3>
+            <p>S3, Lambda, EC2 and DynamoDB each solve a different problem. Each of us chose a favorite and explains why.</p>
+          </article>
+          <article class="learn-card reveal" style="--delay: 0.29s">
+            <svg class="plain" aria-hidden="true"><use href="#icon-github"></use></svg>
+            <h3>Working as a team</h3>
+            <p>Splitting roles, sharing one file, and testing every link before we submit.</p>
+          </article>
+        </div>
+      </div>
+
+      <footer class="reveal" style="--delay: 0.35s">
+        Hosted on Amazon S3 static website hosting &middot; Seatwork 3
+      </footer>
+
+    </section>
+
+  </main>
+
+  <!-- MEMBER PROFILE DIALOG -->
+  <dialog id="profile" aria-label="Member profile">
+    <div class="p-wrap">
+      <button type="button" class="p-close" aria-label="Close profile">&times;</button>
+      <div class="p-content"></div>
+    </div>
+  </dialog>
+
+  <!-- ICON LIBRARY -->
+  <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+    <symbol id="icon-github" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol>
+    <symbol id="icon-linkedin" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol>
+    <symbol id="icon-portfolio" viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></symbol>
+    <symbol id="aws-dynamodb" viewBox="0 0 64 64"><g stroke="none" fill="none" fill-rule="evenodd"><g fill="#C925D1"><rect x="0" y="0" width="64" height="64"></rect></g><path d="M46.5858287,25.2492763 L43.0008475,25.2492763 C42.6728493,25.2492763 42.3658509,25.086523 42.1788519,24.8145936 C41.9918528,24.5416533 41.9488531,24.1939071 42.0648525,23.8835638 L44.5578394,17.162156 L35.6448862,17.162156 L31.5539077,26.2601663 L36.0008843,26.2601663 C36.3218827,26.2601663 36.6238811,26.4158434 36.8128801,26.6806966 C36.9998791,26.943528 37.0518788,27.2821762 36.9488794,27.5904976 L33.2888986,38.6910812 L46.5858287,25.2492763 Z M49.7068123,24.9530855 L31.7079069,43.1491063 C31.5159079,43.3442081 31.2589093,43.4452971 31.0009106,43.4452971 C30.8189116,43.4452971 30.6379125,43.3957635 30.4759134,43.2946744 C30.0809155,43.0480173 29.9049164,42.5597574 30.0529156,42.1149658 L34.6128916,28.2819464 L30.0009159,28.2819464 C29.6609177,28.2819464 29.3449193,28.1070624 29.1599203,27.8189588 C28.9769213,27.5288333 28.9499214,27.1659238 29.0909207,26.8525479 L34.0908944,15.7327574 C34.2528935,15.3718697 34.6078917,15.1403759 35.0008896,15.1403759 L46.0008318,15.1403759 C46.32883,15.1403759 46.6358284,15.3031292 46.8228274,15.5750586 C47.0098265,15.8479989 47.0528262,16.1957451 46.9378268,16.5060883 L44.44384,23.2274962 L48.999816,23.2274962 C49.4038139,23.2274962 49.769812,23.4741534 49.9238111,23.8512154 C50.0788103,24.2292882 49.9928108,24.663971 49.7068123,24.9530855 L49.7068123,24.9530855 Z M41.0008581,44.2196388 C38.2908723,46.1059597 33.3138985,47.1016863 28.5329236,47.1016863 C23.7169489,47.1016863 18.6959753,46.0928181 15.9999895,44.1781923 L16.0009895,47.9943023 C16.0009895,49.6582273 20.7689644,51.9782199 28.5329236,51.9782199 C36.0278842,51.9782199 41.0008581,49.2761108 41.0008581,47.4888572 L41.0008581,44.2196388 Z M43.0648472,40.9504204 C43.0648472,41.1374351 43.0328474,41.3173735 43.0008475,41.4963011 L43.0008475,47.4888572 C43.0008475,51.0795387 36.5108817,54 28.5329236,54 C21.6299599,54 14.6619965,52.1106465 14.0599997,48.4997473 L14.001,48.4997473 L14,43.4452971 L14,30.3037265 L14,16.1512659 L14.001,16.1512659 C14.001,12.1552176 21.4879606,10 28.5329236,10 C32.4739029,10 36.262883,10.6398934 38.9298689,11.755916 L38.163873,13.6240408 C35.7318858,12.6050636 32.2209042,12.0217801 28.5329236,12.0217801 C20.7689644,12.0217801 16.0009895,14.4266875 16.0009895,16.1512659 C16.0009895,17.8758443 20.7689644,20.2807517 28.5329236,20.2807517 C28.7279226,20.2807517 28.9319215,20.2817626 29.1289205,20.2736755 L29.2069201,22.2934338 C28.9819212,22.3025318 28.7579224,22.3025318 28.5329236,22.3025318 C23.7159489,22.3025318 18.6959753,21.2936636 15.9999895,19.3790378 L15.9999895,23.7369848 L16.0009895,23.7369848 L16.0009895,23.7541699 C16.0059895,24.2838763 16.4899869,24.8974866 17.3649823,25.4736939 C19.3469719,26.7615678 22.9149531,27.642053 26.9039322,27.8250241 L26.8129326,29.8447824 C22.6869543,29.6547351 19.0629734,28.7762717 16.7269857,27.4287552 C16.4169873,27.7269678 16.0009895,28.4851353 16.0009895,28.8955567 C16.0009895,30.6201351 20.7689644,33.0250425 28.5329236,33.0250425 C29.2709197,33.0250425 29.9979159,32.9997703 30.6949122,32.9502366 L30.8359115,34.9669623 C30.0919154,35.0205394 29.3169195,35.0468226 28.5329236,35.0468226 C23.7159489,35.0468226 18.6959753,34.0379543 15.9999895,32.1233286 L15.9999895,35.7928594 L16.0009895,35.7928594 C16.0059895,36.339751 16.4899869,36.9533612 17.3649823,37.5295685 C19.6329704,39.0044571 23.9139479,39.9233562 28.5329236,39.9233562 L28.8629219,39.9233562 L28.8629219,41.9451362 L28.5329236,41.9451362 C23.7549487,41.9451362 18.6729754,40.9372789 16.0009895,39.4017369 C15.6789912,39.6999495 16.0009895,40.4126269 16.0009895,40.9504204 C16.0009895,42.6749989 20.7689644,45.0799063 28.5329236,45.0799063 C36.2978828,45.0799063 41.0648577,42.6749989 41.0648577,40.9504204 C41.0648577,40.3408537 40.4658609,39.7757662 39.9728635,39.4118458 C39.5638656,39.658503 39.113868,39.8950512 38.6008707,40.1113817 L37.8328747,38.2442678 C38.3638719,38.0208611 38.8228695,37.7812802 39.1968675,37.5326012 C40.2978617,36.798695 41.0008581,35.7544456 41.0008581,35.3581767 L43.0008475,35.3581767 C43.0008475,36.2983045 42.3798508,37.3051509 41.583855,38.1330699 C42.7758487,39.1732757 43.0648472,40.2114598 43.0648472,40.9504204 L43.0648472,40.9504204 Z M17.1419835,48.3885494 C17.9329793,48.796949 18.8579745,49.1608694 19.893969,49.4691908 L20.457966,47.5292928 C19.5419709,47.2573634 18.7319751,46.9399439 18.0519787,46.5881542 L17.1419835,48.3885494 Z M19.893969,37.3385103 L20.457966,35.3996232 C19.5419709,35.1266829 18.7319751,34.8102743 18.0519787,34.4584846 L17.1419835,36.2578689 C17.9329793,36.6672793 18.8579745,37.0301889 19.893969,37.3385103 L19.893969,37.3385103 Z M17.1419835,24.1281992 L18.0519787,22.3278041 C18.7319751,22.6795938 19.5419709,22.9960024 20.457966,23.2689427 L19.893969,25.2088407 C18.8579745,24.9005192 17.9329793,24.5365988 17.1419835,24.1281992 L17.1419835,24.1281992 Z" fill="#FFFFFF"></path></g></symbol>
+    <symbol id="aws-ec2" viewBox="0 0 64 64"><g stroke="none" fill="none" fill-rule="evenodd"><g fill="#ED7100"><rect x="0" y="0" width="64" height="64"></rect></g><path d="M22,41 L41,41 L41,23 L22,23 L22,41 Z M43,23 L46,23 L46,25 L43,25 L43,27 L46,27 L46,29 L43,29 L43,31 L46,31 L46,33 L43,33 L43,36 L46,36 L46,38 L43,38 L43,40 L46,40 L46,42 L42.863,42 C42.608,42.587 42.023,43 41.344,43 L41,43 L41,46 L39,46 L39,43 L37,43 L37,46 L35,46 L35,43 L33,43 L33,46 L31,46 L31,43 L29,43 L29,46 L27,46 L27,43 L24,43 L24,46 L22,46 L22,43 L21.656,43 C20.977,43 20.392,42.587 20.137,42 L18,42 L18,40 L20,40 L20,38 L18,38 L18,36 L20,36 L20,33 L18,33 L18,31 L20,31 L20,29 L18,29 L18,27 L20,27 L20,25 L18,25 L18,23 L20,23 L20,22.656 C20,21.743 20.743,21 21.656,21 L22,21 L22,18 L24,18 L24,21 L27,21 L27,18 L29,18 L29,21 L31,21 L31,18 L33,18 L33,21 L35,21 L35,18 L37,18 L37,21 L39,21 L39,18 L41,18 L41,21 L41.344,21 C42.257,21 43,21.743 43,22.656 L43,23 Z M32,52 L12,52 L12,32 L16,32 L16,30 L11.843,30 C10.826,30 10,30.827 10,31.843 L10,52.157 C10,53.173 10.826,54 11.843,54 L32.157,54 C33.174,54 34,53.173 34,52.157 L34,48 L32,48 L32,52 Z M54,11.843 L54,32.157 C54,33.173 53.174,34 52.157,34 L48,34 L48,32 L52,32 L52,12 L32,12 L32,16 L30,16 L30,11.843 C30,10.827 30.826,10 31.843,10 L52.157,10 C53.174,10 54,10.827 54,11.843 L54,11.843 Z" fill="#FFFFFF"></path></g></symbol>
+    <symbol id="aws-lambda" viewBox="0 0 64 64"><g stroke="none" fill="none" fill-rule="evenodd"><g fill="#ED7100"><rect x="0" y="0" width="64" height="64"></rect></g><path d="M22.6794094,52 L13.5740701,52 L23.8376189,30.41 L28.3997494,39.861 L22.6794094,52 Z M24.7269406,27.667 C24.5606285,27.321 24.2120702,27.103 23.8306478,27.103 L23.8276601,27.103 C23.4452418,27.104 23.0966835,27.325 22.9323632,27.672 L11.0973143,52.569 C10.9499239,52.879 10.9708374,53.243 11.1540795,53.534 C11.3353298,53.824 11.6540117,54 11.9955989,54 L23.309802,54 C23.695208,54 24.0447622,53.777 24.2100784,53.428 L30.4044577,40.284 C30.5329264,40.01 30.5319305,39.692 30.3994783,39.42 L24.7269406,27.667 Z M51.0082382,52 L41.985557,52 L26.9547262,19.578 C26.7914017,19.226 26.4388599,19 26.0524581,19 L20.1279625,19 L20.1349337,12 L31.8146251,12 L46.7747483,44.42 C46.9380728,44.774 47.2906147,45 47.6790082,45 L51.0082382,45 L51.0082382,52 Z M52.0041191,43 L48.3143803,43 L33.354257,10.58 C33.1909326,10.226 32.8383907,10 32.450993,10 L19.1400486,10 C18.5913182,10 18.1451636,10.447 18.1441677,10.999 L18.1362006,19.999 C18.1362006,20.265 18.2407681,20.519 18.4269979,20.707 C18.6142235,20.895 18.8671772,21 19.1310857,21 L25.4170861,21 L40.4479168,53.422 C40.6112413,53.774 40.9627873,54 41.350185,54 L52.0041191,54 C52.5548412,54 53,53.552 53,53 L53,44 C53,43.448 52.5548412,43 52.0041191,43 L52.0041191,43 Z" fill="#FFFFFF"></path></g></symbol>
+    <symbol id="aws-s3" viewBox="0 0 64 64"><g stroke="none" fill="none" fill-rule="evenodd"><g fill="#7AA116"><rect x="0" y="0" width="64" height="64"></rect></g><g transform="translate(10.999800, 10.000200)" fill="#FFFFFF"><path d="M36.759,23.948 L36.993,22.131 C39.166,23.385 39.842,24.121 40.037,24.424 C39.713,24.485 38.832,24.509 36.759,23.948 L36.759,23.948 Z M19.5,11 C9.125,11 2.382,8.488 2,6.696 L2,6.511 C2.349,5.392 8.14,2 19.5,2 C30.84,2 36.632,5.381 37,6.505 L37,6.616 C36.724,8.446 29.961,11 19.5,11 L19.5,11 Z M34.818,23.362 C30.053,21.797 23.912,18.979 21.594,17.888 C21.535,16.786 20.628,15.906 19.512,15.906 C18.358,15.906 17.418,16.845 17.418,18 C17.418,19.154 18.358,20.094 19.512,20.094 C19.969,20.094 20.389,19.942 20.733,19.693 C23.132,20.822 29.619,23.798 34.558,25.38 L32.837,38.724 C32.583,40.352 27.919,42 19.497,42 C11.072,42 6.405,40.352 6.155,38.751 L2.435,9.814 C5.945,11.915 12.749,13 19.5,13 C26.25,13 33.054,11.915 36.565,9.815 L34.818,23.362 Z M39,6.5 C39,3.431 30.661,0 19.5,0 C8.339,0 -3.55271368e-15,3.431 -3.55271368e-15,6.5 L-3.55271368e-15,7.043 L4.174,39.033 C4.875,43.516 15.123,44 19.497,44 C23.869,44 34.113,43.516 34.818,39.007 L36.501,25.947 C37.778,26.279 38.812,26.456 39.616,26.455 C40.606,26.455 41.273,26.203 41.697,25.697 C42.047,25.281 42.185,24.756 42.085,24.221 C41.857,23 40.403,21.712 37.37,20.044 L37.27,19.989 L39,7.044 L39,6.5 Z"></path></g></g></symbol>
+  </svg>
+
+  <script>
+    (function () {
+
+      /* ==========================================
+         MEMBER INFORMATION
+         ========================================== */
+      var team = [
+        {
+          name: "Vob",
+          role: "Quality Assurance",
+          photo: "https://media1.tenor.com/m/JMjb4OgNoBIAAAAd/iron-man-rober-downey-jr.gif",
+          accent: "#ff4b4b",
+          grad: "linear-gradient(160deg,#ff9a9a 0%,#e32636 50%,#3b0710 100%)",
+          motto: "Your lips, my lips Apocalpyse",
+          bio: "Niche Only",
+          skills: ["Tester", "Documentation"],
+          github: "https://github.com/VobAviso",
+          linkedin: "https://www.linkedin.com/in/vob-aviso-035456448/",
+          aws: {
+            icon: "aws-s3",
+            name: "Amazon S3",
+            url: "https://aws.amazon.com/s3/"
+          }
+        },
+        {
+          name: "Jerome",
+          role: "Project Lead",
+          photo: "https://media1.tenor.com/m/_FdTPSHEhv8AAAAd/drinking-ice-tea-jojo.gif",
+          accent: "#39d98a",
+          grad: "linear-gradient(160deg,#a5ffd0 0%,#20a968 50%,#06351f 100%)",
+          motto: "Alas diyes na naman",
+          bio: "Undergrad Artist",
+          skills: ["Planning", "Lead", "Project Management"],
+          github: "https://github.com/romeonspotify",
+          linkedin: "https://www.linkedin.com/in/jerome-magno-194782448/",
+          aws: {
+            icon: "aws-lambda",
+            name: "AWS Lambda",
+            url: "https://aws.amazon.com/lambda/"
+          }
+        },
+        {
+          name: "Lars",
+          role: "Frontend Developer",
+          photo: "https://media1.tenor.com/m/xNQF7idIlsIAAAAC/fugging-ez-ggez.gif",
+          accent: "#3d8bff",
+          grad: "linear-gradient(160deg,#a9d4ff 0%,#2868e8 50%,#071b48 100%)",
+          motto: "who knows",
+          bio: "Hey it's me its verity",
+          skills: ["HTML", "CSS", "JavaScript"],
+          github: "https://github.com/LarsUlrichPons",
+          linkedin: "https://www.linkedin.com/in/lars-ulrich-pons/",
+          portfolio: "https://larsulrichponsportfolio.netlify.app/",
+          aws: {
+            icon: "aws-ec2",
+            name: "Amazon EC2",
+            url: "https://aws.amazon.com/ec2/"
+          }
+        },
+        {
+          name: "Rey",
+          role: "Lead Programmer",
+          photo: "https://media1.tenor.com/m/cf5HMSkZNogAAAAC/breaking-bad-breaking-bad-meme.gif",
+          accent: "#ff70b8",
+          grad: "linear-gradient(160deg,#ffc1df 0%,#e94b9b 50%,#4a1030 100%)",
+          motto: "Hope and Dreams",
+          bio: "Hope and Dreams",
+          skills: ["Backend Developer"],
+          github: "https://github.com/rewyuu",
+          linkedin: "https://www.linkedin.com/in/rey-benedict-rico-293abb298/",
+          aws: {
+            icon: "aws-dynamodb",
+            name: "Amazon DynamoDB",
+            url: "https://aws.amazon.com/dynamodb/"
+          }
+        }
+      ];
+
+      /* HTML ESCAPING */
+      function esc(s) {
+        return String(s).replace(/[&<>"']/g, function (c) {
+          return {
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#39;"
+          }[c];
+        });
+      }
+
+      /* MEMBER PHOTO */
+      function photoImg(member) {
+        return member.photo
+          ? '<img src="' + esc(member.photo) + '" alt="' + esc(member.name) + '" style="object-position:' + esc(member.photoPos || "center center") + '" onerror="this.remove()">'
+          : "";
+      }
+
+      /* SMALL HELPER: draws one icon from the icon library above */
+      function icon(id) {
+        return '<svg aria-hidden="true"><use href="#' + esc(id) + '"></use></svg>';
+      }
+
+      /* ICON BUTTON LINK shown on the card face */
+      function cardLink(url, label, id, extra) {
+        return '<a class="card-link ' + (extra || "") + '" href="' + esc(url) + '" target="_blank" rel="noopener noreferrer" aria-label="' + esc(label) + '" title="' + esc(label) + '">' + icon(id) + '</a>';
+      }
+
+      /* ==========================================
+         CONTINUOUS 7 - AQUAMARINE MARQUEE
+         ========================================== */
+      var marquee = document.getElementById("marquee");
+      var itemsHtml = "";
+
+      for (var k = 0; k < 10; k++) {
+        itemsHtml +=
+          '<span class="marquee-item">7 - AQUAMARINE <span class="bullet">&bull;</span></span>';
+      }
+
+      if (marquee) {
+        marquee.innerHTML =
+          '<div class="marquee-group">' + itemsHtml + '</div>' +
+          '<div class="marquee-group" aria-hidden="true">' + itemsHtml + '</div>';
+      }
+
+      /* ==========================================
+         CREATE 3D MEMBER CARDS & DOTS
+         ========================================== */
+      var track = document.getElementById("track");
+      var dotsBox = document.getElementById("dots");
+
+      team.forEach(function (member, i) {
+        var card = document.createElement("div");
+        card.setAttribute("role", "button");
+        card.tabIndex = 0;
+        card.className = "card";
+        card.dataset.index = i;
+
+        card.innerHTML =
+          '<div class="card-art" style="--grad:' + member.grad + '">' +
+            photoImg(member) +
+            '<span class="card-initial">' + esc(member.name.charAt(0)) + '</span>' +
+          '</div>' +
+          '<span class="card-hint">View profile</span>' +
+          '<div class="card-info">' +
+            '<p class="card-name">' + esc(member.name) + '</p>' +
+            '<p class="card-role">' + esc(member.role) + '</p>' +
+            '<div class="card-links">' +
+              cardLink(member.github, member.name + " on GitHub", "icon-github") +
+              cardLink(member.linkedin, member.name + " on LinkedIn", "icon-linkedin") +
+              cardLink(member.aws.url, member.name + "'s favorite AWS service: " + member.aws.name, member.aws.icon, "aws-link") +
+            '</div>' +
+          '</div>';
+
+        track.appendChild(card);
+
+        var dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "dot";
+        dot.setAttribute("aria-label", "Show " + member.name);
+        dotsBox.appendChild(dot);
+      });
+
+      /* ELEMENT REFERENCES */
+      var cards = Array.prototype.slice.call(track.children);
+      var dots = Array.prototype.slice.call(dotsBox.children);
+      var nameEl = document.querySelector(".member-name");
+      var roleEl = document.querySelector(".member-role");
+      var dlg = document.getElementById("profile");
+      var content = dlg.querySelector(".p-content");
+
+      /* DEFAULT MEMBER: LARS (Index 2) */
+      var current = 2;
+
+      /* COMPUTE 3D STACK POSITION CLASS */
+      function getStackClass(idx, activeIdx, total) {
+        var offset = (idx - activeIdx + total) % total;
+        if (offset === 0) return "center";
+        if (offset === 1) return "right-1";
+        if (offset === total - 1) return "left-1";
+        if (offset === 2) return "right-2";
+        if (offset === total - 2) return "left-2";
+        return "hidden";
+      }
+
+      /* UPDATE ACTIVE MEMBER & 3D CAROUSEL */
+      function show(i) {
+        var total = cards.length;
+        current = (i + total) % total;
+        var member = team[current];
+
+        document.body.style.setProperty("--member-accent", member.accent);
+
+        cards.forEach(function (card, idx) {
+          var posClass = getStackClass(idx, current, total);
+          card.className = "card " + posClass;
+          card.tabIndex = posClass === "hidden" ? -1 : 0;
+          card.querySelectorAll("a").forEach(function (a) { a.tabIndex = posClass === "hidden" ? -1 : 0; });
+
+          card.setAttribute(
+            "aria-label",
+            (idx === current ? "Open profile of " : "Select ") + team[idx].name
+          );
+        });
+
+        dots.forEach(function (dot, idx) {
+          dot.classList.toggle("active", idx === current);
+        });
+
+        nameEl.style.opacity = "0";
+        nameEl.style.transform = "translateY(6px)";
+        roleEl.style.opacity = "0";
+        roleEl.style.transform = "translateY(6px)";
+
+        setTimeout(function () {
+          nameEl.textContent = member.name;
+          roleEl.textContent = member.role;
+          nameEl.style.opacity = "1";
+          nameEl.style.transform = "translateY(0)";
+          roleEl.style.opacity = "1";
+          roleEl.style.transform = "translateY(0)";
+        }, 160);
+      }
+
+      /* OPEN MEMBER PROFILE DIALOG */
+      function openProfile(i) {
+        if (i !== current) {
+          show(i);
+        }
+        var member = team[i];
+
+        document.body.style.setProperty("--member-accent", member.accent);
+        dlg.style.setProperty("--grad", member.grad);
+
+        content.innerHTML =
+          '<div class="p-photo">' +
+            photoImg(member) +
+            '<span>' + esc(member.name.charAt(0)) + '</span>' +
+          '</div>' +
+          '<div class="p-body">' +
+            '<h2>' + esc(member.name) + '</h2>' +
+            '<p class="p-role">' + esc(member.role) + '</p>' +
+            '<p class="p-motto">' + esc(member.motto) + '</p>' +
+            '<p class="p-bio">' + esc(member.bio) + '</p>' +
+            '<p class="p-label">Skills</p>' +
+            '<ul class="chips">' +
+              member.skills.map(function (skill) {
+                return '<li>' + esc(skill) + '</li>';
+              }).join("") +
+            '</ul>' +
+            '<p class="p-label">Find them online</p>' +
+            '<div class="links">' +
+              '<a href="' + esc(member.github) + '" target="_blank" rel="noopener noreferrer">' + icon("icon-github") + 'GitHub</a>' +
+              '<a href="' + esc(member.linkedin) + '" target="_blank" rel="noopener noreferrer">' + icon("icon-linkedin") + 'LinkedIn</a>' +
+              (member.portfolio
+                ? '<a href="' + esc(member.portfolio) + '" target="_blank" rel="noopener noreferrer">' + icon("icon-portfolio") + 'Portfolio</a>'
+                : '') +
+            '</div>' +
+            '<a class="aws" href="' + esc(member.aws.url) + '" target="_blank" rel="noopener noreferrer">' +
+              icon(member.aws.icon) +
+              '<span>' +
+                '<small>Favorite AWS service</small>' +
+                '<strong>' + esc(member.aws.name) + '</strong>' +
+              '</span>' +
+            '</a>' +
+          '</div>';
+
+        dlg.showModal();
+      }
+
+      /* CARD CLICK EVENTS */
+      cards.forEach(function (card, i) {
+        card.addEventListener("click", function () {
+          if (i === current) {
+            openProfile(i);
+          } else {
+            show(i);
+          }
+        });
+
+        card.addEventListener("keydown", function (e) {
+          if (e.target === card && (e.key === "Enter" || e.key === " ")) {
+            e.preventDefault();
+            card.click();
+          }
+        });
+
+        card.querySelectorAll(".card-link").forEach(function (link) {
+          link.addEventListener("click", function (e) { e.stopPropagation(); });
+        });
+      });
+
+      /* DOT CLICK EVENTS */
+      dots.forEach(function (dot, i) {
+        dot.addEventListener("click", function () {
+          show(i);
+        });
+      });
+
+      /* PREVIOUS & NEXT BUTTONS */
+      document.querySelector(".nav-arrow.left").addEventListener("click", function () {
+        show(current - 1);
+      });
+
+      document.querySelector(".nav-arrow.right").addEventListener("click", function () {
+        show(current + 1);
+      });
+
+      /* CLOSE PROFILE MODAL */
+      dlg.querySelector(".p-close").addEventListener("click", function () {
+        dlg.close();
+      });
+
+      dlg.addEventListener("click", function (e) {
+        if (e.target === dlg) {
+          dlg.close();
+        }
+      });
+
+      /* KEYBOARD NAVIGATION */
+      document.addEventListener("keydown", function (e) {
+        if (dlg.open) return;
+        if (e.key === "ArrowLeft") {
+          show(current - 1);
+        } else if (e.key === "ArrowRight") {
+          show(current + 1);
+        }
+      });
+
+      /* TOUCH SWIPE FOR HORIZONTAL CAROUSEL */
+      var startX = 0;
+      var startY = 0;
+      var carouselEl = document.querySelector(".carousel-container");
+
+      carouselEl.addEventListener("touchstart", function (e) {
+        startX = e.changedTouches[0].screenX;
+        startY = e.changedTouches[0].screenY;
+      }, { passive: true });
+
+      carouselEl.addEventListener("touchend", function (e) {
+        if (dlg.open) return;
+        var diffX = startX - e.changedTouches[0].screenX;
+        var diffY = startY - e.changedTouches[0].screenY;
+
+        if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
+          show(current + (diffX > 0 ? 1 : -1));
+        }
+      }, { passive: true });
+
+      /* ==========================================
+         SCROLL-SNAP INTERSECTION OBSERVER & NAV
+         ========================================== */
+      var sections = document.querySelectorAll(".snap-section");
+      var navBtns = document.querySelectorAll(".section-nav-btn");
+
+      navBtns.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var targetId = btn.getAttribute("data-target");
+          var targetEl = document.getElementById(targetId);
+          if (targetEl) {
+            targetEl.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+
+      if ("IntersectionObserver" in window) {
+        var sectionObserver = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                var id = entry.target.id;
+                navBtns.forEach(function (btn) {
+                  btn.classList.toggle("active", btn.getAttribute("data-target") === id);
+                });
+              }
+            });
+          },
+          {
+            root: document.getElementById("snapContainer"),
+            threshold: 0.45
+          }
+        );
+
+        sections.forEach(function (sec) {
+          sectionObserver.observe(sec);
+        });
+      } else {
+        sections.forEach(function (sec) {
+          sec.classList.add("is-visible");
+        });
+      }
+
+      /* INITIALIZE WITH LARS SELECTED */
+      show(2);
+
+    })();
+  </script>
+
+</body>
+</html>
