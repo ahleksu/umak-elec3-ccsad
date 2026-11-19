@@ -192,7 +192,7 @@ You answer 1 question. I score your own answer.
 
 | Level | What it looks like | Points |
 | --- | --- | --- |
-| Excellent | The app URL opens and does what your case asks. You show each service you chose running, for example the items in your table, within 4 minutes. | 18 to 20 |
+| Excellent | The app URL opens and does what your case asks. You show each service you chose running, for example the items in your table, within 6 minutes. | 18 to 20 |
 | Good | Everything works, with a small slip or a little over time. | 14 to 17 |
 | Fair | One part does not work or cannot be shown. | 10 to 13 |
 | Needs work | Two or more parts do not work, or there is no build. | 0 to 9 |
@@ -217,7 +217,7 @@ If any part of your system already runs on a cloud provider, or you use CI/CD, c
 Yes. A managed platform counts, for example Vercel, Netlify, Render, Railway, Supabase, or Firebase. So do AWS, Google Cloud, and Azure. In the defense, be ready to say what kind of service it is (IaaS, PaaS, or SaaS), where it runs, what it costs, and what the provider manages for you.
 
 **Can we play a recorded pitch or demo video?**
-Yes. A video is optional, and it saves time on the night. It must fit in your live part: 6 minutes for Track A, 4 minutes for Track B. Share your screen with sound, and test the sound before 7:00 PM. Keep your live system open, because I can ask you to show it after the video.
+Yes. A video is optional, and it saves time on the night. It must fit in your 6-minute live part. Share your screen with sound, and test the sound before 7:00 PM. Keep your live system open, because I can ask you to show it after the video.
 
 **Do we need slides?**
 No. Slides are optional. Whatever you show, make clear the problem your system solves, its target users, and how it runs on the cloud. Then show your live system or your build. I score your PDF before the night.
