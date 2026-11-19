@@ -7,7 +7,7 @@ You take the Final Exam with your thesis group, in one of two tracks. This page 
 | Section | Track B written exam, Saturday, November 21 | Presentation night, 7:00 to 9:00 PM | Written exam make-up, Saturday, November 28 |
 | --- | --- | --- | --- |
 | IV-ACSAD | Start 7:30 to 7:45 AM, closes 9:30 AM | Thursday, November 26 | Start 7:30 to 7:45 AM, closes 9:30 AM |
-| IV-BCSAD | Start 10:30 to 10:45 AM, closes 12:30 PM | Wednesday, November 25 | Start 10:30 to 10:45 AM, closes 12:30 PM |
+| IV-BCSAD | Start 3:00 to 3:15 PM, closes 5:00 PM | Wednesday, November 25 | Start 10:30 to 10:45 AM, closes 12:30 PM |
 | IV-CCSAD | Start 6:00 to 6:15 PM, closes 8:00 PM | Tuesday, November 24 | Start 6:00 to 6:15 PM, closes 8:00 PM |
 | IV-DCSAD | Start 3:00 to 3:15 PM, closes 5:00 PM | Monday, November 23 | Start 3:00 to 3:15 PM, closes 5:00 PM |
 
