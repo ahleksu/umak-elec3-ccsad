@@ -69,7 +69,7 @@ Both tracks submit one PDF, made from your track's Canva template:
 Open the link and click "Use template" to get your own copy. Each template has these pages:
 
 - Three pages that you fill in: the cover, the architecture diagram, and the plan. A gray note on each page says what goes there. Delete each gray note when you finish the page.
-- Example pages, marked "Example" in the title and with a red note. They show a made-up system with the level of detail I expect. Copy the level of detail, not the content. The Track A template shows the same system twice: once on several providers (Vercel, Render, Supabase) and once on one provider (AWS). Either kind of system counts for Track A.
+- Example pages, each with "Example" at the start of its title or a red "EXAMPLE PAGE" note. They show a made-up system with the level of detail I expect. Copy the level of detail, not the content. The Track A template shows the same system twice: once on several providers (Vercel, Render, Supabase) and once on one provider (AWS). Either kind of system counts for Track A.
 - A "Before You Download" checklist page.
 
 If an answer does not fit on its page, add a page right after it and title it with "(continued)", for example "Plan (continued)". Before you download, delete every example page and the checklist page. Your PDF then has the cover, the diagram, the plan, and any "(continued)" pages.
