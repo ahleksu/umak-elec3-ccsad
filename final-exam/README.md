@@ -86,10 +86,10 @@ The example diagrams were drawn in draw.io (https://app.diagrams.net) with its A
 
   | Section | Final Exam Submission form |
   | --- | --- |
-  | IV-ACSAD | https://docs.google.com/forms/d/e/1FAIpQLSdCeAPNyx-u2DQ91KYpkolzqk6gwWqf6ZAJ7-XYFoLY0c1S4w/viewform |
-  | IV-BCSAD | https://docs.google.com/forms/d/e/1FAIpQLSf_rjRx4U_I9LXgkFC5Du4LKg1zodd_WSJtp6qb-A5Xj8sDdg/viewform |
-  | IV-CCSAD | https://docs.google.com/forms/d/e/1FAIpQLSec0GaRy7RRNjds_7VvmdNyb00SVL8kpe7r6ZRyJ4KquOK1dw/viewform |
-  | IV-DCSAD | https://docs.google.com/forms/d/e/1FAIpQLSeLHT5MZuPz4ysxtIO6sKgLo7xLjC-5uLziydAPcethQ_98mA/viewform |
+  | IV-ACSAD | https://forms.gle/K4ChGMCXkuuZYBCc6 |
+  | IV-BCSAD | https://forms.gle/TUBDCynfoC1CnNPEA |
+  | IV-CCSAD | https://forms.gle/8Jo1k1uWeyAfgExH7 |
+  | IV-DCSAD | https://forms.gle/6C5HdDBeWKWzNk9YA |
 
 - Name the file `SECTION-TRACK-GROUP.pdf`, for example `DCSAD-B-07.pdf`. The file is at most 10 MB.
 - I score every PDF before the presentation nights.
