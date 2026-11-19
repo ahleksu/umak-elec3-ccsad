@@ -1,0 +1,50 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: The Lab 4 table and Seatwork 3 site of ccsad-g04
+
+Resources:
+  MessagesTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: umak-elec3-ccsad-g04-messages
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+      Tags:
+        - Key: course
+          Value: elec3
+        - Key: group
+          Value: ccsad-g04
+
+  SiteBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: umak-elec3-ccsad-g04-linktree
+      WebsiteConfiguration:
+        IndexDocument: index.html
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: false
+        BlockPublicPolicy: false
+        IgnorePublicAcls: false
+        RestrictPublicBuckets: false
+      Tags:
+        - Key: course
+          Value: elec3
+        - Key: group
+          Value: ccsad-g04
+
+  SiteBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref SiteBucket
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Sid: PublicReadGetObject
+            Effect: Allow
+            Principal: "*"
+            Action: s3:GetObject
+            Resource: !Sub "arn:aws:s3:::${SiteBucket}/*"
