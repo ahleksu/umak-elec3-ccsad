@@ -12,31 +12,45 @@ How to use this template:
 
 ## About us
 
-- Group number: Aquamarine
-- Section: CCSAD
-- Group IAM user: Group 7
+- Group number: 7
+- Section: IV - CCSAD
+- Group IAM user: ccsad-g07
 - Function name: umak-elec3-ccsad-g07-api
 
 ## Handler code
 
-Python 3.13
+```python
+import json
+
+GROUP_NAME = "Group 7 of IV-ACSAD"
+
+
+def lambda_handler(event, context):
+    visitor = event.get("name", "visitor")
+    body = {
+        "message": f"Hello, {visitor}! Greetings from {GROUP_NAME}.",
+        "group": GROUP_NAME,
+    }
+    return {
+        "statusCode": 200,
+        "headers": {"Content-Type": "application/json"},
+        "body": json.dumps(body),
+    }
+```
 
 ## REPORT lines
 
 First run, a cold start:
 
-## REPORT lines
-
-First run, a cold start:
-
-
+```text
 REPORT RequestId: 12345678-1234-1234-1234-1234567890ab Duration: 12.34 ms Billed Duration: 13 ms Memory Size: 128 MB Max Memory Used: 66 MB Init Duration: 150.25 ms
+```
 
 Second run, a warm start:
 
-
+```text
 REPORT RequestId: 87654321-4321-4321-4321-ba0987654321 Duration: 2.15 ms Billed Duration: 3 ms Memory Size: 128 MB Max Memory Used: 66 MB
-
+```
 
 ## Question
 
@@ -46,17 +60,17 @@ During the first run (cold start), AWS Lambda has to initialize a new execution 
 
 ## Screenshots
 
-![Code tab with our deployed handler](screenshots/code.PNG)
+![Code tab with our deployed handler](code.PNG)
 
-![Test result with Executing function: succeeded](screenshots/test.PNG)
+![Test result with Executing function: succeeded](test.PNG)
 
-![The two REPORT lines in CloudWatch](screenshots/logs.PNG)
+![The two REPORT lines in CloudWatch](report.PNG)
 
 ## Contribution
 
 | GitHub username | What this groupmate did |
 | --- | --- |
-| VobAviso | code |
-| LarsUlrichPons | test |
-| rewyuu | report |
-| JeromeMagno | research |
+| VobAviso | Setup Lambda Function and Execution Role |
+| LarsUlrichPons | Created Test Event |
+| rewyuu | Wrote the Handler and edited the submission |
+| JeromeMagno | Cloudwatch Logs |
