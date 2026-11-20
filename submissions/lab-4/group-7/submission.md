@@ -7,14 +7,13 @@ How to use this template:
 2. Replace every <answer> with your group's answer. Delete the angle brackets too.
 3. Save routes.png, post.png, get.png, and items.png in the same folder.
 4. Crop the AWS console top bar out of routes.png and items.png, and cover every ARN.
-5. Cover your API ID, the part between https:// and .execute-api, in routes.png, post.png, and get.png. Your invoke URL goes only in the Google Form, never in this repository.
-6. Do not write full names or student numbers in this file.
+5. Do not write full names or student numbers in this file.
 -->
 
 ## About us
 
-- Group number: Aquamarine
-- Section: CCSAD
+- Group number: 7
+- Section: IV - CCSAD
 - Group IAM user: ccsad-g07
 - DynamoDB table name: umak-elec3-ccsad-g07-messages
 - HTTP API name: umak-elec3-ccsad-g07-api
@@ -74,9 +73,10 @@ def lambda_handler(event, context):
         'body': json.dumps({'message': 'Not Found'})
     }
 ```
+
 ## Screenshots
 
-![The Routes page - GET /messages](routes.png)
+![The Routes page with GET /messages and POST /messages](routes.png)
 
 ![Our curl POST commands and the answers](post.png)
 
@@ -92,7 +92,7 @@ def lambda_handler(event, context):
 
 2. What answer do you get when you open the invoke URL without `/messages`? Why does API Gateway answer this way, and not your function?
 
-  You get a {"message":"Not Found"} JSON response with an HTTP status code 404. API Gateway answers this directly because no route is defined for GET / (the root path). Since there is no route match in API Gateway, the request is blocked at the gateway level and is never forwarded to the Lambda function execution environment.
+   You get a {"message":"Not Found"} JSON response with an HTTP status code 404. API Gateway answers this directly because no route is defined for GET / (the root path). Since there is no route match in API Gateway, the request is blocked at the gateway level and is never forwarded to the Lambda function execution environment.
 
 3. Your `GET /messages` route uses Scan. What happens to the cost of each GET request as the table grows to thousands of messages? Why?
 
