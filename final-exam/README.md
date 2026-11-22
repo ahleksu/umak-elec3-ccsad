@@ -224,6 +224,12 @@ If any part of your system already runs on a cloud provider, or you use CI/CD, c
 **Does our provider count for Track A if it is not AWS, Google Cloud, or Azure?**
 Yes. A managed platform counts, for example Vercel, Netlify, Render, Railway, Supabase, or Firebase. So do AWS, Google Cloud, and Azure. In the defense, be ready to say what kind of service it is (IaaS, PaaS, or SaaS), where it runs, what it costs, and what the provider manages for you.
 
+**Our system runs on a free tier, or our provider has no pricing calculator. What do we link for the cost?**
+Do not use a calculator link. Make your own cost sheet, for example in Google Sheets. One row per service: the plan, the price, and the link to the provider's pricing page. Share it as view-only, and put its link in your PDF.
+
+**Do we include the features of our system that do not use the cloud?**
+Yes. Tell me what your app is about and what problem it solves, in your plan and in your pitch.
+
 **Can we play a recorded pitch or demo video?**
 Yes. A video is optional, and it saves time on the night. It must fit in your 6-minute live part. Share your screen with sound, and test the sound before 7:00 PM. Keep your live system open, because I can ask you to show it after the video.
 
