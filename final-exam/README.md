@@ -129,7 +129,7 @@ Each slot includes 1 minute for the next group to share its screen.
 
 A section with fewer groups ends earlier. IV-CCSAD has 9 groups and IV-DCSAD has 8.
 
-IV-DCSAD presents on Wednesday, November 25, from 3:00 PM. Read 3:00 PM wherever this page says 7:00 PM, and each slot is 4 hours earlier: Group 1 at 3:05 PM, Group 8 until 4:33 PM. IV-DCSAD Group 4 presents alone at 9:00 to 9:15 PM that night, after IV-BCSAD.
+IV-DCSAD presents on Wednesday, November 25, from 3:00 PM. Read 3:00 PM wherever this page says 7:00 PM, and each slot is 4 hours earlier: Group 1 at 3:05 PM, Group 8 until 4:33 PM.
 
 ## How you are scored
 
