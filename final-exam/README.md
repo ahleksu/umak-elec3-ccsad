@@ -4,12 +4,12 @@ You take the Final Exam with your thesis group, in one of two tracks. This page 
 
 ## Your section's dates
 
-| Section | Track B written exam, Saturday, November 21 | Presentation night, 7:00 to 9:00 PM | Written exam make-up, Saturday, November 28 |
+| Section | Track B written exam, Saturday, November 21 | Presentation night | Written exam make-up, Saturday, November 28 |
 | --- | --- | --- | --- |
-| IV-ACSAD | Start 7:30 to 7:45 AM, closes 9:30 AM | Thursday, November 26 | Start 7:30 to 7:45 AM, closes 9:30 AM |
-| IV-BCSAD | Start 3:00 to 3:15 PM, closes 5:00 PM | Wednesday, November 25 | Start 10:30 to 10:45 AM, closes 12:30 PM |
-| IV-CCSAD | Start 6:00 to 6:15 PM, closes 8:00 PM | Tuesday, November 24 | Start 6:00 to 6:15 PM, closes 8:00 PM |
-| IV-DCSAD | Start 3:00 to 3:15 PM, closes 5:00 PM | Monday, November 23 | Start 3:00 to 3:15 PM, closes 5:00 PM |
+| IV-ACSAD | Start 7:30 to 7:45 AM, closes 9:30 AM | Thursday, November 26, 7:00 to 9:00 PM | Start 7:30 to 7:45 AM, closes 9:30 AM |
+| IV-BCSAD | Start 3:00 to 3:15 PM, closes 5:00 PM | Wednesday, November 25, 7:00 to 9:00 PM | Start 10:30 to 10:45 AM, closes 12:30 PM |
+| IV-CCSAD | Start 6:00 to 6:15 PM, closes 8:00 PM | Tuesday, November 24, 7:00 to 9:00 PM | Start 6:00 to 6:15 PM, closes 8:00 PM |
+| IV-DCSAD | Start 3:00 to 3:15 PM, closes 5:00 PM | Wednesday, November 25, 3:00 to 5:00 PM (moved from Monday, November 23) | Start 3:00 to 3:15 PM, closes 5:00 PM |
 
 ## Choose your track
 
@@ -128,6 +128,8 @@ Each slot includes 1 minute for the next group to share its screen.
 | 10 | 8:44 to 8:55 PM |
 
 A section with fewer groups ends earlier. IV-CCSAD has 9 groups and IV-DCSAD has 8.
+
+IV-DCSAD presents on Wednesday, November 25, from 3:00 PM. Read 3:00 PM wherever this page says 7:00 PM, and each slot is 4 hours earlier: Group 1 at 3:05 PM, Group 8 until 4:33 PM. IV-DCSAD Group 4 presents alone at 9:00 to 9:15 PM that night, after IV-BCSAD.
 
 ## How you are scored
 
