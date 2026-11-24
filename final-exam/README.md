@@ -18,7 +18,7 @@ Your whole thesis group takes the same track. Your group representative answers 
 | | Track A | Track B |
 | --- | --- | --- |
 | Who | A group whose thesis system already uses the cloud: a cloud architecture, a deployment to a cloud provider, or CI/CD | Every other group |
-| Written exam | None | Yes, each member, 50 points |
+| Written exam | None. Each member gets the full 50 points | Yes, each member, 50 points |
 | What your group makes | A PDF about your thesis system on the cloud | A small case app built in AWS, and a PDF about it |
 | Presentation night | A 6-minute pitch with your live system, then 1 question for each member | A 6-minute demo of your build, then 1 question for each member |
 
@@ -26,7 +26,7 @@ Your whole thesis group takes the same track. Your group representative answers 
 
 1. By Thursday, November 19, 11:59 PM: your group representative answers the track form. The form asks for your cloud provider and one sentence on what runs on the cloud.
 2. Friday, November 20: I confirm your group for Track A. If I do not confirm it, your group moves to Track B, and I email you that night.
-3. Saturday, November 21: no written exam for you. Prepare your PDF and your pitch.
+3. Saturday, November 21: no written exam for you, and each member gets its full 50 points. Prepare your PDF and your pitch.
 4. Sunday, November 22, 6:00 PM: submit your PDF.
 5. Your section's presentation night: present your live system and answer questions.
 
@@ -135,40 +135,53 @@ IV-DCSAD presents on Wednesday, November 25, from 3:00 PM. Read 3:00 PM wherever
 
 ### Track A, 100 points
 
+Track A has no written exam, so each member gets its full 50 points.
+
 | Part | Points | Scored from |
 | --- | --- | --- |
-| Architecture diagram and plan | 30 | Your PDF, before the night |
-| System presentation | 30 | Your live pitch |
-| Individual defense | 40 | Your own answers |
+| Written exam | 50 | Given in full, each member |
+| Architecture diagram | 10 | Your PDF |
+| Plan | 10 | Your PDF |
+| System presentation | 20 | Your live pitch |
+| Individual defense | 10 | Your own answers |
 
-**Architecture diagram and plan, 30 points**
-
-| Level | What it looks like | Points |
-| --- | --- | --- |
-| Excellent | The cover, the diagram, and the plan are complete. The diagram shows the provider, the network, numbered arrows for one request, the CI/CD path, and a legend. The plan is clear, and the calculator link opens to the cost you state. | 27 to 30 |
-| Good | All parts are there, but one is unclear or has a small error. | 21 to 26 |
-| Fair | One part is missing, for example the CI/CD path or the calculator link. | 15 to 20 |
-| Needs work | Two or more parts are missing, or the diagram does not match your system. | 0 to 14 |
-
-**System presentation, 30 points**
+**Architecture diagram, 10 points**
 
 | Level | What it looks like | Points |
 | --- | --- | --- |
-| Excellent | The live system works on its cloud. The pitch says who it is for, what it does, and what runs on the cloud, within 6 minutes. | 27 to 30 |
-| Good | The system works, with a small slip or a little over time. | 21 to 26 |
-| Fair | Part of the system fails, or most of the pitch is slides and screenshots. | 15 to 20 |
-| Needs work | No live system is shown. | 0 to 14 |
+| Excellent | The diagram shows your system on its provider, the network, numbered arrows for one request, the CI/CD path, and a legend. | 9 to 10 |
+| Good | All parts are there, but one is unclear or has a small error. | 7 to 8 |
+| Fair | One part is missing, for example the CI/CD path or the numbered arrows. | 5 to 6 |
+| Needs work | Two or more parts are missing, or the diagram does not match your system. | 0 to 4 |
 
-**Individual defense, 40 points**
+**Plan, 10 points**
+
+| Level | What it looks like | Points |
+| --- | --- | --- |
+| Excellent | The plan says what your system does and what runs on the cloud. The calculator link or cost sheet opens to the monthly cost you state. | 9 to 10 |
+| Good | All parts are there, but one is unclear or has a small error. | 7 to 8 |
+| Fair | One part is missing, for example the calculator link or the cost sheet. | 5 to 6 |
+| Needs work | Two or more parts are missing. | 0 to 4 |
+
+**System presentation, 20 points**
+
+| Level | What it looks like | Points |
+| --- | --- | --- |
+| Excellent | The live system works on its cloud. The pitch says who it is for, what it does, and what runs on the cloud, within 6 minutes. | 18 to 20 |
+| Good | The system works, with a small slip or a little over time. | 14 to 17 |
+| Fair | Part of the system fails, or most of the pitch is slides and screenshots. | 10 to 13 |
+| Needs work | No live system is shown. | 0 to 9 |
+
+**Individual defense, 10 points**
 
 You answer 1 question. I score your own answer.
 
 | Level | What it looks like | Points |
 | --- | --- | --- |
-| Excellent | Your answer is correct and clear, in your own words, and you can show it in your system or your diagram. | 36 to 40 |
-| Good | Your answer is correct, with a small gap. | 28 to 35 |
-| Fair | Your answer is partly correct. | 20 to 27 |
-| Needs work | Your answer is wrong, or you do not answer. | 0 to 19 |
+| Excellent | Your answer is correct and clear, in your own words, and you can show it in your system or your diagram. | 9 to 10 |
+| Good | Your answer is correct, with a small gap. | 7 to 8 |
+| Fair | Your answer is partly correct. | 5 to 6 |
+| Needs work | Your answer is wrong, or you do not answer. | 0 to 4 |
 
 ### Track B, 100 points
 
